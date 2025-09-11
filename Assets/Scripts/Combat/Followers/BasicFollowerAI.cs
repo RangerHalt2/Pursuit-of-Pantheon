@@ -1,3 +1,8 @@
+// Created By: Ryan Lupoli
+// This is a basic AI script meant to manage followers. Intended for the prototype build
+using System;
+using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class BasicFollowerAI : MonoBehaviour
@@ -9,8 +14,16 @@ public class BasicFollowerAI : MonoBehaviour
 
     private float elapsedTime;
 
+    [Header("Team Settings")]
+    [Tooltip("Team ID's for allies. Will be targeted by a follower's supportive actions.")]
+    [SerializeField] private int[] alliedTeamIds;
+    [Tooltip("Team ID's for enemies. Will be targeted by a follower's basic attacks.")]
+    [SerializeField] private int[] enemyTeamIds;
+    
+
     // Reference to the Follower Stats Script
     private FollowerStats followerStats;
+    private Health health;
 
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,7 +34,7 @@ public class BasicFollowerAI : MonoBehaviour
 
         if (followerStats != null)
         {
-            
+
         }
         else
         {
@@ -46,43 +59,80 @@ public class BasicFollowerAI : MonoBehaviour
     {
         Debug.Log("Attack Method Called.");
 
-        // Create an array of potential targets
-        GameObject[] potentialTargets;
+        // Select a random target
+        GameObject target = FindRandomTargetByID(enemyTeamIds);
 
-        // Search for objects tagged as Enemy
-        potentialTargets = GameObject.FindGameObjectsWithTag("Enemy");
-
-        // Pick a random target from the list
-        int index = Random.Range(0, potentialTargets.Length);
-
-        // Check if target is in range of the array
-        if (index >= 0 & index < potentialTargets.Length)
+        // Check if target has a health script
+        Health targetHealth = target.GetComponent<Health>();
+        if (target != null)
         {
-            GameObject target = potentialTargets[index];
-
-            // Check if the target is within the bounds of the array
-            if (target != null)
-            {
-                // Check if the target has a health script
-                Health targetHealth = target.GetComponent<Health>();
-                if (targetHealth != null)
-                {
-                    Debug.Log(name + " attacked " + target.name + ".");
-                    targetHealth.TakeDamage(followerStats.Attack);
-                }
-                else
-                {
-                    Debug.LogWarning(target.name + " does not have a Health Script.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning(this.name + " tried to hit a target at an index which is out of range.");
-            }
+            Debug.Log(name + " attacked " + target.name + ".");
+            targetHealth.TakeDamage(followerStats.Attack);
         }
         else
         {
-            Debug.LogWarning("Index out of range: " + index);
+            Debug.LogWarning(target.name + " does not have a Health Script.");
         }
     }
+
+    // Selects a random target with a specified tag from within the scene.
+    public GameObject FindRandomTargetByTag(String tagName)
+    {
+        // Create an array of potential targets
+        GameObject[] potentialTargets = GameObject.FindGameObjectsWithTag(tagName);
+
+        // If no objects with specified tag are found, return null
+        if (potentialTargets.Length == 0)
+        {
+            Debug.LogWarning("No GameObjects with found tag: " + tagName);
+            return null;
+        }
+
+        // Select a random object in the array
+        int index = UnityEngine.Random.Range(0, potentialTargets.Length);
+
+        // Return the selected target
+        // Debug.Log(potentialTargets[index].name + " was selected.");
+        return potentialTargets[index];
+    }
+
+    // Selects a random target with a specified teamID from within the scene.
+    public GameObject FindRandomTargetByID(int[] targetTeamID)
+    {
+        // Create an array of all objects with a health component
+        Health[] healthComponents = GameObject.FindObjectsByType<Health>(FindObjectsSortMode.None);
+
+        // Create a list of all game objects
+        List<GameObject> potentialTargets = new List<GameObject>();
+
+        // Check each healthComponent Identified
+        foreach (Health health in healthComponents)
+        {
+            if (health != null && targetTeamID != null)
+            {
+                // For every teamID targeted...
+                foreach (int teamID in targetTeamID)
+                {
+                    // If the teamID is one of the targeted IDs...
+                    if (health.teamID == teamID)
+                    {
+                        // Add the game object to the potential targets
+                        potentialTargets.Add(health.gameObject);
+                        break;
+                    }
+                }
+            }
+        }
+
+        // If no valid targets were found, return null
+        if (potentialTargets.Count == 0)
+        {
+            Debug.LogWarning("No GameObjects with a provided teamID. Make sure there are targets with a Health Script, and that they have the correct TeamID.");
+            return null;
+        }
+
+        // Choose a random target
+        int index = UnityEngine.Random.Range(0, potentialTargets.Count);
+        return potentialTargets[index];
+    }    
 }

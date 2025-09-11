@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     [SerializeField] private int currentHealth = 1;
 
     [Header("Display Settings")]
+    [Tooltip("Reference to healthbar prefab. Optional.")]
+    [SerializeField] private HealthBar healthBar;
     [Tooltip("Reference to TMPro Object used to track current AP. Optional.")]
     [SerializeField] private TextMeshProUGUI healthDisplayText;
 
@@ -39,7 +41,12 @@ public class Health : MonoBehaviour
             Die();
         }
 
-        updateDisplayText();
+        // If there is a healthbar assigned, set the max health
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
+        updateDisplay();
     }
 
     // Update is called once per frame
@@ -54,7 +61,7 @@ public class Health : MonoBehaviour
         // Subtract the damage amount from the health of the object
         currentHealth -= damageAmount;
         Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth + "/" + maxHealth + ".");
-        updateDisplayText();
+        updateDisplay();
 
         // If the object has 0 or less current health
         if (currentHealth <= 0)
@@ -101,12 +108,18 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void updateDisplayText()
+    public void updateDisplay()
     {
         // Used if there is a TMPro Display assinged
         if (healthDisplayText != null)
         {
             healthDisplayText.text = string.Format(currentHealth + " / " + maxHealth);
+        }
+
+        // If there is a healthBar assigned
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
         }
     }
 }
