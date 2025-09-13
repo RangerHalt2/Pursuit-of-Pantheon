@@ -97,6 +97,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5469862152553290201}
   - component: {fileID: 4923628452666122431}
+  - component: {fileID: 4135609220753953432}
+  - component: {fileID: 4074681804033927573}
   m_Layer: 0
   m_Name: Test Enemy
   m_TagString: Enemy
@@ -140,6 +142,36 @@ MonoBehaviour:
   healthDisplayText: {fileID: 0}
   hitEffect: {fileID: 1334585436658503674, guid: 1a9b9e48e0b162b489b71f55bcf51ed1, type: 3}
   deathEffect: {fileID: 5415495801983142025, guid: 8b0262d8253086c41a87049f1a53f693, type: 3}
+--- !u!114 &4135609220753953432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796101736210973026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11eed59a44450e847a2a20beadab65ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 0.5
+  Magic: 0
+  Speed: 1
+--- !u!114 &4074681804033927573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796101736210973026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23823caaafdb5754ba2a0527bfbda2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionInterval: 3
+  alliedTeamIds: 0100000002000000
+  enemyTeamIds: 00000000
 --- !u!1001 &7276341312693194476
 PrefabInstance:
   m_ObjectHideFlags: 0

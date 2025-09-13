@@ -12,9 +12,9 @@ public class Health : MonoBehaviour
 
     [Header("Health Settings")]
     [Tooltip("The maximum amount of health an object can. Value must be greater than 0.")]
-    [SerializeField] private int maxHealth = 1;
+    [SerializeField] public float maxHealth = 1f;
     [Tooltip("The amount of health the object currently has. If the current health is 0, the object is dead.")]
-    [SerializeField] private int currentHealth = 1;
+    [SerializeField] public float currentHealth = 1f;
 
     [Header("Display Settings")]
     [Tooltip("Reference to healthbar prefab. Optional.")]
@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
     }
 
     // Applies a certain amount of damage to an object
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         // Subtract the damage amount from the health of the object
         currentHealth -= damageAmount;
@@ -80,11 +80,12 @@ public class Health : MonoBehaviour
     }
 
     // Applies a certain amount of healing to an object
-    public void ReceiveHealing(int healingAmount)
+    public void ReceiveHealing(float healingAmount)
     {
         // Add the healing amount to the object's current health
         currentHealth += healingAmount;
         Debug.Log(gameObject.name + " received " + healingAmount + " healing. Current Health: " + currentHealth + "/" + maxHealth + ".");
+        updateDisplay();
 
         // If the object's current health is now greater than the max...
         if (currentHealth > maxHealth)

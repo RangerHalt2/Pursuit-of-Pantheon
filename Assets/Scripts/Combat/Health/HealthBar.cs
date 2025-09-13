@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
     [Tooltip("Fill object from Healthbar Prefab.")]
     [SerializeField] private Image fill;
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         // Set Slider to max
         slider.maxValue = health;
@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         // Set the slider's value to the current percentage of health the object has
         slider.value = health;

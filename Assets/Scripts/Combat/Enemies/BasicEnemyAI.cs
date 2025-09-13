@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using NUnit.Framework.Constraints;
 using UnityEngine;
 
-public class BasicFollowerAI : MonoBehaviour
+public class BasicEnemyAI : MonoBehaviour
 {
     #region Variables
     [Header("Action Settings")]
@@ -15,21 +15,21 @@ public class BasicFollowerAI : MonoBehaviour
 
     private float elapsedTime;
 
-    // Determines how many times a follower can attempt to choose an action. Exists as a temporary measure to prevent game lockups. This will be replaced by a more elegant solution later
-    private int choiceLimit = 0;
+    // Determines how many times the object can attempt to choose an action. Exists as a temporary measure to prevent game lockups. This will be replaced by a more elegant solution later
+    private int choiceLimit = 5;
 
     // Whether the follower successfully performed an action
     private bool actionPerformed = false;
 
     [Header("Team Settings")]
-    [Tooltip("Team ID's for allies. Will be targeted by a follower's supportive actions.")]
+    [Tooltip("Team ID's for allies. Will be targeted by the enemy's supportive actions.")]
     [SerializeField] private int[] alliedTeamIds;
-    [Tooltip("Team ID's for enemies. Will be targeted by a follower's basic attacks.")]
+    [Tooltip("Team ID's for enemies. Will be targeted by the enemy's basic attacks.")]
     [SerializeField] private int[] enemyTeamIds;
 
 
-    // Reference to the Follower Stats Script
-    private FollowerStats followerStats;
+    // Reference to the Enemy Stats Script
+    private EnemyStats enemyStats;
     private Health health;
 
     #endregion
@@ -37,15 +37,15 @@ public class BasicFollowerAI : MonoBehaviour
     void Awake()
     {
         // Check if Follower Stats have been assigned
-        followerStats = GetComponent<FollowerStats>();
+        enemyStats = GetComponent<EnemyStats>();
 
-        if (followerStats != null)
+        if (enemyStats != null)
         {
 
         }
         else
         {
-            Debug.LogWarning("FollowerStats Script not found on this GameObject. Follower AI will not function.");
+            Debug.LogWarning("EnemyStats Script not found on this GameObject. Follower AI will not function.");
         }
     }
 
@@ -67,13 +67,12 @@ public class BasicFollowerAI : MonoBehaviour
                 // After action is performed, set the relevant boolean to true
                 switch (action)
                 {
-                    // Attack an enemy
+                    // Attack a follower
                     case 0:
                         Attack();
                         break;
-                    // Heal an ally
+                    // Do nothing
                     case 1:
-                        Heal();
                         break;
                     default:
                         choiceLimit++;
@@ -103,7 +102,7 @@ public class BasicFollowerAI : MonoBehaviour
             Health targetHealth = target.GetComponent<Health>();
 
             Debug.Log(name + " attacked " + target.name + ".");
-            targetHealth.TakeDamage(followerStats.Attack);
+            targetHealth.TakeDamage(enemyStats.Attack);
             actionPerformed = true;
         }
         else
@@ -131,7 +130,7 @@ public class BasicFollowerAI : MonoBehaviour
             }
 
             Debug.Log(name + " healed " + target.name + ".");
-            targetHealth.ReceiveHealing(followerStats.Magic);
+            targetHealth.ReceiveHealing(enemyStats.Magic);
             actionPerformed = true;
         }
         else
