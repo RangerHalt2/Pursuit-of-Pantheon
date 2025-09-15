@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    // Changes the current Scene to...
+    //Dynamic Scene Naming capabilities
+    [SerializeField] private string MainMenu = "";
+
     void Start()
     {
         
@@ -14,4 +16,16 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(MainMenu);
+    }
+
+    //Hard Coded Scene Management for testing scene
+    public void GoToCombatTestScene()
+    {
+        SceneManager.LoadScene("CombatTestScene");
+    }
+
 }
