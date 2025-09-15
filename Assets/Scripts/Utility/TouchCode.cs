@@ -1,16 +1,35 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TouchCode : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Text phaseDisplayText;
+    private Touch touch;
+    private float timeTouchEnded;
+    private float displayTime = 0.5f;
 
-    // Update is called once per frame
     void Update()
     {
-        print(Input.touchCount);
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                phaseDisplayText.text = touch.phase.ToString();
+                timeTouchEnded = Time.time;
+            }
+
+            else if (Time.time - timeTouchEnded > displayTime)
+            {
+                phaseDisplayText.text = touch.phase.ToString();
+                timeTouchEnded = Time.time;
+            }
+        }
+
+        else if (Time.time - timeTouchEnded > displayTime)
+        {
+            phaseDisplayText.text = "";
+        }
     }
 }
