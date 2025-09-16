@@ -12,7 +12,7 @@ public class SceneController : MonoBehaviour
     }
 
     // Closes out of the application
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
