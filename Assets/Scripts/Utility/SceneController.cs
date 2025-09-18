@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,11 @@ public class SceneController : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void GoToScene(String sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void GoToMainMenu()
