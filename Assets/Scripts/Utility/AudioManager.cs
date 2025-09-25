@@ -34,8 +34,17 @@ public class AudioManager : MonoBehaviour
     {
         InitializeAudioManager();
 
-        // Get the float of the saved volume
-        SetVolume(PlayerPrefs.GetFloat(savedVolumeGroup, 100));
+        // If a sound Slider has been set
+        if (soundSlider != null)
+        {
+            // Get the float of the saved volume
+            SetVolume(PlayerPrefs.GetFloat(savedVolumeGroup, 100));
+        }
+        // Otherwise print a warning message in console
+        else
+        {
+            Debug.LogWarning("Audio Manager: No Sound Slider Set. Audio will be unable to be altered in this scene.");
+        }
     }
 
     // Sets the volume of the assigned mixer to a specific value
