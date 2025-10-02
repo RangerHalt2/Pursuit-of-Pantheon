@@ -1,0 +1,36 @@
+{
+    "lines": [
+        {
+            "speakerName": "Zeus",
+            "sentence": "Welcome to Olympus",
+            "choices": [],
+            "nextLineIndex": 1
+        },
+        {
+            "speakerName": "Player",
+            "sentence": "Thank you",
+            "choices": [
+                {
+                    "choiceText": "Who are you?",
+                    "nextLineIndex": 2
+                },
+                {
+                    "choiceText": "Where am I?",
+                    "nextLineIndex": 3
+                }
+            ]
+        },
+        {
+            "speakerName": "Zeus",
+            "sentence": "I am Zeus!",
+            "choices": [],
+            "nextLineIndex": -1
+        },
+        {
+            "speakerName": "Zeus",
+            "sentence": "This is Olympus, I just told you...",
+            "choices": [],
+            "nextLineIndex": -1
+        }
+    ]
+}

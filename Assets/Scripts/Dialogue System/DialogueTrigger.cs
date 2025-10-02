@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public TextAsset dialogueJSON;
+    public DialogueManager manager;
 
-    public void TriggerDialogue()
+    public void Start()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        Dialogue dialogue = manager.LoadDialogueFromJSON(dialogueJSON);
+        manager.StartDialogue(dialogue);
     }
 }
