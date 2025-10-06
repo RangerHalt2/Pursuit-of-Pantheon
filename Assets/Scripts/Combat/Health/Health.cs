@@ -28,12 +28,19 @@ public class Health : MonoBehaviour
     [Tooltip("Reference to prefab for an effect which triggers when the object is destroyed. Optional.")]
     public GameObject deathEffect;
 
-
+    public FollowerStatblock stats;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // If object has been assigned a statblock, read the stats
+        if (stats != null)
+        {
+            maxHealth = stats.maxHP;
+            currentHealth = stats.currentHP;
+        }
+        
         // Automatically kill object if it has 0 or less health
         if (currentHealth <= 0)
         {

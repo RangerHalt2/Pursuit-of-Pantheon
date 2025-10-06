@@ -99,10 +99,8 @@ GameObject:
   - component: {fileID: 9021824749545389894}
   - component: {fileID: 7239007741970617109}
   - component: {fileID: 2237735438597670654}
-  - component: {fileID: 1940734616466579224}
-  - component: {fileID: 3067367298689714994}
   m_Layer: 0
-  m_Name: Test Follower
+  m_Name: Test Follower NOAI
   m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,36 +186,6 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   deathEffect: {fileID: 0}
   stats: {fileID: 0}
---- !u!114 &1940734616466579224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220717093522069905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d598482a196d04a955e36b0e379c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 1
-  Magic: 1
-  Speed: 1
---- !u!114 &3067367298689714994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220717093522069905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7066ac5369c6fcb4cb841a504e0fa3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionInterval: 2
-  alliedTeamIds: 00000000
-  enemyTeamIds: 0100000002000000
 --- !u!1001 &4358507987913025641
 PrefabInstance:
   m_ObjectHideFlags: 0
