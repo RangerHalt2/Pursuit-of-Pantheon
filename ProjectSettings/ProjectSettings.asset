@@ -291,194 +291,9 @@ PlayerSettings:
   m_BuildTargetIcons: []
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
-    m_Icons:
-    - m_Textures: []
-      m_Width: 180
-      m_Height: 180
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 167
-      m_Height: 167
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 152
-      m_Height: 152
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 76
-      m_Height: 76
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 3
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 80
-      m_Height: 80
-      m_Kind: 3
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 80
-      m_Height: 80
-      m_Kind: 3
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 40
-      m_Height: 40
-      m_Kind: 3
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 87
-      m_Height: 87
-      m_Kind: 1
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 58
-      m_Height: 58
-      m_Kind: 1
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 29
-      m_Height: 29
-      m_Kind: 1
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 58
-      m_Height: 58
-      m_Kind: 1
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 29
-      m_Height: 29
-      m_Kind: 1
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 60
-      m_Height: 60
-      m_Kind: 2
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 40
-      m_Height: 40
-      m_Kind: 2
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 40
-      m_Height: 40
-      m_Kind: 2
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 20
-      m_Height: 20
-      m_Kind: 2
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 1024
-      m_Height: 1024
-      m_Kind: 4
-      m_SubKind: App Store
+    m_Icons: []
   - m_BuildTarget: Android
-    m_Icons:
-    - m_Textures: []
-      m_Width: 432
-      m_Height: 432
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 324
-      m_Height: 324
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 216
-      m_Height: 216
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 162
-      m_Height: 162
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 108
-      m_Height: 108
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 81
-      m_Height: 81
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
+    m_Icons: []
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
@@ -527,69 +342,9 @@ PlayerSettings:
   switchNSODependencies: 
   switchCompilerFlags: 
   switchTitleNames_0: 
-  switchTitleNames_1: 
-  switchTitleNames_2: 
-  switchTitleNames_3: 
-  switchTitleNames_4: 
-  switchTitleNames_5: 
-  switchTitleNames_6: 
-  switchTitleNames_7: 
-  switchTitleNames_8: 
-  switchTitleNames_9: 
-  switchTitleNames_10: 
-  switchTitleNames_11: 
-  switchTitleNames_12: 
-  switchTitleNames_13: 
-  switchTitleNames_14: 
-  switchTitleNames_15: 
   switchPublisherNames_0: 
-  switchPublisherNames_1: 
-  switchPublisherNames_2: 
-  switchPublisherNames_3: 
-  switchPublisherNames_4: 
-  switchPublisherNames_5: 
-  switchPublisherNames_6: 
-  switchPublisherNames_7: 
-  switchPublisherNames_8: 
-  switchPublisherNames_9: 
-  switchPublisherNames_10: 
-  switchPublisherNames_11: 
-  switchPublisherNames_12: 
-  switchPublisherNames_13: 
-  switchPublisherNames_14: 
-  switchPublisherNames_15: 
   switchIcons_0: {fileID: 0}
-  switchIcons_1: {fileID: 0}
-  switchIcons_2: {fileID: 0}
-  switchIcons_3: {fileID: 0}
-  switchIcons_4: {fileID: 0}
-  switchIcons_5: {fileID: 0}
-  switchIcons_6: {fileID: 0}
-  switchIcons_7: {fileID: 0}
-  switchIcons_8: {fileID: 0}
-  switchIcons_9: {fileID: 0}
-  switchIcons_10: {fileID: 0}
-  switchIcons_11: {fileID: 0}
-  switchIcons_12: {fileID: 0}
-  switchIcons_13: {fileID: 0}
-  switchIcons_14: {fileID: 0}
-  switchIcons_15: {fileID: 0}
   switchSmallIcons_0: {fileID: 0}
-  switchSmallIcons_1: {fileID: 0}
-  switchSmallIcons_2: {fileID: 0}
-  switchSmallIcons_3: {fileID: 0}
-  switchSmallIcons_4: {fileID: 0}
-  switchSmallIcons_5: {fileID: 0}
-  switchSmallIcons_6: {fileID: 0}
-  switchSmallIcons_7: {fileID: 0}
-  switchSmallIcons_8: {fileID: 0}
-  switchSmallIcons_9: {fileID: 0}
-  switchSmallIcons_10: {fileID: 0}
-  switchSmallIcons_11: {fileID: 0}
-  switchSmallIcons_12: {fileID: 0}
-  switchSmallIcons_13: {fileID: 0}
-  switchSmallIcons_14: {fileID: 0}
-  switchSmallIcons_15: {fileID: 0}
   switchManualHTML: 
   switchAccessibleURLs: 
   switchLegalInformation: 
@@ -608,27 +363,6 @@ PlayerSettings:
   switchCardSpecSize: -1
   switchCardSpecClock: -1
   switchRatingsMask: 0
-  switchRatingsInt_0: 0
-  switchRatingsInt_1: 0
-  switchRatingsInt_2: 0
-  switchRatingsInt_3: 0
-  switchRatingsInt_4: 0
-  switchRatingsInt_5: 0
-  switchRatingsInt_6: 0
-  switchRatingsInt_7: 0
-  switchRatingsInt_8: 0
-  switchRatingsInt_9: 0
-  switchRatingsInt_10: 0
-  switchRatingsInt_11: 0
-  switchRatingsInt_12: 0
-  switchLocalCommunicationIds_0: 
-  switchLocalCommunicationIds_1: 
-  switchLocalCommunicationIds_2: 
-  switchLocalCommunicationIds_3: 
-  switchLocalCommunicationIds_4: 
-  switchLocalCommunicationIds_5: 
-  switchLocalCommunicationIds_6: 
-  switchLocalCommunicationIds_7: 
   switchParentalControl: 0
   switchAllowsScreenshot: 1
   switchAllowsVideoCapturing: 1
@@ -668,34 +402,19 @@ PlayerSettings:
   ps4MasterVersion: 01.00
   ps4AppVersion: 01.00
   ps4AppType: 0
-  ps4ParamSfxPath: 
   ps4VideoOutPixelFormat: 0
   ps4VideoOutInitialWidth: 1920
   ps4VideoOutBaseModeInitialWidth: 1920
   ps4VideoOutReprojectionRate: 60
-  ps4PronunciationXMLPath: 
-  ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
   ps4StartupImagePath: 
-  ps4StartupImagesFolder: 
   ps4IconImagesFolder: 
   ps4SaveDataImagePath: 
   ps4SdkOverride: 
-  ps4BGMPath: 
-  ps4ShareFilePath: 
   ps4ShareOverlayImagePath: 
   ps4PrivacyGuardImagePath: 
-  ps4ExtraSceSysFile: 
-  ps4NPtitleDatPath: 
   ps4RemotePlayKeyAssignment: -1
-  ps4RemotePlayKeyMappingDir: 
-  ps4PlayTogetherPlayerCount: 0
   ps4EnterButtonAssignment: 2
-  ps4ApplicationParam1: 0
-  ps4ApplicationParam2: 0
-  ps4ApplicationParam3: 0
-  ps4ApplicationParam4: 0
-  ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   playerPrefsMaxSize: 32768
@@ -704,7 +423,6 @@ PlayerSettings:
   ps4pnPresence: 1
   ps4pnFriends: 1
   ps4pnGameCustomData: 1
-  playerPrefsSupport: 0
   enableApplicationExit: 0
   resetTempFolder: 1
   restrictedAudioUsageRights: 0
@@ -716,25 +434,8 @@ PlayerSettings:
   ps4ScriptOptimizationLevel: 2
   ps4Audio3dVirtualSpeakerCount: 14
   ps4attribCpuUsage: 0
-  ps4PatchPkgPath: 
-  ps4PatchLatestPkgPath: 
-  ps4PatchChangeinfoPath: 
-  ps4PatchDayOne: 0
-  ps4attribUserManagement: 0
-  ps4attribMoveSupport: 0
-  ps4attrib3DSupport: 0
-  ps4attribShareSupport: 0
-  ps4attribExclusiveVR: 0
-  ps4disableAutoHideSplash: 0
-  ps4videoRecordingFeaturesUsed: 0
-  ps4contentSearchFeaturesUsed: 0
-  ps4CompatibilityPS5: 0
-  ps4AllowPS5Detection: 0
-  ps4GPU800MHz: 1
-  ps4attribEyeToEyeDistanceSettingVR: 0
-  ps4IncludedModules: []
-  ps4attribVROutputEnabled: 0
-  monoEnv: 
+  ps4ProGarlicHeapSize: 2560
+  playerPrefsSupport: 0
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
@@ -788,12 +489,6 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Pursuit-of-Pantheon
-  metroPackageVersion: 
-  metroCertificatePath: 
-  metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Pursuit-of-Pantheon
   wsaImages: {}
   metroTileShortName: 
@@ -802,7 +497,6 @@ PlayerSettings:
   metroLargeTileShowName: 0
   metroWideTileShowName: 0
   metroSupportStreamingInstall: 0
-  metroLastRequiredScene: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
@@ -811,9 +505,6 @@ PlayerSettings:
   syncCapabilities: 0
   platformCapabilities: {}
   metroTargetDeviceFamilies: {}
-  metroFTAName: 
-  metroFTAFileTypes: []
-  metroProtocolName: 
   vcxProjDefaultLanguage: 
   XboxOneProductId: 
   XboxOneUpdateKey: 
