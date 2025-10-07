@@ -3,7 +3,7 @@ using System;
 
 public class ActiveFollowerGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject followerPrefab; // Assign in Inspector
+    [SerializeField] private GameObject followerPrefab;
 
     public GameObject GenerateFollower(string followerName, FollowerClass followerClass)
     {

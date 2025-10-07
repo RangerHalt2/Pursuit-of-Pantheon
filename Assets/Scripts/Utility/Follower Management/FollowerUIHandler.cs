@@ -58,6 +58,5 @@ public class FollowerUIHandler : MonoBehaviour
         }
 
         Debug.Log($"Unequipped follower: {follower.displayName}");
-        // Optionally, refresh your UI here
     }
 }

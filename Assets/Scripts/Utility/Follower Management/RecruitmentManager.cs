@@ -4,7 +4,7 @@ public class RecruitmentManager : MonoBehaviour
 {
     [SerializeField] private ActiveFollowerGenerator activeFollowerGenerator;
     [SerializeField] private PartyManager partyManager;
-    [SerializeField] private FollowerClass warriorClassSO; // Assign in Inspector
+    [SerializeField] private FollowerClass warriorClassSO;
 
     public void RecruitNewFollower()
     {
@@ -18,8 +18,5 @@ public class RecruitmentManager : MonoBehaviour
 
         // Destroy the temporary GameObject since we only want to store data
         Destroy(newFollowerGO);
-
-        // Optionally, equip to a position if you want to auto-equip
-        // partyManager.EquipFollower(newFollowerData, 1);
     }
 }
