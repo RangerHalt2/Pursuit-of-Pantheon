@@ -305,15 +305,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4648775176950704379, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4648775176950704379, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7220717093522069905, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_Name
       value: Test Follower NOAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220717093522069905, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239007741970617109, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: magic
@@ -2052,15 +2056,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4648775176950704379, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4648775176950704379, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7220717093522069905, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: m_Name
       value: Test Follower NOAI (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220717093522069905, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239007741970617109, guid: 5ebb6d2e2bfd43d489db5af66185f979, type: 3}
       propertyPath: magic
