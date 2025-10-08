@@ -2,7 +2,6 @@
 // This script records the data of followers in a scene and sends it to the bootstrapper.
 using UnityEngine;
 using System.Linq;
-using UnityEditor.SearchService;
 
 public class FollowerDataRecorder : MonoBehaviour
 {
