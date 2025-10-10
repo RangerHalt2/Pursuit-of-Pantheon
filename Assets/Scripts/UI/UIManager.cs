@@ -1,6 +1,7 @@
 // Created By: Ryan Lupoli
 // Manages the UI during gameplay and allows for easy navigation between pages
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -23,11 +24,29 @@ public class UIManager : MonoBehaviour
     // Whether or not the game is currently paused
     private bool isPaused = false;
 
+    [Header("TurnManager References")]
+    [Tooltip("Reference to the TMPro Asset which displays the current act.")]
+    public TextMeshProUGUI actText;
+    [Tooltip("Reference to the TMPro Asset which displays the amount of turns remaining.")]
+    public TextMeshProUGUI turnText;
 
     #endregion
 
     void Awake()
     {
+        // Locate the turn manager in the bootstrapper
+        TurnManager turnManager = FindAnyObjectByType<TurnManager>();
+
+        if (turnManager != null)
+        {
+            // Assign the actText and turnText to the turn manager
+            turnManager.AssignUI(actText, turnText);
+        }
+        else
+        {
+            Debug.LogError("UIManager: Could not find TurnManager to assign UI references.");
+        }
+
         // Ensure there is only one instance of the UI Manager
         if (instance == null)
         {

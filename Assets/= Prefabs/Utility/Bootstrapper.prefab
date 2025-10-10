@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &371530954149985018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8869906183571580334}
+  - component: {fileID: 1501651478055948745}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8869906183571580334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371530954149985018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3257871088026630896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1501651478055948745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371530954149985018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d77cab7ae5c2441a334b8fb699f5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: 030000000300000003000000
+  currentTurn: 1
+  currentAct: 1
+  actText: {fileID: 0}
+  turnText: {fileID: 0}
+  test: 0
 --- !u!1 &4324796019375406682
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6163396368298720015}
-  - component: {fileID: 4011980761425172453}
+  - component: {fileID: 5785004785088832124}
   m_Layer: 0
   m_Name: PartyData
   m_TagString: Untagged
@@ -32,7 +82,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3257871088026630896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4011980761425172453
+--- !u!114 &5785004785088832124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,6 +124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8869906183571580334}
   - {fileID: 6163396368298720015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89,4 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f160e8d50c6e847bafaf7e12f43b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partyData: {fileID: 4011980761425172453}
+  partyData: {fileID: 5785004785088832124}

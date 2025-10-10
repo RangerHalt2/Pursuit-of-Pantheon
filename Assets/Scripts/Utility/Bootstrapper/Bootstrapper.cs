@@ -17,7 +17,7 @@ public class Bootstrapper : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             // If another instance exists, destroy it
-            Debug.LogError("Found another instance of BootstrappedData on " + gameObject.name);
+            Debug.LogError("Bootstrapper: Found another instance of BootstrappedData on " + gameObject.name);
             Destroy(gameObject);
             return;
         }
