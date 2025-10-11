@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.ComponentModel;
+using JetBrains.Annotations;
 
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Button continueButton;
+
+    public Image avatarImage;
+    public CharacterData[] characters;
+    private Dictionary<string, CharacterData> characterLookup;
 
     public Button[] choicePanels;
     public TextMeshProUGUI[] choiceTexts;
@@ -18,6 +23,16 @@ public class DialogueManager : MonoBehaviour
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
+
+    private void Start()
+    {
+        characterLookup = new Dictionary<string, CharacterData>();
+
+        foreach (var character in characters)
+        {
+            characterLookup[character.speakerID] = character;
+        }
+    }
 
     public void TestButton()
     {
@@ -61,6 +76,17 @@ public class DialogueManager : MonoBehaviour
         if (hasChoices)
         {
             StartCoroutine(ShowChoicesDelayed(line));
+        }
+
+        if (characterLookup.TryGetValue(line.speakerID, out var character))
+        {
+            nameText.text = character.displayName;
+            avatarImage.sprite = character.avatar;
+        }
+        else
+        {
+            nameText.text = line.speakerID;
+            //avatarImage.sprite = defaultAvatar;
         }
     }
 
