@@ -1,45 +1,44 @@
 using UnityEngine;
+using System;
 
-public class Bandit : MonoBehaviour, IClasses
+public class Bandit : BaseClass
 {
-    #region Base Stats and ID
-    private int classID = 0;
-    private float baseVigor = 5;
-    private float basePower = 5;
-    private float baseResilience = 8;
-    private float baseMagick = 10;
-    private float baseAgility = 50;
+    #region Base Stats, ID, and Promotion Options
+    private void Awake()
+    {
+        classID = 0;
+        baseVigor = 5;
+        basePower = 5;
+        baseResilience = 8;
+        baseMagick = 10;
+        baseAgility = 50;
 
-    private string promotion = "Thief";
-    private float promotionVigor = 7;
-    private float promotionPower = 10;
-    private float promotionResilience = 8;
-    private float promotionMagick = 10;
-    private float promotionAgility = 65;
-    
+        // Set promotion options to the types of the promoted classes
+        promotionOptions = new Type[] { typeof(Thief), typeof(Rogue) };
+    }
     #endregion
 
-    private void DoPromotion()
+    public override void DoPromotion(int optionIndex)
+    {
+        if (optionIndex < 0 || optionIndex >= promotionOptions.Length) return;
+        gameObject.AddComponent(promotionOptions[optionIndex]);
+        this.enabled = false; // Using this.enabled instead of Destroy(this) to keep the component for reference and in the case of respecing the class later.
+    }
+
+    #region Class Skills
+    public override void SkillOne()
     {
         
     }
 
-    
-    #region Class Skills
-    void IClasses.SkillOne()
+    public override void SkillTwo()
     {
-        return;
+        
     }
 
-    void IClasses.SkillTwo() {
-        return;
-    }
-
-    void IClasses.SkillThree()
+    public override void SkillThree()
     {
-        return;
+        
     }
     #endregion
-
-
 }

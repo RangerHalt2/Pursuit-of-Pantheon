@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Thief : BaseClass
+public class Rogue : BaseClass
 {
     #region Base Stats and ID
     private void Awake()
@@ -17,7 +17,7 @@ public class Thief : BaseClass
     #endregion
 
 
-        #region Class Skills
+    #region Class Skills
     public override void SkillOne()
     {
 

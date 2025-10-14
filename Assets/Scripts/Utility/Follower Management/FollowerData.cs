@@ -9,17 +9,17 @@ public class FollowerData
     public int classID;
     public float maxHP;
     public float currentHP;
-    public float strength;
-    public float magic;
-    public float defense;
-    public float resistance;
-    public float speed;
+    public float power;
+    public float magick;
+    public float resilience;
+    public float faith;
+    public float agility;
     public float bonusMaxHP;
-    public float bonusStrength;
-    public float bonusMagic;
-    public float bonusDefense;
-    public float bonusResistance;
-    public float bonusSpeed;
+    public float bonusPower;
+    public float bonusMagick;
+    public float bonusResilience;
+    public float bonusFaith;
+    public float bonusAgility;
 
     // Converts a FollowerStatblock to FollowerData
     public static FollowerData FromStatblock(FollowerStatblock statblock)
@@ -32,17 +32,17 @@ public class FollowerData
             classID = statblock.classID,
             maxHP = statblock.maxHP,
             currentHP = statblock.currentHP,
-            strength = statblock.strength,
-            magic = statblock.magic,
-            defense = statblock.defense,
-            resistance = statblock.resistance,
-            speed = statblock.speed,
+            power = statblock.power,
+            magick = statblock.magick,
+            resilience = statblock.resilience,
+            faith = statblock.faith,
+            agility = statblock.agility,
             bonusMaxHP = statblock.bonusMaxHP,
-            bonusStrength = statblock.bonusStrength,
-            bonusMagic = statblock.bonusMagic,
-            bonusDefense = statblock.bonusDefense,
-            bonusResistance = statblock.bonusResistance,
-            bonusSpeed = statblock.bonusSpeed
+            bonusPower = statblock.bonusPower,
+            bonusMagick = statblock.bonusMagick,
+            bonusResilience = statblock.bonusResilience,
+            bonusFaith = statblock.bonusFaith,
+            bonusAgility = statblock.bonusAgility
         };
     }
 
@@ -57,17 +57,17 @@ public class FollowerData
         statblock.classID = classID;
         statblock.maxHP = maxHP;
         statblock.currentHP = currentHP;
-        statblock.strength = strength;
-        statblock.magic = magic;
-        statblock.defense = defense;
-        statblock.resistance = resistance;
-        statblock.speed = speed;
+        statblock.power = power;
+        statblock.magick = magick;
+        statblock.resilience = resilience;
+        statblock.faith = faith;
+        statblock.agility = agility;
         statblock.bonusMaxHP = bonusMaxHP;
-        statblock.bonusStrength = bonusStrength;
-        statblock.bonusMagic = bonusMagic;
-        statblock.bonusDefense = bonusDefense;
-        statblock.bonusResistance = bonusResistance;
-        statblock.bonusSpeed = bonusSpeed;
+        statblock.bonusPower = bonusPower;
+        statblock.bonusMagick = bonusResilience;
+        statblock.bonusResilience = bonusResilience;
+        statblock.bonusFaith = bonusFaith;
+        statblock.bonusAgility = bonusAgility;
         return go;
     }
 }

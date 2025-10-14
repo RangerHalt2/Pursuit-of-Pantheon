@@ -23,23 +23,23 @@ public class Follower : MonoBehaviour
         block.maxHP = followerStats.maxHP;
         block.currentHP = followerStats.currentHP;
 
-        block.strength = followerStats.strength;
-        block.magic = followerStats.magic;
+        block.power = followerStats.power;
+        block.magick = followerStats.magick;
 
-        block.defense = followerStats.defense;
-        block.resistance = followerStats.resistance;
+        block.resilience = followerStats.resilience;
+        block.faith = followerStats.faith;
 
-        block.speed = followerStats.speed;
+        block.agility = followerStats.agility;
 
         block.bonusMaxHP = followerStats.bonusMaxHP;
 
-        block.bonusStrength = followerStats.bonusStrength;
-        block.bonusMagic = followerStats.bonusMagic;
+        block.bonusPower = followerStats.bonusPower;
+        block.bonusMagick = followerStats.bonusMagick;
 
-        block.bonusDefense = followerStats.bonusDefense;
-        block.bonusResistance = followerStats.bonusResistance;
+        block.bonusResilience = followerStats.bonusResilience;
+        block.bonusFaith = followerStats.bonusFaith;
 
-        block.bonusSpeed = followerStats.bonusSpeed;
+        block.bonusAgility = followerStats.bonusAgility;
     }
 
     // Overwrites a follower's stats with those of the given statblock
@@ -54,22 +54,22 @@ public class Follower : MonoBehaviour
         followerStats.maxHP = stats.maxHP;
         followerStats.currentHP = stats.currentHP;
 
-        followerStats.strength = stats.strength;
-        followerStats.magic = stats.magic;
+        followerStats.power = stats.power;
+        followerStats.magick = stats.magick;
 
-        followerStats.defense = stats.defense;
-        followerStats.resistance = stats.resistance;
+        followerStats.resilience = stats.resilience;
+        followerStats.faith = stats.faith;
 
-        followerStats.speed = stats.speed;
+        followerStats.agility = stats.agility;
 
         followerStats.bonusMaxHP = stats.bonusMaxHP;
 
-        followerStats.bonusStrength = stats.bonusStrength;
-        followerStats.bonusMagic = stats.bonusMagic;
+        followerStats.bonusPower = stats.bonusPower;
+        followerStats.bonusMagick = stats.bonusMagick;
 
-        followerStats.bonusDefense = stats.bonusDefense;
-        followerStats.bonusResistance = stats.bonusResistance;
+        followerStats.bonusResilience = stats.bonusResilience;
+        followerStats.bonusFaith = stats.bonusFaith;
 
-        followerStats.bonusSpeed = stats.bonusSpeed;
+        followerStats.bonusAgility = stats.bonusAgility;
     }
 }

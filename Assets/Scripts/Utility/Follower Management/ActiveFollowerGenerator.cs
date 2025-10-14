@@ -22,11 +22,11 @@ public class ActiveFollowerGenerator : MonoBehaviour
         // Assign base stats from class
         statblock.maxHP = followerClass.baseMaxHP;
         statblock.currentHP = followerClass.baseMaxHP;
-        statblock.strength = followerClass.baseStrength;
-        statblock.magic = followerClass.baseMagic;
-        statblock.defense = followerClass.baseDefense;
-        statblock.resistance = followerClass.baseResistance;
-        statblock.speed = followerClass.baseSpeed;
+        statblock.power = followerClass.baseStrength;
+        statblock.magick = followerClass.baseMagic;
+        statblock.resilience = followerClass.baseDefense;
+        statblock.faith = followerClass.baseResistance;
+        statblock.agility = followerClass.baseSpeed;
 
         // Set up health component
         if (health != null)
