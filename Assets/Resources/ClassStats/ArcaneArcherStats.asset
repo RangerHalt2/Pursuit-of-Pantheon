@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a972bade52eb9479cd74244b6cb841, type: 3}
+  m_Name: ArcaneArcherStats
+  m_EditorClassIdentifier: 
+  classID: 2
+  baseMaxHP: 1
+  basePower: 1
+  baseMagick: 1
+  baseResilience: 1
+  baseFaith: 1
+  baseAgility: 1
+  isStartingClass: 0
+  unityClassName: PursuitOfPantheon.Classes.ArcaneArcher

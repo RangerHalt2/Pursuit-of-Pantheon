@@ -1,14 +1,15 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Follower/FollowerClass")]
+[CreateAssetMenu(menuName = "Follower/ClassStats")]
 public class FollowerClass : ScriptableObject
 {
-    public string className;
     public int classID;
     public float baseMaxHP = 1f;
-    public float baseStrength = 1f;
-    public float baseMagic = 1f;
-    public float baseDefense = 1f;
-    public float baseResistance = 1f;
-    public float baseSpeed = 1f;
+    public float basePower = 1f;
+    public float baseMagick = 1f;
+    public float baseResilience = 1f;
+    public float baseFaith = 1f;
+    public float baseAgility = 1f;
+    public bool isStartingClass = false;
+    public string unityClassName; // e.g., "Rogue"
 }

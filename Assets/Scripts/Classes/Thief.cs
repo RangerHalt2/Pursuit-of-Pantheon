@@ -6,10 +6,10 @@ public class Thief : BaseClass
     private void Awake()
     {
         classID = 1;
-        baseVigor = 7;
         basePower = 10;
         baseResilience = 8;
         baseMagick = 10;
+        baseFaith = 7;
         baseAgility = 65;
 
         promotionOptions = null;

@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5a972bade52eb9479cd74244b6cb841, type: 3}
-  m_Name: WarriorClass
+  m_Name: SwashbucklerStats
   m_EditorClassIdentifier: 
-  className: Warrior
-  classID: 0
-  baseMaxHP: 6
-  baseStrength: 1
-  baseMagic: 1
-  baseDefense: 1
-  baseResistance: 1
-  baseSpeed: 1
+  classID: 1
+  baseMaxHP: 10
+  basePower: 10
+  baseMagick: 10
+  baseResilience: 8
+  baseFaith: 7
+  baseAgility: 65
+  isStartingClass: 0
+  unityClassName: PursuitOfPantheon.Classes.Swashbuckler

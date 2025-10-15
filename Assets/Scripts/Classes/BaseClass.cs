@@ -3,8 +3,9 @@ using System;
 
 public abstract class BaseClass : MonoBehaviour
 {
+    public FollowerClass classData;
     public int classID;
-    public float baseVigor, basePower, baseResilience, baseMagick, baseAgility;
+    public float basePower, baseResilience, baseMagick, baseFaith, baseAgility;
     public Type[] promotionOptions;
 
     public virtual void DoPromotion(int optionIndex)

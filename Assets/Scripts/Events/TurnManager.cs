@@ -44,7 +44,7 @@ public class TurnManager : MonoBehaviour
         sceneController = GetComponentInParent<SceneController>();
         if (sceneController == null)
         {
-            Debug.LogError("TurnManager: SceneController not found on parent Bootstrapper!");
+            //Debug.LogError("TurnManager: SceneController not found on parent Bootstrapper!");
         }
     }
 

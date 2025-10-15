@@ -12,31 +12,34 @@ public class ActiveFollowerGenerator : MonoBehaviour
         // Set up Follower component
         Follower follower = followerGO.GetComponent<Follower>();
         FollowerStatblock statblock = followerGO.GetComponent<FollowerStatblock>();
-        Health health = followerGO.GetComponent<Health>();
 
-        // Assign unique ID
+        // Assign unique ID and display name
         statblock.followerID = Guid.NewGuid().ToString();
         statblock.displayName = followerName;
-        statblock.classID = followerClass.classID;
-
-        // Assign base stats from class
-        statblock.maxHP = followerClass.baseMaxHP;
-        statblock.currentHP = followerClass.baseMaxHP;
-        statblock.power = followerClass.baseStrength;
-        statblock.magick = followerClass.baseMagic;
-        statblock.resilience = followerClass.baseDefense;
-        statblock.faith = followerClass.baseResistance;
-        statblock.agility = followerClass.baseSpeed;
-
-        // Set up health component
-        if (health != null)
-        {
-            health.maxHealth = statblock.maxHP;
-            health.currentHealth = statblock.currentHP;
-        }
 
         // Link statblock to follower
         follower.followerStats = statblock;
+
+        // Add the class-specific component
+        if (!string.IsNullOrEmpty(followerClass.unityClassName))
+        {
+            var type = Type.GetType(followerClass.unityClassName);
+            if (type == null)
+            {
+                // Try with namespace if needed
+                type = Type.GetType("PursuitOfPantheon.Classes." + followerClass.unityClassName);
+            }
+            if (type != null && typeof(BaseClass).IsAssignableFrom(type))
+            {
+                var classComponent = (BaseClass)followerGO.AddComponent(type);
+                classComponent.classData = followerClass;
+                classComponent.enabled = true; // Ensure it's enabled
+            }
+            else
+            {
+                Debug.LogWarning($"Could not find or assign BaseClass type for {followerClass.unityClassName}");
+            }
+        }
 
         return followerGO;
     }

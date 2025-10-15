@@ -9,6 +9,7 @@ public class FollowerData
     public int classID;
     public float maxHP;
     public float currentHP;
+    public float vigor;
     public float power;
     public float magick;
     public float resilience;

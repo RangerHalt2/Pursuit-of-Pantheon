@@ -1,18 +1,17 @@
 using UnityEngine;
-using System;
 
 namespace PursuitOfPantheon.Classes
 {
-    public class Rogue : BaseClass
+    public class Swashbuckler : BaseClass
     {
-        public new static readonly Type[] promotionOptions = { typeof(Swashbuckler), typeof(ArcaneArcher) };
         #region Base Stats and ID
         private void Awake()
         {
             if (classData == null)
-                classData = Resources.Load<FollowerClass>("ClassStats/RogueStats");
+                classData = Resources.Load<FollowerClass>("ClassStats/SwashbucklerStats");
 
             ApplyStats();
+            promotionOptions = null;
         }
         #endregion
 

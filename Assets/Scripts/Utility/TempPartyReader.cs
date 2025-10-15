@@ -18,8 +18,8 @@ public class TempPartyReader : MonoBehaviour
 
     private void Update()
     {
-        PopulateUnEquippedFollowers();
-        PopulateEquippedFollowers();
+        //PopulateUnEquippedFollowers();
+        //PopulateEquippedFollowers();
     }
 
     private void PopulateEquippedFollowers()
