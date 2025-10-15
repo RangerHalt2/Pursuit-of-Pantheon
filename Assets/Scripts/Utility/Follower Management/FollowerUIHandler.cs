@@ -20,6 +20,8 @@ public class FollowerUIHandler : MonoBehaviour
     [SerializeField] private Button followerButtonPrefab;
     [SerializeField] private Button deselectButton;
 
+    [SerializeField] private GameObject promotionSoundEffect;
+
     // Maps followerID to the spawned GameObject
     private Dictionary<string, GameObject> equippedFollowerObjects = new Dictionary<string, GameObject>();
 
@@ -166,6 +168,12 @@ public class FollowerUIHandler : MonoBehaviour
         promoteButton.gameObject.SetActive(false);
         promotionOptionsPanel.SetActive(false);
         deselectButton.gameObject.SetActive(false);
+
+        if(promotionSoundEffect != null)
+        {
+            Instantiate(promotionSoundEffect);
+        }
+
         RefreshFollowerPanels();
     }
 

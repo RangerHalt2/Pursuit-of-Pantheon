@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410423740308116241}
   - component: {fileID: 6415414813555259454}
+  - component: {fileID: 1731300321740588960}
   m_Layer: 0
   m_Name: Follower Sprite
   m_TagString: Untagged
@@ -52,6 +53,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,6 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -87,6 +91,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1731300321740588960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178906581781016113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a76b8abc71d9f45ab2842a916d5580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TempSpriteChanger
+  sprites:
+  - {fileID: 21300000, guid: 5e5fbe13ba884804aaedba5a03971d7e, type: 3}
+  - {fileID: 21300000, guid: 769080854db918d46af0907e74d08d55, type: 3}
+  - {fileID: 21300000, guid: bc4bcd42012298e4793f50bcd033b57c, type: 3}
 --- !u!1 &8127696437970686377
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,17 +175,19 @@ MonoBehaviour:
   classID: 0
   maxHP: 1
   currentHP: 1
-  strength: 1
-  magic: 1
-  defense: 1
-  resistance: 1
-  speed: 1
+  vigor: 1
+  power: 1
+  magick: 1
+  resilience: 1
+  agility: 1
+  faith: 1
   bonusMaxHP: 0
-  bonusStrength: 0
-  bonusMagic: 0
-  bonusDefense: 0
-  bonusResistance: 0
-  bonusSpeed: 0
+  bonusPower: 0
+  bonusMagick: 0
+  bonusResilience: 0
+  bonusAgility: 0
+  bonusVigor: 0
+  bonusFaith: 0
 --- !u!114 &7830073791317335253
 MonoBehaviour:
   m_ObjectHideFlags: 0
