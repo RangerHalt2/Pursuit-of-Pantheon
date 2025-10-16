@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("UIManager: Could not find TurnManager to assign UI references.");
+            Debug.LogWarning("UIManager: Could not find TurnManager to assign UI references.");
         }
 
         // Ensure there is only one instance of the UI Manager

@@ -81,7 +81,7 @@ public class Health : MonoBehaviour
             if (hitEffect != null)
             {
                 // Play the hit effect for the object
-                Instantiate(hitEffect, transform.position, transform.rotation, null);
+                Instantiate(hitEffect, transform.position, transform.rotation);
             }
         }
     }
@@ -108,7 +108,7 @@ public class Health : MonoBehaviour
         if (deathEffect != null)
         {
             // Play the death effect for the object
-            Instantiate(deathEffect, transform.position, transform.rotation, null);
+            Instantiate(deathEffect, transform.position, transform.rotation);
         }
 
         // Destroy the game object

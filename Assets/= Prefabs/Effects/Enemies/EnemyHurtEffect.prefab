@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4294205694248133267}
   - component: {fileID: 9192262748008887571}
-  - component: {fileID: 4245068063324546333}
+  - component: {fileID: 6328123068987314136}
   m_Layer: 0
   m_Name: EnemyHurtEffect
   m_TagString: Untagged
@@ -130,7 +130,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4245068063324546333
+--- !u!114 &6328123068987314136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1334585436658503674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a34e1ead4fb84a4bae9d677b2d2756c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a57ab42a5795d447bc37dba1fb464a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimedObjectDestroyer
   lifeTime: 5

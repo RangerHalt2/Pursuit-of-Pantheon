@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
 
     [Tooltip("The magic stat of the enemy. Used to determine how much effective certain skills are.")]
     [SerializeField] public float Magic = 1;
+    [SerializeField] public float Defense = 1;
 
     [Tooltip("The speed stat of the enemy. Used to determine how quickly they can perform actions.")]
     [SerializeField] public float Speed = 1;
