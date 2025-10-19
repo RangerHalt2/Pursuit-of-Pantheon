@@ -85,7 +85,7 @@ public class ActionPointManager : MonoBehaviour
         if (currentAP + earnerdAP > maxAP)
         {
             currentAP = maxAP;
-            Debug.Log("Player cannot gain " + earnerdAP + " AP without going over the maximum. AP has been set to max.");
+           // Debug.Log("Player cannot gain " + earnerdAP + " AP without going over the maximum. AP has been set to max.");
 
             // If an AP Gain Effect is assigned
             if (apMaxEffect != null)
@@ -101,7 +101,7 @@ public class ActionPointManager : MonoBehaviour
         else
         {
             currentAP += earnerdAP;
-            Debug.Log("AP increased by " + earnerdAP + ". Current AP: " + currentAP + ".");
+            //Debug.Log("AP increased by " + earnerdAP + ". Current AP: " + currentAP + ".");
 
             // AP is at the maximum
             if (currentAP == maxAP)
@@ -139,14 +139,14 @@ public class ActionPointManager : MonoBehaviour
             if (currentAP - spentAP < 0)
             {
                 // This is included as a failsafe to prevent AP accidentally being reduced below 0. Any code spending AP should check if the player can afford to spend the AP before running this method. 
-                Debug.Log("ERROR: Player cannot spend " + spentAP + " AP without going to below 0 AP.");
+                //Debug.Log("ERROR: Player cannot spend " + spentAP + " AP without going to below 0 AP.");
                 return;
             }
             // Otherwise subtract the spentAP from the player's current total
             else
             {
                 currentAP -= spentAP;
-                Debug.Log("AP decreased by " + spentAP + ". CurrentAP: " + currentAP + ".");
+                //Debug.Log("AP decreased by " + spentAP + ". CurrentAP: " + currentAP + ".");
 
                 // If an AP Spend Effect is assigned
                 if (apSpendEffect != null)
@@ -162,7 +162,7 @@ public class ActionPointManager : MonoBehaviour
         // If the unlimitedAP debug setting is enabled, do nothing
         else
         {
-            Debug.Log("Unlimited AP Setting is enabled. No AP deducted.");
+            //Debug.Log("Unlimited AP Setting is enabled. No AP deducted.");
             return;
         }
     }

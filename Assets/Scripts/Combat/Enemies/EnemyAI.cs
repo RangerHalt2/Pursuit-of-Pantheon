@@ -1,12 +1,13 @@
 // Created By: Ryan Lupoli
-// This script manages the AI of the player's followers
+// This script manages the AI of the enemies
+// DISCLAIMER: As of right now this script is mostly copied from the follower AI. If certain comments, tooltips, etc erroneously make reference to a follower, that is why
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FollowerAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     // Options for follower tactics. More options can be easily added as is necessary
     public enum Tactic
@@ -14,32 +15,30 @@ public class FollowerAI : MonoBehaviour
         // Maximizes the potential damage dealt to enemies
         MaximizeDamage,
         // Prioritize killing blows
-        FinishTargets,
-        // Prioritizes healing/buffing the team over dealing damage
-        SupportTeam
+        FinishTargets
     }
 
     #region Variables
     [Header("Team Settings")]
-    [Tooltip("Team ID's for allies. Will be targeted by the follower's healing and buffing skills.")]
+    [Tooltip("Team ID's for allies. Will be targeted by the enemies's healing and buffing skills.")]
     [SerializeField] private int[] alliedTeamIds;
-    [Tooltip("Team ID's for enemies. Will be targeted by a follower's offensive and debuffing skills.")]
+    [Tooltip("Team ID's for enemies. Will be targeted by a enemies's offensive and debuffing skills.")]
     [SerializeField] private int[] enemyTeamIds;
 
-    [Tooltip("The tacics for the selected follower. Determins which skills they use and how they use them")]
+    [Tooltip("The tacics for the selected enemy. Determins which skills they use and how they use them")]
     [SerializeField] private Tactic selectedTactic;
 
-    private FollowerStatblock followerStatblock;
+    private EnemyStatblock enemyStatblock;
     #endregion
 
     void Awake()
     {
-        // Check for FollowerStatblock have been assigned
-        followerStatblock = GetComponent<FollowerStatblock>();
+        // Check for EnemyStatblock have been assigned
+        enemyStatblock = GetComponent<EnemyStatblock>();
 
-        if (followerStatblock == null)
+        if (enemyStatblock == null)
         {
-            Debug.LogWarning("FollowerAI: FollowerStatblock Script not found on " + gameObject.name + ". Follower AI will not function.");
+            Debug.LogWarning("EnemyAI: EnemyStatblock Script not found on " + gameObject.name + ". Enemy AI will not function.");
         }
     }
 
@@ -55,26 +54,23 @@ public class FollowerAI : MonoBehaviour
             case Tactic.FinishTargets:
                 FinishTargetsLogic();
                 break;
-            case Tactic.SupportTeam:
-                SupportTeamLogic();
-                break;
         }
 
     }
 
     #region Tactic Logic
-    // Follower will target the enemy that allows them to deal the highest potential damage to a target. They will ignore any and all supportive skills they have access to.
+    // Target the enemy that allows them to deal the highest potential damage to a target. They will ignore any and all supportive skills they have access to.
     public void MaximizeDamageLogic()
     {
-        // Ensure follower has a statblock
-        if (followerStatblock == null)
+        // Ensure enemy has a statblock
+        if (enemyStatblock == null)
         {
-            Debug.LogWarning("FollowerStatblock not found on " + gameObject.name);
+            Debug.LogWarning("EnemyStatblock not found on " + gameObject.name);
             return;
         }
 
         // Ensure that statblock has at least one skill assigned
-        ISkill[] skills = followerStatblock.GetSkills();
+        ISkill[] skills = enemyStatblock.GetSkills();
         if (skills == null || skills.Length == 0)
         {
             Debug.LogWarning(gameObject.name + " has no skills.");
@@ -161,13 +157,13 @@ public class FollowerAI : MonoBehaviour
     */
     public void FinishTargetsLogic()
     {
-        if (followerStatblock == null)
+        if (enemyStatblock == null)
         {
-            Debug.LogWarning("FollowerStatblock not found on " + gameObject.name);
+            Debug.LogWarning("EnemyStatblock not found on " + gameObject.name);
             return;
         }
 
-        ISkill[] skills = followerStatblock.GetSkills();
+        ISkill[] skills = enemyStatblock.GetSkills();
         if (skills == null || skills.Length == 0)
         {
             Debug.LogWarning(gameObject.name + " has no skills.");
@@ -260,7 +256,7 @@ public class FollowerAI : MonoBehaviour
                 if (skill is SkillBase skillBase && skillBase.type == SkillType.Healing)
                 {
                     // Heal self
-                    //Debug.Log(gameObject.name + " heals themselves with " + skillBase.skillName);
+                    Debug.Log(gameObject.name + " heals themselves with " + skillBase.skillName);
                     skill.UseSkill(self);
                     return;
                 }
@@ -341,183 +337,6 @@ public class FollowerAI : MonoBehaviour
         }
         #endregion
         Debug.Log(gameObject.name + " found no valid skill to use this turn.");
-    }
-
-    /*
-    This tactic prioritizes team Support. In other words healing and buffing over dealing damage
-    Priority 1: Check if any ally has less than 25% of their maximum HP, if so heal the one who has the lowers percentage of their max HP
-    Priority 2: 50% to use a buff on an ally
-    Priority 3: Check if any ally has less than 50% of their maximum Hp, if so heal the one who has the lowers percentage of their max HP
-    Priority 4: Use an offensive skill on a random enemy 
-    */
-    public void SupportTeamLogic()
-    {
-        if (followerStatblock == null)
-        {
-            Debug.LogWarning("FollowerStatblock not found on " + gameObject.name);
-            return;
-        }
-
-        ISkill[] skills = followerStatblock.GetSkills();
-        if (skills == null || skills.Length == 0)
-        {
-            Debug.LogWarning(gameObject.name + " has no skills.");
-            return;
-        }
-
-        List<ICombatant> allCombatants = CombatManager.instance?.GetCombatants();
-        if (allCombatants == null)
-        {
-            Debug.LogWarning("CombatManager not found or combatants list is null.");
-            return;
-        }
-
-        // Create a list of all allies
-        List<GameObject> allies = allCombatants.Where(c => alliedTeamIds.Contains(c.TeamID) && IsTargetValid(c)).Select(c => c.GetGameObject()).ToList();
-
-        // Create a list of all enemies
-        List<GameObject> enemies = allCombatants.Where(c => enemyTeamIds.Contains(c.TeamID) && IsTargetValid(c)).Select(c => c.GetGameObject()).ToList();
-
-        // Priority 1: Heal the most damaged ally who is below 25% of their maximum Health
-        #region Support Team Priority 1
-        // Find the ally with the lowest percentage of health
-        GameObject lowestHpAlly = null;
-        float lowestHpPercent = float.MaxValue;
-
-        foreach (GameObject ally in allies)
-        {
-            // Find the ally's health
-            Health allyHealth = ally.GetComponent<Health>();
-            // If for some reason ally lacks a health componenet, skip them
-            if (allyHealth == null)
-            {
-                continue;
-            }
-            // Find the percentage of health they have
-            float percent = (float)allyHealth.currentHealth / allyHealth.maxHealth;
-
-            // If the percent is lower than 25%, and is lower than the currently recorded lowest percentage
-            if (percent < 0.25f && percent < lowestHpPercent)
-            {
-                // Record the new ally
-                lowestHpAlly = ally;
-                lowestHpPercent = percent;
-            }
-        }
-
-        // If an ally below 25% of their Max Health was found...
-        if (lowestHpAlly != null)
-        {
-            float bestHeal = 0f;
-            ISkill bestSkill = null;
-
-            // Check all healing skills for the one which would heal the most health
-            foreach (ISkill skill in skills)
-            {
-                if (skill is SkillBase skillBase && skillBase.type == SkillType.Healing)
-                {
-                    float healAmount = skillBase.CheckSkill(lowestHpAlly);
-                    if (healAmount > bestHeal)
-                    {
-                        bestHeal = healAmount;
-                        bestSkill = skill;
-                    }
-                }
-            }
-            // If a skill was found...
-            if (bestSkill != null)
-            {
-                Debug.Log(gameObject.name + " heals ally " + lowestHpAlly.name + " (HP: " + lowestHpPercent * 100 + "%)");
-                // Heal the ally
-                bestSkill.UseSkill(lowestHpAlly);
-                return;
-            }
-        }
-        #endregion
-
-        // Priority 2: 50% chance to use a buff on an ally
-        #region Support Team Priority 2
-        // Find the first buff skill in the skill list
-        ISkill buffSkill = skills.FirstOrDefault(s => s is SkillBase sb && sb.type == SkillType.Buff);
-
-        // If a buff skill was found, and there is at least 1 ally
-        if (buffSkill != null && allies.Count > 0)
-        {
-            // 50% of the time...
-            if (UnityEngine.Random.value < 0.5f)
-            {
-                // Select a random ally
-                GameObject randomAlly = allies[UnityEngine.Random.Range(0, allies.Count)];
-                //Debug.Log(gameObject.name + " buffs " + randomAlly.name + " with " + ((SkillBase)buffSkill).skillName);
-                // Use the buff skill on selected ally
-                buffSkill.UseSkill(randomAlly);
-                return;
-            }
-        }
-        #endregion
-        // Priority 3: Heal the most damaged ally who is below 50% of their maximum Health
-        #region Support Team Priority 3
-        GameObject moderateHpAlly = null;
-        float moderateHpPercent = float.MaxValue;
-
-        foreach (GameObject ally in allies)
-        {
-            Health allyHealth = ally.GetComponent<Health>();
-            if (allyHealth == null) continue;
-
-            float percent = (float)allyHealth.currentHealth / allyHealth.maxHealth;
-
-            if (percent < 0.5f && percent < moderateHpPercent)
-            {
-                moderateHpAlly = ally;
-                moderateHpPercent = percent;
-            }
-        }
-
-        if (moderateHpAlly != null)
-        {
-            float bestHeal = 0f;
-            ISkill bestHealingSkill = null;
-
-            // Check all healing skills for the one which would heal the most health
-            foreach (ISkill skill in skills)
-            {
-                if (skill is SkillBase skillBase && skillBase.type == SkillType.Healing)
-                {
-                    float healAmount = skillBase.CheckSkill(moderateHpAlly);
-                    if (healAmount > bestHeal)
-                    {
-                        bestHeal = healAmount;
-                        bestHealingSkill = skill;
-                    }
-                }
-            }
-            if (bestHealingSkill != null)
-            {
-                Debug.Log(gameObject.name + " heals moderately injured ally " + moderateHpAlly.name + " (HP: " + moderateHpPercent * 100 + "%)");
-                bestHealingSkill.UseSkill(moderateHpAlly);
-                return;
-            }
-        }
-        #endregion
-
-        // Attack a random enemy with their offensive skill
-        #region Support Team Priority 4
-        // Select the first offensive skill in the list
-        ISkill offensiveSkill = skills.FirstOrDefault(s => s is SkillBase sb && sb.type == SkillType.Offensive);
-
-        // If an offensive skill was found and there is at least one enemy
-        if (offensiveSkill != null && enemies.Count > 0)
-        {
-            // Select an enemy at random
-            GameObject randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count)];
-            //Debug.Log(gameObject.name + " attacks " + randomEnemy.name + " with " + ((SkillBase)offensiveSkill).skillName);
-            // Use the offensive skill on the selected enemy
-            offensiveSkill.UseSkill(randomEnemy);
-            return;
-        }
-        #endregion
-        Debug.Log(gameObject.name + " found no valid action to take.");
     }
 
     

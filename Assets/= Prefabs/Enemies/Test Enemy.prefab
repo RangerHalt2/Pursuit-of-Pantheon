@@ -52,6 +52,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,6 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -97,8 +100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5469862152553290201}
   - component: {fileID: 4923628452666122431}
-  - component: {fileID: 4135609220753953432}
-  - component: {fileID: 4074681804033927573}
+  - component: {fileID: 2599348098907893592}
+  - component: {fileID: 7632734570840784525}
   m_Layer: 0
   m_Name: Test Enemy
   m_TagString: Enemy
@@ -137,12 +140,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamID: 1
   maxHealth: 5
-  currentHealth: 5
+  currentHealth: 1
   healthBar: {fileID: 275300793678092441}
   healthDisplayText: {fileID: 0}
   hitEffect: {fileID: 1334585436658503674, guid: 1a9b9e48e0b162b489b71f55bcf51ed1, type: 3}
   deathEffect: {fileID: 5415495801983142025, guid: 8b0262d8253086c41a87049f1a53f693, type: 3}
---- !u!114 &4135609220753953432
+  followerStats: {fileID: 0}
+  enemyStats: {fileID: 2599348098907893592}
+--- !u!114 &2599348098907893592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,13 +156,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6796101736210973026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11eed59a44450e847a2a20beadab65ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d38ae412ad00a14ab2c379c64d8bcc2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 0.5
-  Magic: 0
-  Speed: 1
---- !u!114 &4074681804033927573
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStatblock
+  enemyID: 
+  displayName: Test_Enemy
+  teamID: 1
+  position: 0
+  maxHP: 5
+  currentHP: 1
+  vigor: 1
+  power: 1
+  magick: 1
+  resilience: 1
+  faith: 1
+  agility: 5
+  skillComponents: []
+  actionProgress: 0
+--- !u!114 &7632734570840784525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,12 +182,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6796101736210973026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23823caaafdb5754ba2a0527bfbda2c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d6ff61be442dd240ba9edd347c469d4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  actionInterval: 3
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   alliedTeamIds: 0100000002000000
   enemyTeamIds: 00000000
+  selectedTactic: 0
 --- !u!1001 &7276341312693194476
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -52,6 +52,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,6 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -97,10 +100,12 @@ GameObject:
   m_Component:
   - component: {fileID: 349206932546375745}
   - component: {fileID: 9021824749545389894}
-  - component: {fileID: 7239007741970617109}
   - component: {fileID: 2237735438597670654}
-  - component: {fileID: 1940734616466579224}
-  - component: {fileID: 3067367298689714994}
+  - component: {fileID: 7239007741970617109}
+  - component: {fileID: 6416694175851555403}
+  - component: {fileID: 4714444497147275067}
+  - component: {fileID: 78852221818106039}
+  - component: {fileID: 2765593185822858321}
   m_Layer: 0
   m_Name: Test Follower
   m_TagString: Follower
@@ -139,6 +144,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followerHealth: {fileID: 2237735438597670654}
   followerStats: {fileID: 7239007741970617109}
+--- !u!114 &2237735438597670654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220717093522069905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e045ef9ee49be5c4fae95777da77f4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamID: 0
+  maxHealth: 10
+  currentHealth: 2
+  healthBar: {fileID: 6580980267400379932}
+  healthDisplayText: {fileID: 0}
+  hitEffect: {fileID: 0}
+  deathEffect: {fileID: 0}
+  followerStats: {fileID: 7239007741970617109}
+  enemyStats: {fileID: 0}
 --- !u!114 &7239007741970617109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,22 +179,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followerID: Follower_Test
   displayName: Bob
+  teamID: 0
   position: 1
   classID: 0
-  maxHP: 1
-  currentHP: 1
-  strength: 1
-  magic: 1
-  defense: 1
-  resistance: 1
-  speed: 1
+  maxHP: 10
+  currentHP: 2
+  vigor: 1
+  power: 1
+  magick: 5
+  resilience: 1
+  faith: 1
+  agility: 10
   bonusMaxHP: 0
-  bonusStrength: 0
-  bonusMagic: 0
-  bonusDefense: 0
-  bonusResistance: 0
-  bonusSpeed: 0
---- !u!114 &2237735438597670654
+  bonusPower: 0
+  bonusMagick: 0
+  bonusResilience: 0
+  bonusFaith: 0
+  bonusAgility: 0
+  bonusVigor: 0
+  skillComponents:
+  - {fileID: 78852221818106039}
+  - {fileID: 2765593185822858321}
+--- !u!114 &6416694175851555403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,47 +209,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 7220717093522069905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e045ef9ee49be5c4fae95777da77f4e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9782dff575874594db62b2f8b71416f2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  teamID: 0
-  maxHealth: 5
-  currentHealth: 5
-  healthBar: {fileID: 6580980267400379932}
-  healthDisplayText: {fileID: 0}
-  hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
-  stats: {fileID: 0}
---- !u!114 &1940734616466579224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220717093522069905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d598482a196d04a955e36b0e379c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 1
-  Magic: 1
-  Speed: 1
---- !u!114 &3067367298689714994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220717093522069905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7066ac5369c6fcb4cb841a504e0fa3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionInterval: 2
+  m_EditorClassIdentifier: Assembly-CSharp::FollowerAI
   alliedTeamIds: 00000000
   enemyTeamIds: 0100000002000000
+  selectedTactic: 1
+--- !u!114 &4714444497147275067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220717093522069905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13517185f4a489489dd9242fcea3e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiAttack
+  _accuracy: 85
+  hits: 2
+  attackModifier: 0.5
+--- !u!114 &78852221818106039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220717093522069905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4b33556f0df2649a8fbbdfc512698a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  _accuracy: 100
+  attackModifier: 1
+--- !u!114 &2765593185822858321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220717093522069905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920b57501121db84baa956b4a8c65294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicHeal
+  _accuracy: 100
+  healingModifier: 1
 --- !u!1001 &4358507987913025641
 PrefabInstance:
   m_ObjectHideFlags: 0

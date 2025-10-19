@@ -46,10 +46,10 @@ public class MultiAttack : SkillBase
             }
 
             // Get the modified Attack stat of the caster
-            skillAtk = GetStatFromObject(this.gameObject, "Power") * attackModifier;
+            skillAtk = (GetStatFromObject(this.gameObject, "Power") + GetStatFromObject(this.gameObject, "BonusPower"))  * attackModifier;
 
             // Find the defense of the assigned target
-            float targetDef = GetStatFromObject(target, "Defense");
+            float targetDef = GetStatFromObject(target, "Resilience");
 
             // Calculate Skill Damage
             float damage = skillAtk - targetDef;
@@ -69,10 +69,10 @@ public class MultiAttack : SkillBase
     public override float CheckSkill(GameObject target)
     {
         // Find the modified Attack stat of the caster
-        skillAtk = GetStatFromObject(this.gameObject, "Power") * attackModifier;
+        skillAtk = (GetStatFromObject(this.gameObject, "Power") + GetStatFromObject(this.gameObject, "BonusPower")) * attackModifier;
 
         // Find the target's defense
-        float targetDef = GetStatFromObject(target, "Defense");
+        float targetDef = GetStatFromObject(target, "Resilience");
 
         // Calculate the skills damage per hit
         float damage = skillAtk - targetDef;

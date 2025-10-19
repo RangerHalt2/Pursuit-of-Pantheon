@@ -2,6 +2,7 @@
 // This is a script meant to track a game object's health
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Health : MonoBehaviour
 {
@@ -28,23 +29,36 @@ public class Health : MonoBehaviour
     [Tooltip("Reference to prefab for an effect which triggers when the object is destroyed. Optional.")]
     public GameObject deathEffect;
 
-    public FollowerStatblock stats;
+    [Header("Statblock References")]
+    [Tooltip("Reference to follower Statblock")]
+    public FollowerStatblock followerStats;
+    [Tooltip("Reference to enemy Statblock")]
+    public EnemyStatblock enemyStats;
+
+    private IEnumerator coroutine;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // If object has been assigned a statblock, read the stats
-        if (stats != null)
+        if (followerStats != null)
         {
-            maxHealth = stats.maxHP;
-            currentHealth = stats.currentHP;
+            maxHealth = followerStats.maxHP;
+            currentHealth = followerStats.currentHP;
+            teamID = followerStats.teamID;
+        }
+        else if(enemyStats != null)
+        {
+            maxHealth = enemyStats.maxHP;
+            currentHealth = enemyStats.currentHP;
+            teamID = enemyStats.teamID;
         }
         
         // Automatically kill object if it has 0 or less health
         if (currentHealth <= 0)
         {
-            Debug.Log(gameObject.name + "'s Initial Health was equal to or less than 0. They have been automatically destroyed.");
+            //Debug.Log(gameObject.name + "'s Initial Health was equal to or less than 0. They have been automatically destroyed.");
             Die();
         }
 
@@ -67,7 +81,7 @@ public class Health : MonoBehaviour
     {
         // Subtract the damage amount from the health of the object
         currentHealth -= damageAmount;
-        Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth + "/" + maxHealth + ".");
+        //Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth + "/" + maxHealth + ".");
         updateDisplay();
 
         // If the object has 0 or less current health
@@ -91,7 +105,7 @@ public class Health : MonoBehaviour
     {
         // Add the healing amount to the object's current health
         currentHealth += healingAmount;
-        Debug.Log(gameObject.name + " received " + healingAmount + " healing. Current Health: " + currentHealth + "/" + maxHealth + ".");
+        //Debug.Log(gameObject.name + " received " + healingAmount + " healing. Current Health: " + currentHealth + "/" + maxHealth + ".");
         updateDisplay();
 
         // If the object's current health is now greater than the max...
@@ -111,8 +125,19 @@ public class Health : MonoBehaviour
             Instantiate(deathEffect, transform.position, transform.rotation);
         }
 
+        // Remove the combatant from the list
+        CombatManager.instance.RemoveCombatant(GetComponent<ICombatant>());
+
+        //Debug.Log(gameObject.name + " has died.");
+        //Delay destruction by a frame
+        StartCoroutine(DelayedDestroy());
+    }
+    
+    private IEnumerator DelayedDestroy()
+    {
+        // Wait one frame
+        yield return null;
         // Destroy the game object
-        Debug.Log(gameObject.name + " has died.");
         Destroy(gameObject);
     }
 
