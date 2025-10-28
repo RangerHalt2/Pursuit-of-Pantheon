@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace PursuitOfPantheon.Classes
 {
-    public class ArcaneArcher : BaseClass
+    public class Archivist : BaseClass
     {
         #region Base Stats and ID
         private void Awake()
         {
             if (classData == null)
-                classData = Resources.Load<FollowerClass>("ClassStats/ArcaneArcherStats");
+                classData = Resources.Load<FollowerClass>("ClassStats/ArchivistStats");
 
             ApplyStats();
             promotionOptions = null;
@@ -33,20 +33,9 @@ namespace PursuitOfPantheon.Classes
         }
 
         #region Class Skills
-        public override void SkillOne()
-        {
-
-        }
-
-        public override void SkillTwo()
-        {
-
-        }
-
-        public override void SkillThree()
-        {
-
-        }
+        public override void SkillOne() { }
+        public override void SkillTwo() { }
+        public override void SkillThree() { }
         #endregion
     }
 }

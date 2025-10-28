@@ -24,6 +24,7 @@ namespace PursuitOfPantheon.Classes
                 statblock.classID = classData.classID;
                 statblock.maxHP = classData.baseMaxHP;
                 statblock.currentHP = classData.baseMaxHP;
+                statblock.vigor = classData.baseVigor;
                 statblock.power = classData.basePower;
                 statblock.magick = classData.baseMagick;
                 statblock.resilience = classData.baseResilience;
