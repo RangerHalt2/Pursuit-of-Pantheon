@@ -18,15 +18,15 @@ public class TurnManager : MonoBehaviour
     public int currentTurn = 1;
     // The current act the player is in
     public int currentAct = 1;
+    // How many turns must pass before the next random int can occur
+    private int reCooldown = 1;
 
     [Header("UI References")]
     public TextMeshProUGUI actText;
     public TextMeshProUGUI turnText;
 
-    [Header("Event Settings")]
-    public int test;
-
     SceneController sceneController;
+    EventManager eventManager;
     #endregion
 
     void Awake()
@@ -44,7 +44,13 @@ public class TurnManager : MonoBehaviour
         sceneController = GetComponentInParent<SceneController>();
         if (sceneController == null)
         {
-            //Debug.LogError("TurnManager: SceneController not found on parent Bootstrapper!");
+            Debug.LogWarning("TurnManager: SceneController not found on parent Bootstrapper!");
+        }
+
+        eventManager = GetComponent<EventManager>();
+        if(eventManager == null)
+        {
+            Debug.LogWarning("TurnManager: Cannot find EventManager!");
         }
     }
 
@@ -58,6 +64,13 @@ public class TurnManager : MonoBehaviour
     // Increase the value of currentTurn, calling MoveToNextAct if necessary
     public void SpendTurn()
     {
+        // If the random event cooldown is greater than 0
+        if(reCooldown > 0)
+        {
+            // Decrease it by one
+            reCooldown--;
+        }
+
         // If the currentAct is less than or equal to the amount of acts in the game...
         if (currentAct <= turns.Length)
         {
@@ -66,6 +79,15 @@ public class TurnManager : MonoBehaviour
             {
                 // Increment the current turn
                 currentTurn++;
+
+                // Roll for a random event and check if it is on cooldown
+                if(eventManager.RollForRandomEvent() && reCooldown <= 0)
+                {
+                    // Play a random event
+                    eventManager.PlayRandomEvent();
+                    //Set the cooldown timer to the randomEventCooldown specified in the EventManager
+                    reCooldown = eventManager.randomEventCooldown;
+                }
             }
             // If the currentTurn is greater than the amount of turns in the current act...
             if (currentTurn > turns[currentAct - 1])
