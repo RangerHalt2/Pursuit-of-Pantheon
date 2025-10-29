@@ -1,0 +1,58 @@
+{
+    "lines": [
+        {
+            "speakerID": "3",
+            "sentence": "Up in the front of a taverna, a bard sits restlessly before the maid behind the bar, giddy in the afterglow of his performance.",
+            "choices": [],
+            "nextLineIndex": 1
+        },
+        {
+            "speakerID": "0",
+            "sentence": "Thank you so much for letting me share my stories here, Laurel! You know it means the world to me.",
+            "choices": [],
+            "nextLineIndex": 2
+        },
+        {
+            "speakerID": "1",
+            "sentence": "Of course. The passion in your voice is a comfort to hear. Although, I am surprised to hear that you weren’t singing a love song to some valiant miss or mister though. It sounded much more inspired tonight. Personal.",
+            "choices": [],
+            "nextLineIndex": 3
+        },
+        {
+            "speakerID": "0",
+            "sentence": "I know! It was like I had a stroke of inspiration. A muse in the form of the goddess of stories! It was wonderful. She held herself with strength and care, much like how you do Miss Laurel!",
+            "choices": [],
+            "nextLineIndex": 4
+        },
+        {
+            "speakerID": "1",
+            "sentence": "Yes well, your usual room is ready for the night. Let me know if you need anything alright?",
+            "choices": [],
+            "nextLineIndex": 5
+        },
+        {
+            "speakerID": "0",
+            "sentence": "No please, let me know if YOU need anything. Especially since I will likely be heading out soon. I would like to see the road for a while, but I promise when I return I’ll tell you everything about what I’ve found!",
+            "choices": [],
+            "nextLineIndex": 6
+        },
+        {
+            "speakerID": "3",
+            "sentence": "The bard, giving a small but dramatic bow before pardoning himself from the bottom floor, ascending to his room.",
+            "choices": [],
+            "nextLineIndex": 7
+        },
+        {
+            "speakerID": "1",
+            "sentence": "I appreciate it, but dear, I can promise you’ll need it more than me. Your story will be wonderfully vibrant. Painted with life and emotions deeper than most will see.",
+            "choices": [],
+            "nextLineIndex": 8
+        },
+        {
+            "speakerID": "2",
+            "sentence": "I can’t wait to bear witness to it.",
+            "choices": [],
+            "nextLineIndex": -1
+        }
+    ]
+}

@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
-    private void Start()
+    private void Awake()
     {
         characterLookup = new Dictionary<string, CharacterData>();
 
@@ -78,7 +78,7 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(ShowChoicesDelayed(line));
         }
 
-        if (characterLookup.TryGetValue(line.speakerID, out var character))
+        if (characterLookup != null && characterLookup.TryGetValue(line.speakerID, out var character))
         {
             nameText.text = character.displayName;
             avatarImage.sprite = character.avatar;
@@ -155,7 +155,6 @@ public class DialogueManager : MonoBehaviour
                 currentLineIndex = line.nextLineIndex;
                 DisplayLine();
             }
-
             else
             {
                 EndDialogue();

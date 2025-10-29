@@ -3,19 +3,12 @@ using UnityEngine;
 public class PromotionBuilding : MonoBehaviour
 {
     private FollowerStatblock followerStats { get; set; }
-    private IClasses currClass { get; set; }
+    private BaseClass currClass { get; set; }
 
 
     public void PromoteFollower()
     {
-        if (isFollowerStatsReady() && isItemsReady())
-        {
-            currClass.DoPromotion();
-        }
-        else
-        {
-
-        }
+        
     }
 
 
@@ -24,11 +17,11 @@ public class PromotionBuilding : MonoBehaviour
         bool ret = false;
         if(followerStats != null && currClass != null)
         {
-           if(followerStats.vigor >= currClass.promotionVigor && followerStats.power >= currClass.promotionPower && followerStats.resilience >= currClass.promotionResilience
-                && followerStats.magick >= currClass.promotionMagick && followerStats.faith >= currClass.promotionFaith && followerStats.agility >= currClass.promotionAgility)
+           /*if()
             {
                 ret = true;
             }
+           */
         }
         else
         {
