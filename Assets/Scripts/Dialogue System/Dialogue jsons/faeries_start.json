@@ -1,0 +1,37 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Walking among the forest, it’s hard to miss a set of flittering lights dancing closer. As they approach, the lights are tiny creatures, faeries!",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Faerie",
+      "sentence": "Well well! Look what’s wandered into our woods…a young blessing looking to sway the masses… You came at the perfect time darling! We just found something that might be of use to you! Just follow us over here.",
+      "choices": [
+        {
+          "choiceText": "Any help would be greatly appreciated, lead the way, little ones.",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "No thanks, I’ve read enough legends to know how this could end up. I'm not blind.",
+          "nextLineIndex": 3
+        }
+      ]
+    },
+    {
+      "speakerName": "Faerie",
+      "sentence": "Here we go, a gift from us to you ... Use it well, young one, and you might just make it! We’re rooting for you!",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Faerie",
+      "sentence": "How rude! We were just trying to help! See if we ever offer help to you again!",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

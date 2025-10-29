@@ -1,0 +1,22 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "As you cross near a seabed, a pleasant song flits across your ears as you feel your body relax at the sound.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Traveller",
+      "sentence": "Don’t you hear that, friend of mine? That music is a blessing sent from the heavens. I must learn its origin. I must see what beautiful maiden sings to me.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "It takes you too long to shake off the appeal of the music, and now, creatures, half-bird half-woman, descend upon you.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

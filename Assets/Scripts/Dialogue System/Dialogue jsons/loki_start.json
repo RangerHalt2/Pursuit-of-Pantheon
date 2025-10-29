@@ -1,0 +1,68 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Compared to many of your chaotic journeys, this one hasn’t been too devastating. As a matter of fact the empty plains you’re on now are almost calming.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Panicked Person",
+      "sentence": "Please! You have to help me! There’s a man that just broke into my house!",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Woah. Wait what?",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Okay, a person comes in front of you, pointing to their house out across the field. The door is smashed open.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Was that building there before...?",
+      "choices": [
+        {
+          "choiceText": "Of course I’ll help you!",
+          "nextLineIndex": 5
+        },
+        {
+          "choiceText": "I'm sorry, but I'm not a town guard. I can't help you.",
+          "nextLineIndex": 7
+        }
+      ]
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Walking into the building, the silence is more prevalent than any damage-",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Panicked Person?",
+      "sentence": "Oh, and the cultists!",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Okay, WHAT'S GOING ON?!",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    //Need a fail too
+    {
+      "speakerName": "Panicked Person?",
+      "sentence": "How boring...",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

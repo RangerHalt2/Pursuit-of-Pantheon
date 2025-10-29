@@ -1,0 +1,34 @@
+{
+  "lines": [
+    {
+      "speakerName": "???",
+      "sentence": "Ha! My children surround Straeon easily, the wind of travel running weak in his mast as the ground quickly comes to catch him.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Critic",
+      "sentence": "Keep this one in mind, kid. The lesson of this story is told through your bruises.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "???",
+      "sentence": "They spit on him, and it’s glorious to see victory served to the heroes. Ahhhh.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "???",
+      "sentence": "Take your role back, I’m done with it.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Ugh…thank you…",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

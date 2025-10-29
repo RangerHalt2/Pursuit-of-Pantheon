@@ -1,0 +1,37 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Turning your pack inside out, you’re disappointed to find that you have run out of food on the road, too far from any nearby towns. Your stomach growls loudly just before you find a group of people sitting on the side of the road laughing together.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Suspiciously Calm Person",
+      "sentence": "Oh, hello there! You look pale, but there’s no need to worry. We found this fruit on a nearby tree. It’s as sweet as honey! Try some!",
+      "choices": [
+        {
+          "choiceText": "I appreciate you sharing your food with me. I hope it’s as good as you say.",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "Um, no thank you, I think I’d rather hold on until I make it to the next town.",
+          "nextLineIndex": 3
+        }
+      ]
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "It’s been days. Days of the sweetest bliss you’ve ever experienced before. After those days though, your memory finally starts to come back, and you’re lost. You shouldn’t be sitting here, wherever you’ve ended up. The next fruit you’re handed, you decline and finally start your way back home from… wherever you are.",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Suspicously Calm Person",
+      "sentence": "If you say so! I wish you luck on whatever journey you’re on!",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Along the road, you stumble upon a battlefield, the dead of which haven’t started becoming accustomed to their new surroundings, but a pair of armored, winged women sit among them, the visage of dead surrounding them.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Valkyrie",
+      "sentence": "Hello, young one, my sister and I are here to help some of these einherjar to Valhalla, but some of them seem to be unwilling to leave with us. We hate to ask for help, but perhaps you might have a way to ease their scarred souls?",
+      "choices": [
+        {
+          "choiceText": "It would be an honor to help show them the way to Valhalla after all the dead deserve peace.",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "I honor your task, but this task is not mine to bear. I do hope they find peace.",
+          "nextLineIndex": 4
+        }
+      ]
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The slow calm of your soul eases the rigid spirits, allowing rallying behind the winged warriors.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Valkyrie",
+      "sentence": "The souls are now in Valhalla’s embrace, and for that I thank you.",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    //Need a fail too
+    {
+      "speakerName": "Valkyrie",
+      "sentence": "I understand, and wish you luck on your future journeys.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

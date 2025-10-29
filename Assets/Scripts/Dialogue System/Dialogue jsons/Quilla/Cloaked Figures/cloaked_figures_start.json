@@ -1,0 +1,54 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "It’s barely a day out from the next town that Straeon stops upon seeing a bevy of cloaked beings. Mortals from the way they hold themselves.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Greetings lost souls! Are you also heading into the nearby civilization? I have just finished one of my longest journeys yet and cannot wait for the grace that an inn would offer.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The faces that look up to greet him are hollow. Like deer that had the power to peer directly into your soul. It was haunting and hollow.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Cloaked Figure",
+      "sentence": "...",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "They didn’t speak, however, after a second of watching, a glint of silver revealed itself from beneath their clothing.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Ah, well, that’s not quite fair, I just shared that I’m in a tired state.",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "(Battle begins.)",
+      "choices": [
+        {
+          "choiceText": "Win",
+          "nextLineIndex": -1
+        },
+        {
+          "choiceText": "Loss",
+          "nextLineIndex": -1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "A voice echoes from the nearby darkness. It’s unsettlingly low, and the smile in his eyes is dangerous.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "???",
+      "sentence": "Greetings, young one, you seem quite skilled, but those skills should be sharpened… I could help you with that",
+      "choices": [
+        {
+          "choiceText": "Sure! Teach me what you know, friend.",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "Apologies, but I’m not interested in what you have to offer.",
+          "nextLineIndex": 3
+        }
+      ]
+    },
+    {
+      "speakerName": "???",
+      "sentence": "Impressive… You’ve survived more than most and even learned faster than I expected, but don't let that success get to your head, keep working hard…",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    //Need a fail too
+    {
+      "speakerName": "???",
+      "sentence": "BAH! Well, I guess that’s fine, not everyone is strong enough for my training.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

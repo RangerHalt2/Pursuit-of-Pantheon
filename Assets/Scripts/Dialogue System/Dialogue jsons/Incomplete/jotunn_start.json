@@ -1,0 +1,17 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "The sound of fighting from a village up ahead can be heard before it’s seen. Fires rage through the town, as the road crumbles leading into it, and a trail of frost follows suit. A man leaning on the outer wall begs your attention.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "You are either brave or mad for coming here, but your help would be appreciated! Our village is being attacked by Jotunn! They’re terrifying forces of nature! We need help driving them out. Please, lend us your strength.",
+      "choices": [],
+      "nextLineIndex": 2
+    }
+
+  ]
+}

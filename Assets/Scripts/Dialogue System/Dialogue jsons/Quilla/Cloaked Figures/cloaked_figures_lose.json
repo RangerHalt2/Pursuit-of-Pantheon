@@ -1,0 +1,34 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Straeon himself woke a few hours later, in the edges of light, as he noticed the cleared battlefield. While there were certainly marks left behind, his own corpse was not one of them luckily.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Ugh…",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "However, it certainly felt close. Looking down, he couldn’t miss the wrapped wounds across his body, though whatever blood there was had stopped, a method of cauterization being applied. Someone provided him with care, and it likely wasn’t his assailants…",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "As he finally entered the town, the wind that blew through was the loudest noise he could hear. No joy, no song or tale. Not a person in sight. He stayed the night, only out of a need for a place.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Whatever happened here, there was no longer a story to tell.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

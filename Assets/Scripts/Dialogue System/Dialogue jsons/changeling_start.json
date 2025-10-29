@@ -1,0 +1,49 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "As you walk by, a nearby mob keeps your attention, crowding with violence, and stopping you. Your focus is drawn toward the object of their violence, a child.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "Be careful, stranger! This is a changeling! We've been trying to find them for a while and finally figure out a way to get rid of them, sending them off somewhere else where they won't cause trouble.",
+      "choices": [
+        {
+          "choiceText": "What are you waiting for then? Creatures like this are dangerous!",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "A book shouldn’t be judged by the cover, right? Allow me to investigate and find out the truth.",
+          "nextLineIndex": 4
+        }
+      ]
+    },
+    {
+      "speakerName": "Evil Changeling",
+      "sentence": "Let’s see how dangerous...",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Eden",
+      "sentence": "A battle goes here against the changeling. Fight fight. Clash Clash.",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "Is that what they say? Well, we say, the cursed get cursed.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Eden",
+      "sentence": "A fight goes on here against the villagers",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "speakerName": "Straeon",
+      "sentence": "Ha! Out performed by me at my worst? Your quiet demeanor might be ominous, but nobody should be ALL show!",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Cloaked Figure",
+      "sentence": "...",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The cloaked figures sat knocked out on the side of the road, unconscious from the battle. But to Straeon, anything a killer loses after an attempt at one’s life is a paid cost. Aside from their weapons, they weren’t carrying much though, only a piece of parchment.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Well well! What do we have here?",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Parchment",
+      "sentence": "Silence is a virtue. Let loose the Light of life.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Unnerving. Straeon quickly turned it in upon making his way finally into the new town, telling the local cavalry.",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "While he was left unaware, the town’s protectors would not find the bodies he swore couldn’t be missed.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "lines": [
+    {
+      "speakerName": "Straeon",
+      "sentence": "There’s no need to be so volatile, friends!",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Critic",
+      "sentence": "Stupid fake magick. Come on guys! Let’s go!",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Thank you for this, my head feels much better now… Even if you don’t know.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "???",
+      "sentence": "A shame they no longer believe. Although, personally, I think watching you dance was definitely worth losing them. If this is your best, claiming your strength and followers will certainly be difficult, but not hard enough.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "You and your children have lost! Learn from this.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "???",
+      "sentence": "I’ll be sure to…",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

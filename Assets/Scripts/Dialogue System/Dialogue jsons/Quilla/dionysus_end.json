@@ -1,0 +1,124 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "The people armed with weapons begin to disappear, fading into a deep purple mist. The battle is won. Despite the fact that the bard and maid still present have yet to fully catch their breath.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "An elegant trick. But no match for the greatest of bards!",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Ugh…",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "HA! That was quite the taste indeed, Ms Laurel! I do apologize for the rough handling of your bar, I tend to lose myself in my drink. Bouts of madness in those around ends up being a result.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "I see. Well, you'll understand then if I tell you I've a mind to kick you out for harassing me and the fine people here.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "Indeed I would, however, I'd also be more than willing to make this all worth your time, if you’d allow me to share with you a story or two?",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "I hate to tell you this, friend, but our lovely barkeep doesn’t like to give cadence to those that torment us within.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "You saw through me. I’m listening…",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Indeed, everyone deserves a second chance after all!",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "…You are distorted. I’ve seen it before. Someone much like you had this affliction when their purpose was being downplayed. Someone is attempting to spread disorder and chaos.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "You refer to someone other than yourself?",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "I can assure you that the one doing it has a much bigger plan than I do, I’m just here to sample the local taste.",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "No, the one you should be after is deception incarnate. Meaningless lies and trickery are their preferred method of communication, and recently, I hear that they’re putting something together.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "I think they’re after enough power to claim the pendant my cousin made.",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Pendant?",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": " Mmm, unfortunately, I’m sobering up. I need to get back to preparing myself for the festival while I have the headspace to do so.",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "And I’ll take that last bottle of wine if you don’t mind.",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The patron paid for his bill and happily left the bar, taking the last bottle with him.",
+      "choices": [],
+      "nextLineIndex": 18
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "… Is he talking about Dionysia? The festival to the wine god?",
+      "choices": [],
+      "nextLineIndex": 19
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "…",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "As your feet carry you, you’re stopped by the sight of a man running toward you from across the road. He seems hectic, but tired.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "Please, dear traveller! Help us! Those foul demons in the mountains have taken our daughter, and their leader said he had intentions to make her his bride! We need help getting our girl back….will you help us?",
+      "choices": [
+        {
+          "choiceText": "Of course! I’ll lend my strength in getting your daughter back from those creatures.",
+          "nextLineIndex": 2
+        },
+        {
+          "choiceText": "Unfortunately, I have more important matters to focus on.",
+          "nextLineIndex": 3
+        }
+      ]
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "Thank you! Oh thank you dear traveller! My village and I will await your splendid return!",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Villager",
+      "sentence": "Fine, if you won't help us, then we will find someone who will.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

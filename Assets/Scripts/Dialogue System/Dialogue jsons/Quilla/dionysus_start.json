@@ -1,0 +1,118 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "The noises of the drinking hole echo off the walls as the door opens and a new patron enters the estate.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Welcome into the String of Life, sir! You’re one of the early ones, we just opened up a little while ago. Unfortunately we have live storytelling planned today, but not until the evening. My name is Laurel. May I present you with food or-",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "Wine? Your finest if you would. The roads have been long, and the company has not been appealing. My name is Bruster, miss. Thank you for your hospitality.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Wine? We hold a lot of drinks, but wine has been running a little low recently due to its popularity. I guess a lot of people have been moving by with the preference for it. Let me check to see if I have a bottle left.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "Sounds like many with taste, if I may. I typically make my own, but I’ve heard tales of a festival happening in town soon and wanted to participate, so I’ve rooted myself in a nearby inn.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Ah! I have 2 bottles left. One for you and one for the next person lucky enough to ask. Did I hear that you make your own? You must own a vinery then! I’ve heard that the process for making it involves a lot of waiting.",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "You could say I created it! More than enough patience for a good drink. Ooo. You were right, this is much better than most glasses I’ve tasted from hands other than my own! It’s got a strong aftertaste though.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "…What is that? It’s not unappealing, but it’s certainly powerful-",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Are you talking about the drink? I don’t make most of the drinks myself, I mainly serve the customers. While I have you here though-",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerName": "Laurel",
+      "sentence": "Uff…",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Laurel’s stance wavers a bit as she becomes dizzy. No wind up, just a headache as the tavern starts to spin in her view.",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "No, not the drink, something else here…",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The taverna doors clatter open as a familiar bard loudly steps into the room.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Miss Laurel, Miss Laurel! I saw her again! She has been protecting my travels! Oh you should have seen her Miss Laurel she was beautiful! The meaning of everything I stand for incarnated into a Goddess!",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "Hmm?",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "The Goddess of Stories believes in what I’ve been sharing to the people of this land!… Oh I’m sorry for inter-",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "Ahhhhh. A Goddess huh? So that’s what this is.",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerName": "Bruster",
+      "sentence": "How lucky for me.",
+      "choices": [],
+      "nextLineIndex": 18
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Slowly, more and more people start to populate the String of Life. Something is wrong with them though. Stand. Fight.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

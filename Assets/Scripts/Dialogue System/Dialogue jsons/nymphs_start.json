@@ -1,0 +1,43 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "Movement out of the corner of your eye immediately pulls your attention as what looks like a tree starts walking out of the forest.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "No, not a tree, a person wearing nature as their skin. A beautiful nymph. Her voice is slow, but anxious.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Nymph",
+      "sentence": "Please help… These mortals are invading and ruining the forest. They set fire to my sisters’ and I’s home and then pushed us out.",
+      "choices": [
+        {
+          "choiceText": "Don’t worry, I'll handle them so you and your sisters can enjoy your home in peace.",
+          "nextLineIndex": 3
+        },
+        {
+          "choiceText": "I'm sure they will move on soon, give it some time.",
+          "nextLineIndex": 4
+        }
+      ]
+    },
+    {
+      "speakerName": "Nymph",
+      "sentence": "Finally some peace, thank you truly, you are always welcome here anytime.",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    {
+      "speakerName": "Nymph",
+      "sentence": "I’m not sure how long my sister and I can wait while they desecrate our home…",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "While the tavern that Straeon decided to place himself in certainly wasn’t the String of Life, the people around praised his showmanship just the same. He couldn’t help but give them an encore or two.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "And then I heard the suggestion on the wind, the Lady of Strings guiding my voice! They heard my story of change and took it so personally, they let me go!",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerName": "Drunkard",
+      "sentence": "HA! Sounds like this Goddess of yours is the embodiment of cunning!",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "I believe so as well! After my last partner broke my heart, she was cunning enough to show me the deepest sunrise across the ocean. My story truly isn’t over yet, not until I’ve shared the wonder of tales with more lovely folk like you!",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Once the applause died down, Straeon made himself comfortable at a nearby table, partaking of food and drink. Not much longer though, and he acquired a few friends who appeared allergic to sitting.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Greetings, friends! Unfortunately I’m much too exhausted to tell you more. You should come to the String of Life! I consider it my favorite place to partake in a tale. They have much more than me there as well!",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerName": "Critic",
+      "sentence": "Oh, we’re not here for more tales, as a matter of fact, I wanted to say that telling a story about an escaped criminal.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "…urgh, my head…",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "I can assure you, I am nothing of the sort. I believe you’ve misunderstood my story. You see, I was a hero, overpowered by-",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerName": "Critic",
+      "sentence": "Indeed, although I think it would have been smarter to abstain from the threat to begin with.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Well, no story is for everyone I suppose. That shan’t stop me from telling of my grandiose adventures though! And the brilliant lessons I’ve learned along the way!",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Ugh, okay… It’s a little hard to spot, but the now disappointed critic thumbs across a symbol he holds near his chest. A godly sigil, from a temple perhaps?",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerName": "Straeon",
+      "sentence": "Who’s symbol do you carry there, friend?",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "The critic’s mouth crooks up into a smile that’s a bit too wide, while power drips into their eyes.",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerName": "???",
+      "sentence": "I’m sure you’ll figure it out, eventually. How about a fight for your job, dear?",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "Me??",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerName": "Narrator",
+      "sentence": "(Battle begins.)",
+      "choices": [
+        {
+          "choiceText": "Win",
+          "nextLineIndex": -1
+        },
+        {
+          "choiceText": "Lose",
+          "nextLineIndex": -1
+        }
+      ]
+    }
+  ]
+}

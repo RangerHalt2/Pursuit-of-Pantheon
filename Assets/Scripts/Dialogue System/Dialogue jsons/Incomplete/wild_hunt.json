@@ -1,0 +1,39 @@
+{
+  "lines": [
+    {
+      "speakerName": "Narrator",
+      "sentence": "The sounds of a horn echoes through the nightly mist as the sight of a ghostly precession comes your way. Huntsman atop their horses. A whisper reaches out on the wind, telling you to make way for the precision. Do you stand your ground to watch or move?",
+      "choices": [
+        {
+          "choiceText": "Stand your ground, ready to face their impending might as it will test yours.",
+          "nextLineIndex": 1
+        },
+        {
+          "choiceText": "You legs shuffle to the side as you don’t quite feel you are ready to handle the challenge of the hunt.",
+          "nextLineIndex": 3
+        }
+      ]
+    },
+    {
+      "speakerName": "Huntsman",
+      "sentence": "The slow calm of your soul eases the rigid spirits, allowing rallying behind the winged warriors.",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    //THIS IS INCOMPLETE
+    {
+      "speakerName": "Valkyrie",
+      "sentence": "The souls are now in Valhalla’s embrace, and for that I thank you.",
+      "choices": [],
+      "nextLineIndex": -1
+    },
+    //
+    {
+      "speakerName": "Valkyrie",
+      "sentence": "I understand, and wish you luck on your future journeys.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+
+  ]
+}
