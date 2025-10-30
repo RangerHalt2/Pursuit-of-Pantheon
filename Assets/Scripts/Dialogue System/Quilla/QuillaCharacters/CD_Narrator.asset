@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   speakerID: 3
   displayName: Narrator
-  avatar: {fileID: -1710620657, guid: f3ca5e49a266077438913325fd40d858, type: 3}
+  avatar: {fileID: 386698014, guid: 6195405e3715d334ab1f3c59cbc2ef1b, type: 3}

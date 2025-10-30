@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   speakerID: 2
   displayName: Quilla
-  avatar: {fileID: 225047352, guid: f3ca5e49a266077438913325fd40d858, type: 3}
+  avatar: {fileID: 21300000, guid: f69b2256875c482498dd921bff9864d1, type: 3}
