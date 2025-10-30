@@ -78,7 +78,7 @@ public class FollowerStatblock : MonoBehaviour, ICombatant
     private float actionProgress;
 
     #region Interface Management
-    public float Agility => agility;
+    public float Agility => agility + bonusAgility;
     public float ActionProgress { get => actionProgress; set => actionProgress = value; }
     public int TeamID => teamID;
     #endregion

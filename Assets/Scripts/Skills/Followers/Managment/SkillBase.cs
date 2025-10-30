@@ -103,7 +103,7 @@ public abstract class SkillBase : MonoBehaviour, ISkill
                 case "faith":
                     return enemy.faith;
                 default:
-                    Debug.LogWarning("Stat type " + statType + " not found in EnemyStatblock.");
+                    //Debug.LogWarning("Stat type " + statType + " not found in EnemyStatblock.");
                     return 0;
             }
         }

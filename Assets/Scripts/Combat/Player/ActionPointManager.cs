@@ -34,7 +34,7 @@ public class ActionPointManager : MonoBehaviour
     public GameObject apMaxEffect;
     [Tooltip("Reference to prefab for an effect which triggers when AP is spent. Optional.")]
     public GameObject apSpendEffect;
-    
+
     [Header("Debug Settings")]
     [Tooltip("DEBUG SETTING: Grant the player unlimited AP. AP will be automatically set to the maximum and will never be spent.")]
     [SerializeField] private bool unlimitedAP;
@@ -58,7 +58,7 @@ public class ActionPointManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     // AP Recovery Coroutine
@@ -85,7 +85,7 @@ public class ActionPointManager : MonoBehaviour
         if (currentAP + earnerdAP > maxAP)
         {
             currentAP = maxAP;
-           // Debug.Log("Player cannot gain " + earnerdAP + " AP without going over the maximum. AP has been set to max.");
+            // Debug.Log("Player cannot gain " + earnerdAP + " AP without going over the maximum. AP has been set to max.");
 
             // If an AP Gain Effect is assigned
             if (apMaxEffect != null)
@@ -123,7 +123,7 @@ public class ActionPointManager : MonoBehaviour
                     Instantiate(apGainEffect, transform.position, transform.rotation, null);
                 }
             }
-            
+
             // Update the AP Display
             updateAPDisplay();
         }
@@ -180,4 +180,8 @@ public class ActionPointManager : MonoBehaviour
         // At a later point in time the artists should create a finalized AP display. Code managing it will be added once the assets are ready
     }
 
+    public int getAP()
+    {
+        return currentAP;
+    }
 }
