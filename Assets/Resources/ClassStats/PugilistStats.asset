@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a972bade52eb9479cd74244b6cb841, type: 3}
   m_Name: PugilistStats
   m_EditorClassIdentifier: Assembly-CSharp::FollowerClass
-  classID: 0
-  baseMaxHP: 1
-  baseVigor: 1
-  basePower: 1
+  classID: 5
+  baseMaxHP: 10
+  baseVigor: 12
+  basePower: 3
   baseMagick: 1
-  baseResilience: 1
-  baseFaith: 1
-  baseAgility: 1
+  baseResilience: 4
+  baseFaith: 2
+  baseAgility: 8
   isStartingClass: 0
-  unityClassName: 
+  unityClassName: PursuitOfPantheon.Classes.Pugilist

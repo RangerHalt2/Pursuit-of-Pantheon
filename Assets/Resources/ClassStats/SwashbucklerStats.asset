@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classID: 1
   baseMaxHP: 10
-  basePower: 10
-  baseMagick: 10
-  baseResilience: 8
-  baseFaith: 7
-  baseAgility: 65
+  baseVigor: 2
+  basePower: 9
+  baseMagick: 3
+  baseResilience: 3
+  baseFaith: 1
+  baseAgility: 7
   isStartingClass: 0
   unityClassName: PursuitOfPantheon.Classes.Swashbuckler

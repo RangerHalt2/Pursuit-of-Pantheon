@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a972bade52eb9479cd74244b6cb841, type: 3}
   m_Name: MageStats
   m_EditorClassIdentifier: Assembly-CSharp::FollowerClass
-  classID: 0
-  baseMaxHP: 1
-  baseVigor: 1
+  classID: 12
+  baseMaxHP: 5
+  baseVigor: 2
   basePower: 1
-  baseMagick: 1
-  baseResilience: 1
-  baseFaith: 1
-  baseAgility: 1
-  isStartingClass: 0
-  unityClassName: 
+  baseMagick: 8
+  baseResilience: 2
+  baseFaith: 4
+  baseAgility: 3
+  isStartingClass: 1
+  unityClassName: PursuitOfPantheon.Classes.Mage

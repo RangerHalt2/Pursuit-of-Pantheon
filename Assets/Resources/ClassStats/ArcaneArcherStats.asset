@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: ArcaneArcherStats
   m_EditorClassIdentifier: 
   classID: 2
-  baseMaxHP: 1
-  basePower: 1
-  baseMagick: 1
-  baseResilience: 1
+  baseMaxHP: 10
+  baseVigor: 2
+  basePower: 4
+  baseMagick: 8
+  baseResilience: 3
   baseFaith: 1
-  baseAgility: 1
+  baseAgility: 7
   isStartingClass: 0
   unityClassName: PursuitOfPantheon.Classes.ArcaneArcher
