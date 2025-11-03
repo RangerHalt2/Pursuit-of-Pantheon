@@ -52,7 +52,8 @@
             "speakerID": "2",
             "sentence": "I can’t wait to bear witness to it.",
             "choices": [],
-            "nextLineIndex": -1
+            "nextLineIndex": -1,
+            "leadsTo":"ReturnToHub"
         }
     ]
 }

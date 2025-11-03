@@ -153,7 +153,6 @@ public class TurnManager : MonoBehaviour
             case "Promote":
                 // Spend a turn
                 SpendTurn();
-                
                 // Load the promotion event scene
                 sceneController.GoToScene("PromotionEventScene");
                 Debug.Log("Turn Manager: Player has spent a turn to promote a unit.");

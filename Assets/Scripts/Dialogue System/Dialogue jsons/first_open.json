@@ -40,7 +40,8 @@
       "speakerName": "Narrator",
       "sentence": "Gods.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Leads_QuillaOpening"
     }
   ]
 }

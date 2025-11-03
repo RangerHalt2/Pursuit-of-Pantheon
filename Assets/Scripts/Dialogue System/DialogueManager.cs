@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.ComponentModel;
 using JetBrains.Annotations;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Threading.Tasks;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -164,7 +167,32 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        string leadsTo = currentDialogue.lines[currentLineIndex].leadsTo;
+        HandleDialogueOutcome(leadsTo);
+        return;
+    }
+
+    public async void HandleDialogueOutcome(string leadsToName)
+    {
+        if (string.IsNullOrEmpty(leadsToName))
+        {
+            Debug.Log("No leadsTo field, ending dialogue.");
+            return;
+        }
+
+        // Load the asset asynchronously by its Address
+        AsyncOperationHandle<DialogueOutcome> handle =
+            Addressables.LoadAssetAsync<DialogueOutcome>(leadsToName);
+
+        DialogueOutcome outcome = await handle.Task;
+
+        if (outcome == null)
+        {
+            Debug.LogWarning($"Could not find DialogueOutcome with name {leadsToName}");
+            return;
+        }
+
+        outcome.Execute();
     }
 
     public Dialogue LoadDialogueFromJSON(TextAsset jsonFile)
