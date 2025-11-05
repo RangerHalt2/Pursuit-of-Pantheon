@@ -32,4 +32,6 @@ public class DialogueChoice
     //Don't believe we need this but this is just to change dialogue if there characters have not met yet, honestly don't think we need it
     public string requiredFlag;
     public string setFlagOnSelect;
+
+    public string effectID; //for DamageParty and AddFollowers
 }

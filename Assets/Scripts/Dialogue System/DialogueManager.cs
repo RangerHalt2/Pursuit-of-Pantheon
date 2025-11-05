@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Threading.Tasks;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    public FollowerManager followerManager;
+    private Dictionary<string, Action> effects;
+
     private void Awake()
     {
         characterLookup = new Dictionary<string, CharacterData>();
@@ -34,6 +38,13 @@ public class DialogueManager : MonoBehaviour
         foreach (var character in characters)
         {
             characterLookup[character.speakerID] = character;
+        }
+
+        HandleChoiceAdjustments();
+
+        if (effects == null)
+        {
+            effects = new Dictionary<string, Action>(); //safeguard
         }
     }
 
@@ -123,10 +134,14 @@ public class DialogueManager : MonoBehaviour
                 choicePanels[i].onClick.RemoveAllListeners();
 
                 int nextIndex = line.choices[i].nextLineIndex;
+
+                DialogueChoice currentChoice = line.choices[i];
+
                 choicePanels[i].onClick.AddListener(() =>
                 {
-                    currentLineIndex = nextIndex;
-                    DisplayLine();
+                    OnChoicesSelected(currentChoice);
+                    //currentLineIndex = nextIndex;
+                    //DisplayLine();
                 });
             }
 
@@ -163,6 +178,41 @@ public class DialogueManager : MonoBehaviour
                 EndDialogue();
             }
         }
+    }
+
+    void HandleChoiceAdjustments()
+    {
+        //effects = new Dictionary
+        //"DamageParty", () => takedamage(int)
+        //"AddHealingDebuff", () => debuff
+        //Add more debuffs
+        //"IncreaseFollowers", () => followerManager.AddFollower(int)
+        //"DecreaseFollowers", () => followerManager.RemoveFollower(int)
+        //"SkipCombat", ()  => skip combat
+        //"GainItem", () => ItemHandler.AddItem("")
+
+
+        //how to implement within JSON
+        //{
+        //"choiceText": "Be mean",
+        //"nextLineIndex: 12,
+        //"effectID": "DamageParty"
+    }
+
+    void OnChoicesSelected(DialogueChoice choice)
+    {
+        //trigger an effect
+        //if not string.is null or empty w/ choice id && effects.get value w/ choice id and out var effect
+        //invoke effect
+
+        //if not string.is null or empty w/ choice.set flag
+        //flag system if we choose to use it
+
+        //if choice.next line equals great or equal to 0
+        //current line index = choice.next line index
+        //display line
+        //else
+        //end dialogue
     }
 
     void EndDialogue()
