@@ -6,12 +6,10 @@ public class FollowerTester : MonoBehaviour
 
     private void Start()
     {
-        followerManager.AddFollower("Archer");
-        followerManager.AddFollower("Warrior");
-        followerManager.AddFollower("Mage");
+        followerManager.AddFollower(5);
+        followerManager.AddFollower(2);
+        followerManager.AddFollower(1);
 
-        followerManager.AddExperienceToAll(100);
-
-        followerManager.RemoveFollower("Warrior");
+        followerManager.RemoveFollower(5);
     }
 }

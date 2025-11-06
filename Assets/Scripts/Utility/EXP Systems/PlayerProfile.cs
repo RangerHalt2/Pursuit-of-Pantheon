@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerProfile : MonoBehaviour
 {
     [Header("Player Data")]
-    public int level = 1;
+    public int level = 0;
 
     public void UpdateLevel(int followerCount)
     {

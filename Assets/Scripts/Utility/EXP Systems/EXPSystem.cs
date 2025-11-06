@@ -7,23 +7,19 @@ public class EXPSystem
     //This should have a remove/add function so we can take away follower count 
     //from the player when events occur or they have a combatant die.
 
-    public string name;
-    public int experience;
+    public int amount;
+    public readonly PlayerProfile profile;
 
-    public EXPSystem(string name, int startingExp = 0)
+    public EXPSystem(PlayerProfile profile, int startingAmount = 0)
     {
-        this.name = name;
-        this.experience = startingExp;
+        this.profile = profile;
+        amount = startingAmount;
+        profile.level = amount;
     }
 
-    public void AddExperience(int amount)
+    public void SyncLevel()
     {
-        experience += amount;
-    }
-
-    public void RemoveExperience(int amount)
-    {
-        experience = Mathf.Max(0, experience - amount);
+        profile.UpdateLevel(amount);
     }
 }
 

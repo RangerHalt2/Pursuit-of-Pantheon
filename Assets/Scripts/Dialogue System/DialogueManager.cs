@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
 
     public FollowerManager followerManager;
+    public Health health;
     private Dictionary<string, Action> effects;
 
     private void Awake()
@@ -182,7 +183,13 @@ public class DialogueManager : MonoBehaviour
 
     void HandleChoiceAdjustments()
     {
-        //effects = new Dictionary
+        effects = new Dictionary<string, Action>
+        {
+            { "DamageParty", () => health.TakeDamage(5f) },
+            { "IncreaseFollowers", () => followerManager.AddFollower(5) }
+            //{ "GainItem", () => ItemHandler.AddItem() }
+        };
+
         //"DamageParty", () => takedamage(int)
         //"AddHealingDebuff", () => debuff
         //Add more debuffs
@@ -202,17 +209,25 @@ public class DialogueManager : MonoBehaviour
     void OnChoicesSelected(DialogueChoice choice)
     {
         //trigger an effect
-        //if not string.is null or empty w/ choice id && effects.get value w/ choice id and out var effect
-        //invoke effect
+        if (!string.IsNullOrEmpty(choice.effectID) && effects.TryGetValue(choice.effectID, out var effect))
+        {
+            effect.Invoke();
+        }
 
-        //if not string.is null or empty w/ choice.set flag
-        //flag system if we choose to use it
+        if (!string.IsNullOrEmpty(choice.effectID))
+        {
+            //flag system
+            //GameFlags.Set
+        }
 
-        //if choice.next line equals great or equal to 0
-        //current line index = choice.next line index
-        //display line
-        //else
-        //end dialogue
+        if (choice.nextLineIndex >= 0)
+        {
+            currentLineIndex = choice.nextLineIndex;
+        }
+        else
+        {
+            EndDialogue();
+        }
     }
 
     void EndDialogue()
