@@ -1,0 +1,19 @@
+{
+  "scheduledEvents": [
+    {
+      "act": 1,
+      "turn": 2,
+      "eventName": "Test"
+    },
+    {
+      "act": 2,
+      "turn": 3,
+      "eventName": "Test"
+    },
+    {
+      "act": 3,
+      "turn": 1,
+      "eventName": "Test"
+    }
+  ]
+}

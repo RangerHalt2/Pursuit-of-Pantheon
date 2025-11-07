@@ -20,7 +20,7 @@ public class TurnButtonProxy : MonoBehaviour
         // If there is an instance of the turn manager
         if (TurnManager.Instance != null)
         {
-            TurnManager.Instance.LoadEvent(eventName);
+            TurnManager.Instance.LoadEvent(eventName, true);
         }
         else
         {

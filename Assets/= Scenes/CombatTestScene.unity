@@ -6149,6 +6149,8 @@ MonoBehaviour:
   characters: []
   choicePanels: []
   choiceTexts: []
+  followerManager: {fileID: 0}
+  health: {fileID: 0}
 --- !u!4 &1687088920
 Transform:
   m_ObjectHideFlags: 0

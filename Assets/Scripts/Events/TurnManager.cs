@@ -1,10 +1,8 @@
 // Created By: Ryan Lupoli
 // This script is in charge of managing the turns within the game and loading the various different events
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class TurnManager : MonoBehaviour
 {
@@ -21,12 +19,15 @@ public class TurnManager : MonoBehaviour
     // How many turns must pass before the next random int can occur
     private int reCooldown = 1;
 
+
     [Header("UI References")]
     public TextMeshProUGUI actText;
     public TextMeshProUGUI turnText;
 
     SceneController sceneController;
     EventManager eventManager;
+
+    private ScheduledEventList scheduledEventList;
     #endregion
 
     void Awake()
@@ -48,9 +49,21 @@ public class TurnManager : MonoBehaviour
         }
 
         eventManager = GetComponent<EventManager>();
-        if(eventManager == null)
+        if (eventManager == null)
         {
             Debug.LogWarning("TurnManager: Cannot find EventManager!");
+        }
+
+        // Locate JSON File for scheduled events and convert events into a list
+        TextAsset jsonFile = Resources.Load<TextAsset>("Events/ScheduledEvents");
+        if (jsonFile != null)
+        {
+            scheduledEventList = JsonUtility.FromJson<ScheduledEventList>(jsonFile.text);
+            Debug.Log("TurnManager: Scheduled events successfully loaded!");
+        }
+        else
+        {
+            Debug.LogWarning("TurnManager: Could not find ScheduledEvents.json in Resources!");
         }
     }
 
@@ -80,13 +93,18 @@ public class TurnManager : MonoBehaviour
                 // Increment the current turn
                 currentTurn++;
 
+                CheckForScheduledEvent();
+
                 // Roll for a random event and check if it is on cooldown
-                if(eventManager.RollForRandomEvent() && reCooldown <= 0)
+                if (reCooldown <= 0)
                 {
-                    // Play a random event
-                    eventManager.PlayRandomEvent();
-                    //Set the cooldown timer to the randomEventCooldown specified in the EventManager
-                    reCooldown = eventManager.randomEventCooldown;
+                    if (eventManager.RollForRandomEvent())
+                    {
+                        // Play a random event
+                        eventManager.PlayRandomEvent();
+                        //Set the cooldown timer to the randomEventCooldown specified in the EventManager
+                        reCooldown = eventManager.randomEventCooldown;
+                    }
                 }
             }
             // If the currentTurn is greater than the amount of turns in the current act...
@@ -120,7 +138,7 @@ public class TurnManager : MonoBehaviour
             return;
         }
 
-        // Increment current Act and rest the current turn
+        // Increment current Act and restet the current turn
         currentAct++;
         currentTurn = 1;
 
@@ -143,16 +161,51 @@ public class TurnManager : MonoBehaviour
     #endregion
 
     #region Event Management
-    // Load the a specific event by their name
-    public void LoadEvent(string eventName)
+    private void CheckForScheduledEvent()
     {
+        // Ensure that the Scheduled Evetnts list was found
+        if (scheduledEventList == null || scheduledEventList.scheduledEvents == null)
+        {
+            Debug.LogWarning("Turn Manager: Scheduled Events list was not found or not set up properly. Cannot check for/load any Scheduled events!");
+            return;
+        }
+
+        // Parse Scheduled events to see if one is meant to occur on the current turn
+        foreach (ScheduledEvent e in scheduledEventList.scheduledEvents)
+        {
+            // If an event is meant to happen on this turn in this act
+            if (e.act == currentAct && e.turn == currentTurn)
+            {
+                Debug.Log("Turn Manager: Scheduled event " + e.eventName + " triggered on Act: " + currentAct + ", Turn: " + currentTurn);
+
+                // Prevent random events from occuring this turn
+                reCooldown = eventManager.randomEventCooldown;
+
+                // Load event and consume an additional turn
+                LoadEvent(e.eventName, true);
+                return;
+            }
+        }
+    }
+
+    // Load the a specific event by their name
+    public void LoadEvent(string eventName, bool spendTurn)
+    {
+        // If the spendTurn is ture, the event consumes a turn
+        // This is meant to allow Scheduled events to consume a turn, but for manual ones to not
+        if(spendTurn)
+        {
+            SpendTurn();
+        }
+
         // Each case represents a new event
         switch (eventName)
         {
+            case "Test":
+                Debug.Log("Turn Manager: Test Event Successfully triggered!");
+                break;
             // Promotion event
             case "Promote":
-                // Spend a turn
-                SpendTurn();
                 // Load the promotion event scene
                 sceneController.GoToScene("PromotionEventScene");
                 Debug.Log("Turn Manager: Player has spent a turn to promote a unit.");

@@ -1271,6 +1271,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      propertyPath: schedule
+      value: 
+      objectReference: {fileID: 11400000, guid: f385696c4d075a04c8efe121839365d3, type: 2}
+    - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       propertyPath: 'turns.Array.data[0]'
       value: 7
       objectReference: {fileID: 0}

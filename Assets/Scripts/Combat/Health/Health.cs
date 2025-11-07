@@ -36,6 +36,8 @@ public class Health : MonoBehaviour
     public EnemyStatblock enemyStats;
 
     private IEnumerator coroutine;
+
+    private bool stasisActive = false;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,6 +81,7 @@ public class Health : MonoBehaviour
     // Applies a certain amount of damage to an object
     public void TakeDamage(float damageAmount)
     {
+        if (stasisActive) return;
         // Subtract the damage amount from the health of the object
         currentHealth -= damageAmount;
         //Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth + "/" + maxHealth + ".");
@@ -103,6 +106,7 @@ public class Health : MonoBehaviour
     // Applies a certain amount of healing to an object
     public void ReceiveHealing(float healingAmount)
     {
+        if (stasisActive) return;
         // Add the healing amount to the object's current health
         currentHealth += healingAmount;
         //Debug.Log(gameObject.name + " received " + healingAmount + " healing. Current Health: " + currentHealth + "/" + maxHealth + ".");
@@ -153,6 +157,18 @@ public class Health : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetHealth(currentHealth);
+        }
+    }
+
+    public void ToggleStasis()
+    {
+        if (stasisActive)
+        {
+            stasisActive = false;
+        }
+        else
+        {
+            stasisActive = true;
         }
     }
 }
