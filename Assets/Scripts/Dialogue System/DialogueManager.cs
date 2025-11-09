@@ -186,8 +186,12 @@ public class DialogueManager : MonoBehaviour
         effects = new Dictionary<string, Action>
         {
             { "DamageParty", () => health.TakeDamage(5f) },
-            { "IncreaseFollowers", () => followerManager.AddFollower(5) }
+            { "IncreaseFollowers", () => followerManager.AddFollower(5) },
+            { "DecreaseFollowers", () => followerManager.RemoveFollower(3) }
             //{ "GainItem", () => ItemHandler.AddItem() }
+            //{ "AddHealingDebuff", () => debuffManager.AddDebuff("HealingDebuff") }
+            //{ "SkipCombat", () => combatManager.SkipNextCombat() }
+            //{ "DamageParty", () => health.TakeDamage(10f) }
         };
 
         //"DamageParty", () => takedamage(int)
