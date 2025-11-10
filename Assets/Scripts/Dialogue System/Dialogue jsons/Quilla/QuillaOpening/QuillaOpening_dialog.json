@@ -53,7 +53,7 @@
             "sentence": "I can’t wait to bear witness to it.",
             "choices": [],
             "nextLineIndex": -1,
-            "leadsTo":"ReturnToHub"
+            "leadsTo":"TestBattle"
         }
     ]
 }

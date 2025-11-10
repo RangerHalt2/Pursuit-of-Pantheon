@@ -119,6 +119,8 @@ GameObject:
   - component: {fileID: 3565580806678940997}
   - component: {fileID: 8423206519329071901}
   - component: {fileID: 7830073791317335253}
+  - component: {fileID: 5593451386475838225}
+  - component: {fileID: 2958553185233095178}
   m_Layer: 0
   m_Name: FollowerPrefab
   m_TagString: Untagged
@@ -171,23 +173,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followerID: 
   displayName: 
+  teamID: 0
   position: 0
   classID: 0
-  maxHP: 1
-  currentHP: 1
+  maxHP: 100
+  currentHP: 100
   vigor: 1
   power: 1
   magick: 1
   resilience: 1
-  agility: 1
   faith: 1
+  agility: 1
   bonusMaxHP: 0
   bonusPower: 0
   bonusMagick: 0
   bonusResilience: 0
+  bonusFaith: 0
   bonusAgility: 0
   bonusVigor: 0
-  bonusFaith: 0
+  skillComponents:
+  - {fileID: 2958553185233095178}
 --- !u!114 &7830073791317335253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,13 +206,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamID: 0
-  maxHealth: 1
-  currentHealth: 1
+  maxHealth: 100
+  currentHealth: 100
   healthBar: {fileID: 0}
   healthDisplayText: {fileID: 0}
   hitEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  stats: {fileID: 0}
+  followerStats: {fileID: 0}
+  enemyStats: {fileID: 0}
+--- !u!114 &5593451386475838225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127696437970686377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9782dff575874594db62b2f8b71416f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowerAI
+  alliedTeamIds: 00000000
+  enemyTeamIds: 0100000002000000
+  selectedTactic: 0
+--- !u!114 &2958553185233095178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127696437970686377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4b33556f0df2649a8fbbdfc512698a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  _accuracy: 100
+  attackModifier: 1.46
 --- !u!1001 &7873813670913893551
 PrefabInstance:
   m_ObjectHideFlags: 0

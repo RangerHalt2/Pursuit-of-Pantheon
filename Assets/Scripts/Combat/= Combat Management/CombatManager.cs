@@ -1,5 +1,6 @@
 // Created By: Ryan Lupoli
 // Meant to manage combat in game
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.EditorTools;
@@ -40,6 +41,8 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private float actionThreshold = 100f;
 
     private float actionTickTimer = 0f;
+
+    private bool registerd = false;
     #endregion
 
 
@@ -64,7 +67,7 @@ public class CombatManager : MonoBehaviour
 
     private void Start()
     {
-        RegisterCombatants();
+        StartCoroutine(RegisterCombatants());
     }
 
     // Update is called once per frame
@@ -74,25 +77,34 @@ public class CombatManager : MonoBehaviour
     }
 
     // Registers all combatants in the current scene
-    private void RegisterCombatants()
+    IEnumerator RegisterCombatants()
     {
         // Clear the combatants list
         combatants.Clear();
         // Add all followers and enemies to the combatants list
+        yield return new WaitForSeconds(0.2f);
+        FollowerSpawner spawner = GameObject.FindAnyObjectByType<FollowerSpawner>();
+        spawner.SpawnEquippedFollowers();
+
         var followers = FindObjectsByType<FollowerStatblock>(FindObjectsSortMode.None);
         foreach (var follower in followers)
         {
             combatants.Add(follower);
         }
+        
+
+
         var enemies = FindObjectsByType<EnemyStatblock>(FindObjectsSortMode.None);
         foreach (var enemy in enemies)
         {
             combatants.Add(enemy);
         }
+        registerd = true;
     }
 
     private void TickCombat()
     {
+        if (!registerd) return;
         // Update the Tick Timer
         actionTickTimer += Time.deltaTime;
         // If the actionTickInterval has passed

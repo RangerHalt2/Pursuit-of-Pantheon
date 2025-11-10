@@ -224,6 +224,7 @@ public class FollowerUIHandler : MonoBehaviour
     }
     public void RefreshFollowerPanels()
     {
+        if (equippedFollowersPanel == null || unequippedFollowersPanel == null) return;
         // Clear old buttons
         foreach (Transform child in equippedFollowersPanel) Destroy(child.gameObject);
         foreach (Transform child in unequippedFollowersPanel) Destroy(child.gameObject);

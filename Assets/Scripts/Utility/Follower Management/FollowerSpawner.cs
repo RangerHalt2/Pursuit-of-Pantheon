@@ -13,7 +13,7 @@ public class FollowerSpawner : MonoBehaviour
     public GameObject followerPrefab;
 
     [Header("Follower Position Settings")]
-    [SerializeField] private Transform[] spawnPoints = new Transform[6];
+    [SerializeField] public Transform[] spawnPoints = new Transform[6];
 
     [SerializeField] private PartyManager partyManager;
     [SerializeField] private FollowerUIHandler uiHandler;

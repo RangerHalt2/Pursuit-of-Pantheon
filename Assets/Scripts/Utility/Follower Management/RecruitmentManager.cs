@@ -17,6 +17,7 @@ public class RecruitmentManager : MonoBehaviour
         // Convert to FollowerData and add to unequipped pool
         FollowerData newFollowerData = FollowerData.FromStatblock(newStatblock);
         partyManager.AddToUnequipped(newFollowerData);
+        if (partyManager.equippedFollowers.Count < 1) partyManager.EquipNextAvailable(newFollowerData);
 
         // Destroy the temporary GameObject since we only want to store data
         Destroy(newFollowerGO);
