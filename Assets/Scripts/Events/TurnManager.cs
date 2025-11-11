@@ -181,8 +181,16 @@ public class TurnManager : MonoBehaviour
                 // Prevent random events from occuring this turn
                 reCooldown = eventManager.randomEventCooldown;
 
-                // Load event and consume an additional turn
-                LoadEvent(e.eventName, true);
+                // Check if scheduled event is for dialogue
+                if (!string.IsNullOrEmpty(e.dialogueFileName))
+                {
+                    Debug.Log("Turn Manager: Scheduled dialogue event " + e.eventName + " triggered with dialogue " + e.dialogueFileName);
+                    StartDialogueEvent(e.dialogueFileName, e.loadDialogueScene);
+                }
+                else
+                {
+                    LoadEvent(e.eventName, true);
+                }
                 return;
             }
         }
@@ -193,7 +201,7 @@ public class TurnManager : MonoBehaviour
     {
         // If the spendTurn is ture, the event consumes a turn
         // This is meant to allow Scheduled events to consume a turn, but for manual ones to not
-        if(spendTurn)
+        if (spendTurn)
         {
             SpendTurn();
         }
@@ -205,6 +213,8 @@ public class TurnManager : MonoBehaviour
                 Debug.Log("Turn Manager: Test Event Successfully triggered!");
                 break;
             // Promotion event
+            case "Dialogue":
+                break;
             case "Promote":
                 // Load the promotion event scene
                 sceneController.GoToScene("PromotionEventScene");
@@ -214,6 +224,18 @@ public class TurnManager : MonoBehaviour
             default:
                 Debug.LogError("Turn Manager: LoadEvent was asked to load " + eventName + ", but that event does not exist!");
                 break;
+        }
+    }
+    
+    private void StartDialogueEvent(string dialogueFileName, bool loadDialogueScene)
+    {
+        if (loadDialogueScene)
+        {
+            Debug.Log("TurnManager: Saving dialogue " + dialogueFileName + " to PlayerPrefs key 'NextDialogueToLoad'");
+            PlayerPrefs.SetString("NextDialogueToLoad", dialogueFileName);
+            PlayerPrefs.Save();
+            // Load the dialogue scene
+            sceneController.GoToScene("DialogueTesting");
         }
     }
     #endregion

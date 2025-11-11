@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Dialogue JSONs
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Dialogue JSONs
+  m_GUID: 7003bf130e2da8b41ad6b5bc87c6bb1a
+  m_SerializeEntries:
+  - m_GUID: 1d2b44341d1c7694d87dc3b8d196440c
+    m_Address: changeling_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2aad3f1c23925614a87d6253c3f405af
+    m_Address: valkyries_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 302a5a18fa0fa36428357d251e3e231e
+    m_Address: Assets/Scripts/Dialogue System/Zeus/zeus_dialogue.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32d3af424268e3b42ac3123fe1fb0e51
+    m_Address: promotion_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e94490b9b43a13469e2a526084484b1
+    m_Address: straeon_tavern_lose
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6171414d578ecd647a0b8305d15cfdc7
+    m_Address: sirens_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67820c48977613d4789bfba43805a7b8
+    m_Address: cloaked_figures_win
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d68038587826ac4688fcae469249207
+    m_Address: witches_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 799bf8bf79576554c920f1d8b49a8948
+    m_Address: loki_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9386641ace827eb49a78fee78dd05f02
+    m_Address: cloaked_figures_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97ead34e8877cf84a87b122f9ecce1db
+    m_Address: straeon_tavern_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d0d3640c4e53d14baa13f0a4eeecfd2
+    m_Address: Leads_QuillaOpening
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3ff1f5c5762c0d4f935c7e958bcd3d3
+    m_Address: straeon_tavern_win
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa97d203be1d892449ba478cafede21f
+    m_Address: mountain_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba20e4f14f87be64a839629445f7e65a
+    m_Address: cloaked_figures_lose
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be0e637361b7c3f4aa0e6e24de4df651
+    m_Address: Assets/Scripts/Dialogue System/Zeus/base_dialog.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0f86a0b662f687439d303b0c14451cd
+    m_Address: nymphs_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d43e01ddfdad4b94fa24f8e8be93bb50
+    m_Address: first_open_quilla
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d46ab3731f127e44eac4539ae109870f
+    m_Address: first_open
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dbf96aed76ddff64cab587e581bc52de
+    m_Address: faeries_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f68d7fb221272ea4f9feb5596cefc908
+    m_Address: the_old_stories
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc49364016eac11478186628f72db071
+    m_Address: lotus_eaters
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff8ee0aa30ac29c4cb08ba61a14a398b
+    m_Address: dionysus_end
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 071a1b57c0482b74383c27b9134631cf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0951947ac2d28844fac10ed2b60fa208, type: 2}
+    - {fileID: 11400000, guid: 04bf184f0214ff8438d2f1f831963fc2, type: 2}

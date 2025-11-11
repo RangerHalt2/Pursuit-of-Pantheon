@@ -3,17 +3,23 @@
     {
       "act": 1,
       "turn": 2,
-      "eventName": "Test"
+      "eventName": "Dialogue",
+      "loadDialogueScene": true,
+      "dialogueFileName": "dionysus_start"
     },
     {
       "act": 2,
       "turn": 3,
-      "eventName": "Test"
+      "eventName": "Test",
+      "loadDialogueScene": false,
+      "dialogueFileName": ""
     },
     {
       "act": 3,
       "turn": 1,
-      "eventName": "Test"
+      "eventName": "Test",
+      "loadDialogueScene": false,
+      "dialogueFileName": ""
     }
   ]
 }

@@ -2082,6 +2082,8 @@ MonoBehaviour:
   choiceTexts:
   - {fileID: 394702139}
   - {fileID: 950064058}
+  followerManager: {fileID: 0}
+  health: {fileID: 0}
 --- !u!1 &1502144018
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class ScheduledEvent
     public int turn;
     // The name of the event
     public string eventName;
+    // Determines whether or not to load a dialogue scene
+    public bool loadDialogueScene;
+    // The name of the Dialogue JSON file to be loaded
+    public string dialogueFileName;
 }
 
 [System.Serializable]

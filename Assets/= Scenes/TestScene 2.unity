@@ -1047,6 +1047,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503197279}
   m_CullTransparentMesh: 1
+--- !u!1 &588635701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+  m_PrefabInstance: {fileID: 944319834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &588635704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588635701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cd54d36a07da146a2fd2144677bd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  MainMenu: 
 --- !u!1 &798543455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1352,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 588635704}
     - targetCorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1003023663}

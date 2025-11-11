@@ -93,15 +93,15 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(ShowChoicesDelayed(line));
         }
 
-        if (characterLookup != null && characterLookup.TryGetValue(line.speakerID, out var character))
+        if (!string.IsNullOrEmpty(line.speakerID) && characterLookup.TryGetValue(line.speakerID, out var character))
         {
             nameText.text = character.displayName;
             avatarImage.sprite = character.avatar;
         }
         else
         {
-            nameText.text = line.speakerID;
-            //avatarImage.sprite = defaultAvatar;
+            nameText.text = line.speakerName ?? "Unknown";
+            // avatarImage.sprite = defaultAvatar;
         }
     }
 
