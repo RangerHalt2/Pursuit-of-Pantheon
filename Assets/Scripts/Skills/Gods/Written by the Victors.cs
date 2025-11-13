@@ -1,27 +1,93 @@
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class WrittenbytheVictors : DivineSkillBase
 {
     public override string skillName => "Written by the Victors";
-    [SerializeField] float rewindSeconds = 3f;
-    [SerializeField] float extraHealing = 0f;
 
-    private void Start()
+    [Header("Rewind Settings")]
+    [Tooltip("How far back in time to rewind (seconds")]
+    [SerializeField] private float rewindDuration = 2f;
+
+    [Tooltip("How many seconds of history we store at a time")]
+    [SerializeField] private float recordDuration = 5f;
+
+    [Tooltip("How often to record snapshots during gameplay (smaller is smoother but takes up more memory")]
+    [SerializeField] private float snapshotInterval = 0.1f;
+
+    private List<Snapshot> snapshots = new List<Snapshot>();
+    private float recordTimer;
+    private bool isRewinding = false;
+
+    private Health healthComponent;
+
+    private struct Snapshot
     {
-        //Create battle recorder
+        public float health;
+    }
+
+    private void Awake()
+    {
+        healthComponent = GetComponent<Health>();
+        StartCoroutine(RecordState());
+    }
+
+    private IEnumerator RecordState()
+    {
+        while (true)
+        {
+            if (!isRewinding)
+            {
+                recordTimer += Time.deltaTime;
+
+                if (recordTimer >= snapshotInterval)
+                {
+                    recordTimer = 0f;
+                    snapshots.Insert(0, new Snapshot
+                    {
+                        health = healthComponent.currentHealth
+                    });
+
+                    int maxSnapshots = Mathf.CeilToInt(recordDuration /  snapshotInterval);
+
+                    if (snapshots.Count > maxSnapshots)
+                    {
+                        snapshots.RemoveAt(snapshots.Count - 1);
+                    }
+                }
+            }
+
+            yield return null;
+        }
     }
 
     public override void UseSkill()
     {
-        if (onCooldown || !CheckAP()) return;
+        //Check is we can use
+        if (onCooldown || !CheckAP())
+        {
+            return;
+        }
 
-        // if battlerecorder is not null
-        //rewindseconds
-        //if extrahealing is more than 0
-        //find followers
-        //foreach var follower in followers
-        //extraHealing
+        StartCoroutine(ActivateRewind());
+        StartCoroutine(CooldownCoroutine());
+    }
 
-        //Start Cooldown coroutine
+    private IEnumerator ActivateRewind()
+    {
+        isRewinding = true;
+
+        float rewindEndTime = Time.time + rewindDuration;
+
+        while (Time.time < rewindEndTime && snapshots.Count > 0)
+        {
+            var snapshot = snapshots[0];
+            healthComponent.SetHealth(snapshot.health);
+            yield return new WaitForSeconds(snapshotInterval);
+        }
+
+        isRewinding = false;
     }
 }

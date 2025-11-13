@@ -3,6 +3,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class Health : MonoBehaviour
     private IEnumerator coroutine;
 
     private bool stasisActive = false;
+
+    //Added by Alyssa for SetHealth()
+    public UnityEvent<float> OnHealthChanged;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -169,6 +173,23 @@ public class Health : MonoBehaviour
         else
         {
             stasisActive = true;
+        }
+    }
+
+    //Added by Alyssa for WrittenbytheVictors Quilla skill
+    public void SetHealth(float newHealth)
+    {
+        float clamped = Mathf.Clamp(newHealth, 0f, maxHealth);
+
+        if (Mathf.Approximately(clamped, currentHealth) == false)
+        {
+            currentHealth = clamped;
+            OnHealthChanged?.Invoke(currentHealth);
+        }
+
+        if (currentHealth < 0f)
+        {
+            Die();
         }
     }
 }
