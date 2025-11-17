@@ -2,7 +2,7 @@
   "scheduledEvents": [
     {
       "act": 1,
-      "turn": 2,
+      "turn": 5,
       "eventName": "Dialogue",
       "loadDialogueScene": true,
       "dialogueFileName": "dionysus_start"

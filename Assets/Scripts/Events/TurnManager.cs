@@ -93,15 +93,15 @@ public class TurnManager : MonoBehaviour
                 // Increment the current turn
                 currentTurn++;
 
-                CheckForScheduledEvent();
+                bool wasScheduled = CheckForScheduledEvent();
+                if (wasScheduled) return; //Don't execute any below code if the event was scheduled.
 
                 // Roll for a random event and check if it is on cooldown
                 if (reCooldown <= 0)
                 {
                     if (eventManager.RollForRandomEvent())
                     {
-                        // Play a random event
-                        eventManager.PlayRandomEvent();
+                        sceneController.GoToScene("QuillaOpeningScene");
                         //Set the cooldown timer to the randomEventCooldown specified in the EventManager
                         reCooldown = eventManager.randomEventCooldown;
                     }
@@ -161,13 +161,16 @@ public class TurnManager : MonoBehaviour
     #endregion
 
     #region Event Management
-    private void CheckForScheduledEvent()
+    private bool CheckForScheduledEvent()
     {
+        //returns if a scheduled event is being forcefully loaded.
+        bool ret = false;
+
         // Ensure that the Scheduled Evetnts list was found
         if (scheduledEventList == null || scheduledEventList.scheduledEvents == null)
         {
             Debug.LogWarning("Turn Manager: Scheduled Events list was not found or not set up properly. Cannot check for/load any Scheduled events!");
-            return;
+            return ret;
         }
 
         // Parse Scheduled events to see if one is meant to occur on the current turn
@@ -186,14 +189,16 @@ public class TurnManager : MonoBehaviour
                 {
                     Debug.Log("Turn Manager: Scheduled dialogue event " + e.eventName + " triggered with dialogue " + e.dialogueFileName);
                     StartDialogueEvent(e.dialogueFileName, e.loadDialogueScene);
+                    ret = true;
                 }
                 else
                 {
                     LoadEvent(e.eventName, true);
                 }
-                return;
+                return ret;
             }
         }
+        return ret;
     }
 
     // Load the a specific event by their name

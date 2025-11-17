@@ -15,6 +15,8 @@ public class DialogueLine
     public string sentence;
     public string leadsTo;
 
+    public bool gainFollowers;
+
     public string emotion;
     public AudioClip voiceClip; //here just in case we need later
 

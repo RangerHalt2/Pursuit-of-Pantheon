@@ -3092,7 +3092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       propertyPath: 'turns.Array.data[0]'
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       propertyPath: 'turns.Array.data[1]'
@@ -3156,6 +3156,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031461859}
+    - targetCorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2031461862}
   m_SourcePrefab: {fileID: 100100000, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
 --- !u!1 &2031461858 stripped
 GameObject:
@@ -3174,9 +3177,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8745fa97daf00b84b868c82ab790c5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventManager
-  baseRandomEventChance: 25
+  baseRandomEventChance: 100
   randomEventChanceIncrease: 10
-  randomEventCooldown: 3
+  randomEventCooldown: 0
+--- !u!114 &2031461862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031461858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5974a669e7d53fe428561b4a9e0ffc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventLibraryManager
+  EventAddressableNames:
+  - straeon_tavern_start
+  - cloaked_figures_start
+  - loki_start
+  - loki_start
+  - loki_start
+  - loki_start
+  - loki_start
+  - loki_start
+  - loki_start
 --- !u!1 &2096493497
 GameObject:
   m_ObjectHideFlags: 0

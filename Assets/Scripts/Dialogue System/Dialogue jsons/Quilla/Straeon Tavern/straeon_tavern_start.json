@@ -97,18 +97,11 @@
       "nextLineIndex": 16
     },
     {
-      "speakerName": "Narrator",
-      "sentence": "(Battle begins.)",
-      "choices": [
-        {
-          "choiceText": "Win",
-          "nextLineIndex": -1
-        },
-        {
-          "choiceText": "Lose",
-          "nextLineIndex": -1
-        }
-      ]
+        "speakerName": "Narrator",
+        "sentence": "(Battle begins.)",
+        "choices": [],
+        "nextLineIndex" : -1,
+        "leadsTo": "StraeonTavernBattle"
     }
   ]
 }

@@ -3055,7 +3055,7 @@ MonoBehaviour:
   alliedTeamIDs: 00000000
   enemyTeamIDs: 0100000002000000
   actionTickInterval: 1
-  actionThreshold: 25
+  actionThreshold: 10
 --- !u!1 &791339133
 GameObject:
   m_ObjectHideFlags: 0

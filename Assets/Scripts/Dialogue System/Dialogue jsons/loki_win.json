@@ -1,0 +1,24 @@
+{
+    "lines": [
+        {
+            "speakerID": "3",
+            "sentence": "Even being jumped, you manage to pull yourself away from the battle with nothing more than a few scratches. If you look around-",
+            "choices": [],
+            "nextLineIndex": 1
+        },
+        {
+            "speakerID": "4",
+            "sentence": "You find nothing of interest, just go back to whatever you were doing. You’re back out in the fields walking home!",
+            "choices": [],
+            "nextLineIndex": 2
+        },
+        {
+            "speakerID": "3",
+            "sentence": "Hey! Stop interrupting me!!",
+            "choices": [],
+            "nextLineIndex": -1,
+            "leadsTo": "ReturnToHub",
+            "gainFollowers": true
+        }
+    ]
+}

@@ -3,6 +3,39 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public static class ClassNames
+{
+    public static readonly Dictionary<int, string> IdToName = new Dictionary<int, string>()
+    {
+        { 0, "Rogue" },
+        { 1, "Swashbuckler" },
+        { 2, "Arcane Archer" },
+        { 3, "Brawler" },
+        { 4, "Monk" },
+        { 5, "Pugilist" },
+        { 6, "Barbarian" },
+        { 7, "Olympian" },
+        { 8, "Ogre" },
+        { 9, "Knight" },
+        { 10, "Dark Knight" },
+        { 11, "Cavalier" },
+        { 12, "Mage" },
+        { 13, "Witch" },
+        { 14, "Archivist" },
+        { 15, "Priest" },
+        { 16, "Bard" },
+        { 17, "Paladin" }
+    };
+
+    public static string GetNameById(int id)
+    {
+        if (IdToName.TryGetValue(id, out var name))
+            return name;
+        return "Unknown";
+    }
+}
+
+
 public class TrainingBuilding : MonoBehaviour
 {
     [Header("How much Training is worth")]
@@ -17,6 +50,7 @@ public class TrainingBuilding : MonoBehaviour
     [Header("Selected Followers Canvas UI Elements")]
     [SerializeField] private TextMeshProUGUI statsBlockText;
     [SerializeField] private TextMeshProUGUI selectedName;
+    [SerializeField] private TextMeshProUGUI selectedClass;
     [SerializeField] private Canvas selectedFollowerCanvas;
 
     private TurnManager turnManager;
@@ -68,6 +102,7 @@ public class TrainingBuilding : MonoBehaviour
                     {
                         selectedFollower = follower;
                         selectedName.text = selectedFollower.displayName;
+                        selectedClass.text = ("Class: "+ClassNames.GetNameById(selectedFollower.classID));
                         statsBlockText.text = ("Vigor:      " + selectedFollower.vigor + "\n"
                                               +"Power:      " + selectedFollower.power + "\n"
                                               +"Magick:     " + selectedFollower.magick + "\n"

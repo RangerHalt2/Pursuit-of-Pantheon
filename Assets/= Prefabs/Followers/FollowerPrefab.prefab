@@ -214,6 +214,9 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   followerStats: {fileID: 0}
   enemyStats: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5593451386475838225
 MonoBehaviour:
   m_ObjectHideFlags: 0

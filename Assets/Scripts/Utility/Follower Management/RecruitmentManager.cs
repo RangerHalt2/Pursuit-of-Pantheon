@@ -1,4 +1,46 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+public static class NameList
+{
+    public static readonly List<string> names = new List<string>()
+    {
+        "Alyssa",
+        "Alan",
+        "Logan",
+        "Bryan",
+        "Eden",
+        "William",
+        "Wai",
+        "Athena",
+        "Ryan",
+        "Ethan",
+        "James",
+        "John",
+        "Matthew",
+        "Daniel",
+        "Joshua",
+        "Emily",
+        "Ailime", //Lowkey this is a sneak from Logan, it's a shitty play on Emilia.
+        "Mia",
+        "Reine",
+        "Yoshino",
+        "Tohka",
+        "Taylor",
+        "Jordan"
+    };
+
+
+    public static string GetRandomName()
+    {
+        string ret = "";
+
+        ret = names[Random.Range(0, names.Count)];
+
+        return ret;
+    }
+}
+
 
 public class RecruitmentManager : MonoBehaviour
 {
@@ -11,7 +53,7 @@ public class RecruitmentManager : MonoBehaviour
         FollowerClass randomClass = FollowerFactory.GetRandomClass();
 
         // Generate a new follower GameObject
-        GameObject newFollowerGO = activeFollowerGenerator.GenerateFollower("Bob", randomClass);
+        GameObject newFollowerGO = activeFollowerGenerator.GenerateFollower(NameList.GetRandomName(), randomClass);
         FollowerStatblock newStatblock = newFollowerGO.GetComponent<FollowerStatblock>();
 
         // Convert to FollowerData and add to unequipped pool

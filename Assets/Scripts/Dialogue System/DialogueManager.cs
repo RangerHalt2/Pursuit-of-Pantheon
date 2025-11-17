@@ -103,6 +103,7 @@ public class DialogueManager : MonoBehaviour
             nameText.text = line.speakerName ?? "Unknown";
             // avatarImage.sprite = defaultAvatar;
         }
+
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -134,15 +135,15 @@ public class DialogueManager : MonoBehaviour
 
                 choicePanels[i].onClick.RemoveAllListeners();
 
-                int nextIndex = line.choices[i].nextLineIndex;
 
                 DialogueChoice currentChoice = line.choices[i];
+                int nextIndex = line.choices[i].nextLineIndex;
 
                 choicePanels[i].onClick.AddListener(() =>
                 {
                     OnChoicesSelected(currentChoice);
                     //currentLineIndex = nextIndex;
-                    //DisplayLine();
+                    DisplayLine();
                 });
             }
 
@@ -155,7 +156,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        Debug.Log("Continue button pressed. Typing: " + isTyping);
+        //Debug.Log("Continue button pressed. Typing: " + isTyping);
 
         if (isTyping)
         {
@@ -237,6 +238,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         string leadsTo = currentDialogue.lines[currentLineIndex].leadsTo;
+
+        //LB: Adding a feature that adds a follower at the end of the dialogue if it's meant to
+        bool addFollower = currentDialogue.lines[currentLineIndex].gainFollowers;
+        if (addFollower)
+        {
+            RecruitmentManager rm = GameObject.FindAnyObjectByType<RecruitmentManager>(); //This will always be loaded
+            rm.RecruitNewFollower();
+        }
+
         HandleDialogueOutcome(leadsTo);
         return;
     }

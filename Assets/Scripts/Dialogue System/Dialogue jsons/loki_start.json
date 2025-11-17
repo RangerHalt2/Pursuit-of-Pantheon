@@ -34,34 +34,23 @@
         },
         {
           "choiceText": "I'm sorry, but I'm not a town guard. I can't help you.",
-          "nextLineIndex": 7
+          "nextLineIndex": 6
         }
       ]
     },
     {
       "speakerName": "Narrator",
-      "sentence": "Walking into the building, the silence is more prevalent than any damage-",
+      "sentence": "Walking into the building, the silence is more prevalent than any danger-",
       "choices": [],
-      "nextLineIndex": 6
+      "nextLineIndex": -1,
+      "leadsTo": "LokiInDisguiseBattle"
     },
     {
       "speakerName": "Panicked Person?",
-      "sentence": "Oh, and the cultists!",
+      "sentence": "Hmph, How boring...",
       "choices": [],
-      "nextLineIndex": -1
-    },
-    {
-      "speakerName": "Narrator",
-      "sentence": "Okay, WHAT'S GOING ON?!",
-      "choices": [],
-      "nextLineIndex": 8
-    },
-    //Need a fail too
-    {
-      "speakerName": "Panicked Person?",
-      "sentence": "How boring...",
-      "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "LokiInDisguiseBattle"
     }
 
   ]

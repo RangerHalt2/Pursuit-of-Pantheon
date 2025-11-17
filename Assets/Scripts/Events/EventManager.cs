@@ -15,7 +15,8 @@ public class EventManager : MonoBehaviour
     [Tooltip("How many turns must pass after one random event before another one can occur.")]
     [SerializeField] public int randomEventCooldown = 3;
 
-    TurnManager turnManager;
+    private TurnManager turnManager;
+    private EventLibraryManager eventLibrary;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +27,8 @@ public class EventManager : MonoBehaviour
         {
             Debug.LogWarning("EventManager: Cannot find TurnManager!");
         }
+
+        eventLibrary = GetComponent<EventLibraryManager>();
 
         // Set the random event chance to the base
         randomEventChance = baseRandomEventChance;
@@ -55,13 +58,11 @@ public class EventManager : MonoBehaviour
         {
             // Reset random event chance to its base amount
             randomEventChance = baseRandomEventChance;
-            return true;
-        }
-    }
 
-    // Plays a random event
-    public void PlayRandomEvent()
-    {
-        Debug.Log("EventManager: Random Event!");
+            //LB: Adding the functionality to load a random event
+            bool ret = eventLibrary.LoadRandomEvent();
+
+            return ret;
+        }
     }
 }

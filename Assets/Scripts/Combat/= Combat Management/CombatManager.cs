@@ -40,7 +40,7 @@ public class CombatManager : MonoBehaviour
     [Tooltip("Time (in seconds) between ActionProgress ticks.")]
     [SerializeField] private float actionTickInterval = 1f;
     [Tooltip("How much ActionProgress is required to take a turn.")]
-    [SerializeField] private float actionThreshold = 100f;
+    [SerializeField] private float actionThreshold = 10f;
 
     private float actionTickTimer = 0f;
 

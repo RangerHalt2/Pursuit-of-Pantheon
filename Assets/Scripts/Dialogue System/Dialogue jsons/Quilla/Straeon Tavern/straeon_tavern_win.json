@@ -34,7 +34,9 @@
       "speakerName": "???",
       "sentence": "I’ll be sure to…",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "gainFollowers": true,
+      "leadsTo": "ReturnToHub"
     }
   ]
 }

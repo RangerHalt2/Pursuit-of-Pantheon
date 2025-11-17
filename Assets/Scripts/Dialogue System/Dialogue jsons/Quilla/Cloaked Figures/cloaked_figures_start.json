@@ -39,16 +39,9 @@
     {
       "speakerName": "Narrator",
       "sentence": "(Battle begins.)",
-      "choices": [
-        {
-          "choiceText": "Win",
-          "nextLineIndex": -1
-        },
-        {
-          "choiceText": "Loss",
-          "nextLineIndex": -1
-        }
-      ]
+      "choices": [],
+      "nextLineIndex" : -1, 
+      "leadsTo": "CloakedFiguresBattle"
     }
   ]
 }

@@ -40,7 +40,9 @@
       "speakerName": "Narrator",
       "sentence": "While he was left unaware, the town’s protectors would not find the bodies he swore couldn’t be missed.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub",
+      "gainFollowers": true
     }
   ]
 }
