@@ -109,10 +109,11 @@
       "nextLineIndex": 18
     },
     {
-      "speakerName": "Narrator",
-      "sentence": "Slowly, more and more people start to populate the String of Life. Something is wrong with them though. Stand. Fight.",
-      "choices": [],
-      "nextLineIndex": -1
+        "speakerName": "Narrator",
+        "sentence": "Slowly, more and more people start to populate the String of Life. Something is wrong with them though. Stand. Fight.",
+        "choices": [],
+        "nextLineIndex": -1,
+        "leadsTo": "Dionysus_Battle"
     }
   ]
 }

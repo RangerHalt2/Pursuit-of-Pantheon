@@ -118,7 +118,8 @@
       "speakerName": "Laurel",
       "sentence": "…",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
     }
   ]
 }

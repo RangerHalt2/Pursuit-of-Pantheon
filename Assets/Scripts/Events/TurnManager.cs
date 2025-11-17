@@ -235,7 +235,7 @@ public class TurnManager : MonoBehaviour
             PlayerPrefs.SetString("NextDialogueToLoad", dialogueFileName);
             PlayerPrefs.Save();
             // Load the dialogue scene
-            sceneController.GoToScene("DialogueTesting");
+            sceneController.GoToScene("QuillaOpeningScene");
         }
     }
     #endregion
@@ -251,7 +251,7 @@ public class TurnManager : MonoBehaviour
     }
 
     // Updates the UI to reflect the current Act and Turn
-    private void UpdateUI()
+    public void UpdateUI()
     {
         // Displays the current act
         if (actText != null)

@@ -17,6 +17,14 @@ public class TrainingBuilding : MonoBehaviour
     [Header("Selected Followers Canvas UI Elements")]
     [SerializeField] private TextMeshProUGUI statsBlockText;
     [SerializeField] private TextMeshProUGUI selectedName;
+    [SerializeField] private Canvas selectedFollowerCanvas;
+
+    private TurnManager turnManager;
+
+    private void Start()
+    {
+        turnManager = GameObject.FindAnyObjectByType<TurnManager>();
+    }
 
     private FollowerData selectedFollower;
 
@@ -29,6 +37,7 @@ public class TrainingBuilding : MonoBehaviour
         }
 
         TrainingFollowers.gameObject.SetActive(false);
+        selectedFollowerCanvas.gameObject.SetActive(false);
     }
 
     public void ShowAllFollowersUI()
@@ -66,6 +75,7 @@ public class TrainingBuilding : MonoBehaviour
                                               +"Faith:      " + selectedFollower.faith + "\n"
                                               +"Agility:    " + selectedFollower.agility + "\n"
                         );
+                        selectedFollowerCanvas.gameObject.SetActive(true);
                     }
                 ); //End of Listener Function
             } //End of Null Check
@@ -126,6 +136,10 @@ public class TrainingBuilding : MonoBehaviour
                 Debug.LogWarning("Stat string passed was not a proper stat. No effect has occured");
                 break;
         }//End of Switch
+
+        HideFollowerCanvas();
+        turnManager.SpendTurn();
+
         return;
     }//end of TrainStat
 

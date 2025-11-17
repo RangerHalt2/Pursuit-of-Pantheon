@@ -15,6 +15,39 @@ public class Bootstrapper : MonoBehaviour
     [Tooltip("Player's Active Party")]
     public PartyData partyData = new PartyData();
 
+    //LB: Region added by Logan, intermediate between combat outcome and the combat manager.
+    #region Combat Manager Dialogue Resources and Functions
+    [HideInInspector]
+    public bool combatLeadsToDialogue = false;
+    [HideInInspector]
+    public TextAsset dialogueAfterBattle;
+
+    public void HandleCombatEnd()
+    {
+        if (combatLeadsToDialogue)
+        {
+            if(dialogueAfterBattle == null)
+            {
+                Debug.LogWarning("No provided dialogue with this, some form of error occured. Preventing execution.");
+                return;
+            }
+
+            SceneController controller = GetComponent<SceneController>();
+            if (controller != null)
+            {
+                controller.GoToScene("QuillaOpeningScene");
+            }
+        }
+    }
+    
+    public void PurgeDialogues()
+    {
+        dialogueAfterBattle = null;
+        combatLeadsToDialogue = false;
+    }
+
+    #endregion
+
     void Awake()
     {
         // Check if an instance already exists

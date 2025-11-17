@@ -9,8 +9,17 @@ public class DialogueTrigger : MonoBehaviour
     public TextAsset dialogueJSON;
     public DialogueManager manager;
 
+    private Bootstrapper boot;
+
     private void Start()
     {
+        boot = GameObject.FindAnyObjectByType<Bootstrapper>();
+        //Intercepts the dialogue meant to be loaded on start.
+        if (boot.combatLeadsToDialogue)
+        {
+            dialogueJSON = boot.dialogueAfterBattle;
+            boot.PurgeDialogues(); //Purge it.
+        }
         StartCoroutine(LoadDialogueCoroutine());
     }
 

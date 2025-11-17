@@ -3086,6 +3086,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      propertyPath: turns.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      propertyPath: 'turns.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      propertyPath: 'turns.Array.data[1]'
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501651478055948745, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      propertyPath: 'turns.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3257871088026630896, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1142.1523
@@ -3133,87 +3149,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119218302}
+    - targetCorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2031461859}
   m_SourcePrefab: {fileID: 100100000, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
---- !u!1 &2068439616
+--- !u!1 &2031461858 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+  m_PrefabInstance: {fileID: 2031461857}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2068439617}
-  - component: {fileID: 2068439618}
-  - component: {fileID: 2068439620}
-  - component: {fileID: 2068439619}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2068439617
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068439616}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 998.2625, y: 0, z: 14823.636}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068439618
+--- !u!114 &2031461859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068439616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cd54d36a07da146a2fd2144677bd6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneController
-  MainMenu: MainMenu
---- !u!114 &2068439619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068439616}
+  m_GameObject: {fileID: 2031461858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8745fa97daf00b84b868c82ab790c5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventManager
-  baseRandomEventChance: 100
-  randomEventChanceIncrease: 0
-  randomEventCooldown: 1
---- !u!114 &2068439620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068439616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d77cab7ae5c2441a334b8fb699f5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurnManager
-  turns: 00000000010000000000000000000000
-  currentTurn: 1
-  currentAct: 1
-  actText: {fileID: 2096493499}
-  turnText: {fileID: 1810533415}
+  baseRandomEventChance: 25
+  randomEventChanceIncrease: 10
+  randomEventCooldown: 3
 --- !u!1 &2096493497
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3313,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096493497}
   m_CullTransparentMesh: 1
+--- !u!1 &2119218299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+  m_PrefabInstance: {fileID: 2031461857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119218302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119218299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cd54d36a07da146a2fd2144677bd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  MainMenu: 
 --- !u!1 &2142273008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,6 +3478,5 @@ SceneRoots:
   - {fileID: 97814861}
   - {fileID: 922590823}
   - {fileID: 85031407}
-  - {fileID: 2068439617}
   - {fileID: 1363549387}
   - {fileID: 2031461857}

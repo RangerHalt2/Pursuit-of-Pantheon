@@ -31,6 +31,8 @@ public class CombatManager : MonoBehaviour
     [Tooltip("The teamIDs for the player's followers.")]
     [SerializeField] private int[] enemyTeamIDs;
 
+    private SceneController sceneController;
+
     #region CombatantTracking
     [Header("Combatant Settings")]
     // List of all combatants in the current scene
@@ -43,6 +45,9 @@ public class CombatManager : MonoBehaviour
     private float actionTickTimer = 0f;
 
     private bool registerd = false;
+
+    private Bootstrapper boot;
+
     #endregion
 
 
@@ -68,6 +73,8 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(RegisterCombatants());
+        sceneController = GameObject.FindAnyObjectByType<SceneController>();
+        boot = GameObject.FindAnyObjectByType<Bootstrapper>();
     }
 
     // Update is called once per frame
@@ -155,9 +162,19 @@ public class CombatManager : MonoBehaviour
         // This code is temporary and will be refined at a later date
         if (!enemiesAlive)
         {
-            UIManager.instance.GoToPage(gameVictoryPageIndex);
+            //Intercept the win condition for dialogue.
+            if(boot != null && boot.combatLeadsToDialogue)
+            {
+                sceneController.GoToScene("QuillaOpeningScene");
+                return;
+            }
+
+
+            //UIManager.instance.GoToPage(gameVictoryPageIndex);
+            sceneController.GoToScene("HubWorld");
             // Freeze Time
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+            return;
         }
 
         // Check to see if any objects with a health component are on the player's side
