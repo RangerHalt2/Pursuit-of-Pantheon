@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     public FollowerManager followerManager;
     public Health health;
-    private Dictionary<string, Action> effects;
+    private Dictionary<string, Action<string>> effects;
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
 
         if (effects == null)
         {
-            effects = new Dictionary<string, Action>(); //safeguard
+            effects = new Dictionary<string, Action<string>>(); //safeguard
         }
     }
 
@@ -184,15 +184,85 @@ public class DialogueManager : MonoBehaviour
 
     void HandleChoiceAdjustments()
     {
-        effects = new Dictionary<string, Action>
+        effects = new Dictionary<string, Action<string>>
         {
-            { "DamageParty", () => health.TakeDamage(5f) },
-            { "IncreaseFollowers", () => followerManager.AddFollower(5) },
-            { "DecreaseFollowers", () => followerManager.RemoveFollower(3) }
-            //{ "GainItem", () => ItemHandler.AddItem() }
-            //{ "AddHealingDebuff", () => debuffManager.AddDebuff("HealingDebuff") }
-            //{ "SkipCombat", () => combatManager.SkipNextCombat() }
-            //{ "DamageParty", () => health.TakeDamage(10f) }
+            { "DamageParty", (param) =>
+                {
+                    if (float.TryParse(param, out float dmg))
+                        health.TakeDamage(dmg);
+                    else
+                        health.TakeDamage(5f);
+                }
+            },
+
+            { "IncreaseFollowers", (param) =>
+                {
+                    if (int.TryParse(param, out int amount))
+                        followerManager.AddFollower(amount);
+                }
+            },
+
+            { "DecreaseFollowers", (param) =>
+                {
+                    if (int.TryParse (param, out int amount))
+                        followerManager.RemoveFollower(amount);
+                }
+            },
+
+            { "GainItem", (param) =>
+                {
+                    int amount = 1;
+                    int.TryParse(param, out amount);
+                    ItemHandler.Instance.AddItem(amount);
+                }
+            },
+
+            { "AddHealingDebuff", (param) =>
+                {
+                    //debuffManager.AddDebuff(param);
+                }
+            },
+
+            { "SkipCombat", (param) =>
+                {
+                    //CombatManager.SkipNextCombat();
+                }
+            },
+
+            { "RandomOutcome", (param) =>
+                {
+                    bool success = UnityEngine.Random.value > 0.5f;
+
+                    if (success)
+                    {
+                        Debug.Log("Random outcome: Success");
+                        //GameFlags.Set("RandomOutcome", true);
+                    }
+                    else
+                    {
+                        Debug.Log("Random outcome: Failure");
+                        //GameFlags.Set("RandomOutcome", false);
+                    }
+                } 
+            },
+
+            { "SkillCheck", (param) =>
+            {
+                string[] parts = param.Split(',');
+                if (parts.Length != 2) return;
+
+                string skillName = parts[0].Trim();
+                int difficulty = int.Parse(parts[1]);
+
+                //int skillValue = FollowerStatblock.GetSkills(skillName);
+
+                //bool success = skillValue >= difficulty;
+
+                //Debug.Log($"Skill check {skillName} {skillValue}/{difficulty} : {success}");
+
+                //GameFlags.Set("LastSkillCheck", success);
+            }
+            }
         };
 
         //"DamageParty", () => takedamage(int)
@@ -216,7 +286,7 @@ public class DialogueManager : MonoBehaviour
         //trigger an effect
         if (!string.IsNullOrEmpty(choice.effectID) && effects.TryGetValue(choice.effectID, out var effect))
         {
-            effect.Invoke();
+            //effect.Invoke();
         }
 
         if (!string.IsNullOrEmpty(choice.effectID))

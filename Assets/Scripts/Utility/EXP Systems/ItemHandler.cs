@@ -4,13 +4,43 @@ using UnityEngine;
 
 public class ItemHandler : MonoBehaviour
 {
-    //This should store variables and change their counts.
-    //Public functions to get/set should be the core of this script.
+    public static ItemHandler Instance;
 
-    public List<string> items;
+    public int itemCount = 0;
 
-    public void Start()
+    private void Awake()
     {
-        items = new List<string>();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void AddItem(int amount = 1)
+    {
+        itemCount += amount;
+        Debug.Log("Item count is now: " + itemCount);
+    }
+
+    public bool RemoveItem(int amount = 1)
+    {
+        if (itemCount >= amount)
+        {
+            itemCount -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public bool HasItem()
+    {
+        return itemCount > 0;
     }
 }

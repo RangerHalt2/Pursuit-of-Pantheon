@@ -36,4 +36,5 @@ public class DialogueChoice
     public string setFlagOnSelect;
 
     public string effectID; //for DamageParty and AddFollowers
+    public string effectParameter;
 }
