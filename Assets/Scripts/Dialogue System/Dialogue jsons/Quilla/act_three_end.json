@@ -1,0 +1,88 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "The silence that takes over the String of Life is comforting, especially after the loudest night the bar maid has had in quite a long time. The front door opening was the only thing that drew her attention back up.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Apologies, but the taverna is closed right now. I just managed to get the too-drunk folk out my door.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "8",
+      "sentence": "Actually, I’m not here for a drink. I was wondering instead if you might have found any jewelry recently?",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "1",
+      "sentence": "… Jewelry? This is an inn ma’am, I believe you might have the wrong establishment. If you’ve lost something, I can keep an eye out for it if I know what to look for?",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "8",
+      "sentence": "It’s a pendant. It belongs to my love, I’d appreciate its return.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "3",
+      "sentence": "The bar maid took a second and doubled back toward the box that she kept it in.",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "8",
+      "sentence": "You never used it? All of its power… Why? You know that he was wrong. You are strong enough to…",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "2",
+      "sentence": "I haven’t found something I wanted enough yet. It also helps that one of the bards that comes by speaks rather passionately about many things, even his own suffering. He’s a bit of a light in the darkness huh?",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "8",
+      "sentence": "… Silence…",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "2",
+      "sentence": "Hmm?",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "8",
+      "sentence": "Nothing, thank you for keeping it safe. I promise to take good care of it, and to return it to its rightful owner.",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "3",
+      "sentence": "Then, the mysterious figure left as quick as they came, the power to control the universe in their hand…",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "3",
+      "sentence": "The door squeaked closed, and the second it slid into place, the world went black.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "3",
+      "sentence": "No… it ceased to exist. Mountains, cities, forests, people, animals… Even gods. All gone in the blink of an eye.",
+      "choices": [],
+      "nextLineIndex": -1
+    }
+  ]
+}

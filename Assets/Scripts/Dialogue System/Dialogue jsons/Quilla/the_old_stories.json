@@ -1,82 +1,83 @@
 {
   "lines": [
     {
-      "speakerName": "Narrator",
+      "speakerID": "3",
       "sentence": "Typically, when Straeon wanders the roads, he’s more than happy to give the shrines or statues of gods a bold declaration of thanks, but this one was different.",
       "choices": [],
       "nextLineIndex": 1
     },
     {
-      "speakerName": "Narrator",
+      "speakerID": "3",
       "sentence": "The statue showed a god in the form of a bard carrying a lute. His stance implies that he’s appeasing an audience through singing them a song.",
       "choices": [],
       "nextLineIndex": 2
     },
     {
-      "speakerName": "Narrator",
+      "speakerID": "3",
       "sentence": "Or, through Straeon’s eyes, sharing a story.",
       "choices": [],
       "nextLineIndex": 3
     },
     {
-      "speakerName": "Caretaker",
+      "speakerID": "9",
       "sentence": "Hello there sir! Are you enjoying Hōrō-sha? The god of bardistry deeply enjoyed presenting for an audience, but unfortunately it appears that his voice and tales are long gone.",
       "choices": [],
       "nextLineIndex": 4
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "This is a god of storytelling? He’s much different from the Goddess Quilla, though I haven’t seen a shrine to her yet.",
       "choices": [],
       "nextLineIndex": 5
     },
     {
-      "speakerName": "Caretaker",
+      "speakerID": "9",
       "sentence": "Oh? Well, it’s certainly been a while since I’ve heard stories of his. This new goddess must be quite recent, though. I’ve yet to hear such stories. My family has cared for this shrine much longer than she’s been around, likely.",
       "choices": [],
       "nextLineIndex": 6
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "I’d be hard pressed to believe that you’d forgotten her. The way she speaks is so clear and her form is so careful, it must be what people have described muses to be!",
       "choices": [],
       "nextLineIndex": 7
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "Whatever happened to this god though? Why do you speak of him as though his story has ended?",
       "choices": [],
       "nextLineIndex": 8
     },
     {
-      "speakerName": "Caretaker",
+      "speakerID": "9",
       "sentence": "Unfortunately, it has. This shrine serves as a memory now, though it’ll be the only one you find. He perished long ago, when his stories fell on ears who would listen no longer.",
       "choices": [],
       "nextLineIndex": 9
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "...",
       "choices": [],
       "nextLineIndex": 10
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "You said your family cares for this shrine, yes?",
       "choices": [],
       "nextLineIndex": 11
     },
     {
-      "speakerName": "Straeon",
+      "speakerID": "0",
       "sentence": "Would you be willing to share with me what stories he has left? Stories he might have left behind?",
       "choices": [],
       "nextLineIndex": 12
     },
     {
-      "speakerName": "Caretaker",
+      "speakerID": "9",
       "sentence": "Not many ask. Come, I suspect a traveller like you is going to be needing lodgings for the night. Let’s exchange stories of the gods of stories.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
     }
   ]
 }

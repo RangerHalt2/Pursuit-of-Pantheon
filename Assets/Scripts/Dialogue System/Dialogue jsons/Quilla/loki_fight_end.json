@@ -1,0 +1,113 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "Loki and their entourage are fended off, pushed away from the glowing light as Quilla and Straeon separate them.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "4",
+      "sentence": "Uuf…",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "0",
+      "sentence": "HaHA! Know that the one that defeated you this time, Loki, was I! Straeon the Fearless!",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "2",
+      "sentence": "Don’t get caught ahead of yourself, friend.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Indeed! Being humble is one of the hallmarks of a hero of the world! And only a hero would interrogate the villain as to their dastardly evil plot, like this! Tell us, baddie two shoes, of this mystery pendant.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "4",
+      "sentence": "The pendant…? You… don’t know of it?",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "4",
+      "sentence": "Hahah…HAHAHA! ASTONISHING! Allow me a guess, you, dear Story, haven’t had time to read its story?! Or no, the stories of it were erased, weren’t they?!",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "4",
+      "sentence": "Well, then allow me this, my foolish antagonist, a moment outside of my domain. A moment of honesty.",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "4",
+      "sentence": "That pendant is the embodiment of change. With it in hand, a god could change the very foundation that our world sits on. Space, fate, death, even the rising of the sun and moon could all be erased or changed.",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "4",
+      "sentence": "However, neither you or I are clearly strong enough to take hold of the power in it, luckily.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "2",
+      "sentence": "Why would you so clearly give that information to us? Information that is so clearly valuable to you.",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "4",
+      "sentence": "Simple! Because you’re simple minded! Half of the difficulty of using it was finding it, I would dread losing it… But you’ll take it, and because of that, I will only need to find you to find it.",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "4",
+      "sentence": "But why would you take it? Simple… because if you want to know its story, it itself is the only book with its tale recorded.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "4",
+      "sentence": "And with that word of promise, I will let you go. May our Strings of Life cross once more, my friends!",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerID": "3",
+      "sentence": "And then they disappear. No fight, no anger, just a silent disappearance, leaving the hof’s only residents as Quilla and Straeon.",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerID": "2",
+      "sentence": "…",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerID": "0",
+      "sentence": "…",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerID": "0",
+      "sentence": "WE WON!!",
+      "choices": [],
+      "nextLineIndex": -1,
+      "leadsTo": "ActThree_End"
+    }
+  ]
+}

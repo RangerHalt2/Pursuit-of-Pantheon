@@ -16,7 +16,8 @@
       "speakerName": "Narrator",
       "sentence": "It takes you too long to shake off the appeal of the music, and now, creatures, half-bird half-woman, descend upon you.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Siren_Battle"
     }
   ]
 }

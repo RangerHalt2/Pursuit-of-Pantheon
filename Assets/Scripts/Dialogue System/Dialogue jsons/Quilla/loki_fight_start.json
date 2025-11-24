@@ -1,0 +1,143 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "The setting sun over the most recent town’s edges gave a deep orange hue to the sky. Our bard can’t help but watch its beauty longingly.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Not that I don’t trust you, oh Story, but we don’t find ourselves directed toward anywhere pointedly centered around deception or distortion.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Well, I doubt if we had, it would be a good place of deception. The best we can do is search for whispers. That or—",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "3",
+      "sentence": "A knock on the door of their upper story room was quickly preceded by the knock of metal on the door.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "1",
+      "sentence": "…wait for someone to find us.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Would this timing happen to be a coincidence?",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "1",
+      "sentence": "No, much simpler. The imposter from before knew who we were without us mentioning.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "0",
+      "sentence": "So they’ve been watching? … It’s a runestick, and records an offer to arrive at the town hof to worship…",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Quilla, it mentions “Ragnarok”.",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Yes. It will likely be a fight. Now’s our last chance to make any decisions.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "0",
+      "sentence": "I’ve long made any I might need. Let us go.",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "3",
+      "sentence": "The door to the wooden building opened, as an entire village, or more, of people sat inside, all turning to see the newcomers, eerily silent. The only one that resided differently sat in the middle at the end of the building, facing away toward a delicate light.",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "3",
+      "sentence": "This person was indescribable, as their appearance constantly changed. A loving mother, a cruel tyrant, an inspired artist, a noble king. They didn’t need to turn in order to acknowledge the new beings in the room.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "4",
+      "sentence": "I’m surprised it’s taken us this long to meet, “Laurel”. If you wanted to wait a second more, I could have recreated the world by now. Then, you wouldn’t even have to worry about existing.",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerID": "0",
+      "sentence": "You’d still have me to deal with. They say an army marches on its stomach, but gods march on their armies, no?",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerID": "4",
+      "sentence": "You’re not much of an army, kid. Maybe you should “read the room”, oh story-teller.",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerID": "1",
+      "sentence": "What powers does the pendant hold that you’re so dedicated to, god of trickery.",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerID": "4",
+      "sentence": "This? This is Chaos incarnate! Crafted by the late god of crafts Hephaestus himself! I plan to use her power to bring about some changes throughout Midgard. However, even with all of the strength I hold, and worship I’ve built since World Death, I still can’t touch it. Something holds me back.",
+      "choices": [],
+      "nextLineIndex": 18
+    },
+    {
+      "speakerID": "4",
+      "sentence": "You.",
+      "choices": [],
+      "nextLineIndex": 19
+    },
+    {
+      "speakerID": "4",
+      "sentence": "We’re opposites, contradictions, two ends of a rope. Yanking on one will always pull the other, and the more strength you hold, the more I must acquire to pull back!",
+      "choices": [],
+      "nextLineIndex": 20
+    },
+    {
+      "speakerID": "4",
+      "sentence": "This rope must be cut once more. I won’t negotiate this. Sorry, but I’m not sorry.",
+      "choices": [],
+      "nextLineIndex": 21
+    },
+    {
+      "speakerID": "2",
+      "sentence": "I understand. Straeon?",
+      "choices": [],
+      "nextLineIndex": 22
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Hehe. Once upon a time…",
+      "choices": [],
+      "nextLineIndex": -1,
+      "leadsTo": "LokiFight_Battle"
+    }
+  ]
+}

@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 9d859c6f9bdd32f4183eb8d5dd293e63
   m_SerializeEntries:
+  - m_GUID: 0d1fbd460937198409036c5b1dfe20b5
+    m_Address: Ra_Battle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 160dab7390df48f4a8c5bf1a53e3e9df
     m_Address: Dionysus_Battle
     m_ReadOnly: 0
@@ -35,8 +40,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7094a20cb12b3b44ca83de0c693e9572
+    m_Address: ActTwo_Start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 753da345c4965264cbf9e7f68cb9af23
     m_Address: StraeonTavernBattle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87b9bd16179ea7f4f9b997330661540c
+    m_Address: Assets/Scripts/Dialogue System/Dialogue jsons/Quilla/act_three_end.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbeca8a8f5db4a443acb4ec7aac7bba5
+    m_Address: ActThree_End
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

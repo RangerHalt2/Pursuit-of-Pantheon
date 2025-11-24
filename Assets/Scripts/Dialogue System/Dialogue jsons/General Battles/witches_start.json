@@ -24,13 +24,15 @@
       "speakerName": "Witch",
       "sentence": "I figured we would be running for the rest of our lives, but thanks to you, we won't have to.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Witches_Battle"
     },
     {
       "speakerName": "Witch",
       "sentence": "I understand, come on, Apprentice, may our pursuers lose chase before our legs give out.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
     }
 
   ]

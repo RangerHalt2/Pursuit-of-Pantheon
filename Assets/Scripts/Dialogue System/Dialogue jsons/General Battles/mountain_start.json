@@ -24,13 +24,15 @@
       "speakerName": "Villager",
       "sentence": "Thank you! Oh thank you dear traveller! My village and I will await your splendid return!",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Mountain_Battle"
     },
     {
       "speakerName": "Villager",
       "sentence": "Fine, if you won't help us, then we will find someone who will.",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
     }
 
   ]

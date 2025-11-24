@@ -1,0 +1,107 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "The taverna’s quiet this morning, while the building’s caretaker lays supplies out across the bar.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Okay, 3 days of food, a travel sized waterskin, a sleep pack, if I wasn’t being held back, I might be able to ride the storylines…",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Is that the name of your horse, ma’am?",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Straeon! It’s good to see you up so early! I’m sorry, but the String of Life won’t be able to house you for much longer. I’m going out on a trip, and the building will be left unattended.",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "1",
+      "sentence": "I think you deserve praise and much gratitude for the liveliness you’ve put in my taverna though, so thank you.",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Of course, I’m more than happy to share a tale or two with people who would listen, but what’s with this sudden change? Will you be back?",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "1",
+      "sentence": "I intend to, but it won’t be very soon. I’m heading East in order to get a lay of the land, you might say.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "0",
+      "sentence": "…well.",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Then I’m coming too!",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "0",
+      "sentence": "I’ve never seen you leave the confines of your taverna. I can’t imagine having an EXPERT of the roads by your side would make your chances of survival much shorter!",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Plus, I’m blessed by the divine goddess of stories, so my presence might bless our travels together!",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "1",
+      "sentence": "That’s… a great idea actually.",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Really?",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Well, I’m not inexperienced in the kind of travel I’ll be undertaking, but having another person on the roads would be nice, not to mention I’d get to see more people get to experience your stories.",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Exactly! This can’t go wrong! I’ll go and pack my stuff, and I’ll be ready to leave as soon as you’re ready!",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerID": "3",
+      "sentence": "Straeon hops up the stairs in the back of the building quickly to approach his current residence.",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Wait! You don’t need time to prepare??",
+      "choices": [],
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
+    }
+  ]
+}

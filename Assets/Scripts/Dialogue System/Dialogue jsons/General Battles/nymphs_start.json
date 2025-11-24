@@ -28,15 +28,17 @@
     },
     {
       "speakerName": "Nymph",
-      "sentence": "Finally some peace, thank you truly, you are always welcome here anytime.",
+      "sentence": "Oh thank you! Thank you! You're truely a blessing!",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Nymph_Battle"
     },
     {
       "speakerName": "Nymph",
       "sentence": "I’m not sure how long my sister and I can wait while they desecrate our home…",
       "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
     }
 
   ]

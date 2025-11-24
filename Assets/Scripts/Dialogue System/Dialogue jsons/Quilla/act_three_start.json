@@ -1,0 +1,113 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "Early in the morning, Straeon alone sits at the bar of the String of Life eating a meal that Laurel composed for him, but he’s been deep in thought ever since the pair returned.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "0",
+      "sentence": "…",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Straeon dear, you’re not eating, and your usual shine is depleted. I know going to Iunu was a lot, and a lot of it went unplanned, but…",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "0",
+      "sentence": "“But” you’re a Goddess?",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "1",
+      "sentence": "…",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "0",
+      "sentence": "I feel like a fool for coming back to the tavern after every journey while chanting and singing the praises of the divine entity that resided in the very inn I frequented.",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "1",
+      "sentence": "I’m sorry.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "1",
+      "sentence": "The truth is, I haven’t been around for very long myself. Not as much as Ra, or Dionysus… I’m still learning about the stories of the people around us. The story of Laurel has been helping me to learn, and has been enjoyable, of course.",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "1",
+      "sentence": "But outside of that, the many stories that gods no longer tell have been… difficult to decipher. They hold rules that gods are not to cross, one is that they must not directly interfere in the world of mortals.",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "1",
+      "sentence": "… I didn’t keep you around for your stories out of desperation though. I may have lied about my name, and my title, but not of my love for the tales that you tell.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "0",
+      "sentence": "… Loki.",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Pardon?",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "0",
+      "sentence": "The amulet that the imposter Ra held around his neck when he was apprehended in Iunu. It was the symbol of Loki, and the norse runes around its edges make me more than sure.",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Oh… Why didn’t you mention this earlier?",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Because I wasn’t sure how I felt about being deceived, but after I’ve had time to divulge with myself, I am certain of what I must do. I will make sure that Quilla’s blessing my travels was a good choice.",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerID": "0",
+      "sentence": "I have seen how Loki’s deceptions hurt her. Hurt what she… what I stand for. I don’t know what it is they’re after, but if it leads to more of this, then it cannot be allowed to continue.",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerID": "0",
+      "sentence": "I will continue to travel, and fight with you to stop them, oh Goddess.",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerID": "2",
+      "sentence": "…I understand, and Straeon, thank you for everything.",
+      "choices": [],
+      "nextLineIndex": -1,
+      "leadsTo": "ReturnToHub"
+    }
+  ]
+}

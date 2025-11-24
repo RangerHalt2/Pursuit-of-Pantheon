@@ -16,34 +16,23 @@
         },
         {
           "choiceText": "A book shouldn’t be judged by the cover, right? Allow me to investigate and find out the truth.",
-          "nextLineIndex": 4
+          "nextLineIndex": 3
         }
       ]
     },
     {
-      "speakerName": "Evil Changeling",
+      "speakerName": "Changeling",
       "sentence": "Let’s see how dangerous...",
       "choices": [],
-      "nextLineIndex": 3
-    },
-    {
-      "speakerName": "Eden",
-      "sentence": "A battle goes here against the changeling. Fight fight. Clash Clash.",
-      "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Changeling_Battle"
     },
     {
       "speakerName": "Villager",
       "sentence": "Is that what they say? Well, we say, the cursed get cursed.",
       "choices": [],
-      "nextLineIndex": 5
-    },
-    {
-      "speakerName": "Eden",
-      "sentence": "A fight goes on here against the villagers",
-      "choices": [],
-      "nextLineIndex": -1
+      "nextLineIndex": -1,
+      "leadsTo": "Villager_Battle"
     }
-
   ]
 }

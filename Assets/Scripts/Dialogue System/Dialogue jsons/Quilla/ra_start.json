@@ -1,0 +1,137 @@
+{
+  "lines": [
+    {
+      "speakerID": "3",
+      "sentence": "The night stretched on above, as the stars and moon lit the way of the hostess and bard, like a path toward a desolate city.",
+      "choices": [],
+      "nextLineIndex": 1
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Wow. You know, when you talked about going to a temple of the sun, I expected something a little more populated.",
+      "choices": [],
+      "nextLineIndex": 2
+    },
+    {
+      "speakerID": "1",
+      "sentence": "So did I…",
+      "choices": [],
+      "nextLineIndex": 3
+    },
+    {
+      "speakerID": "0",
+      "sentence": "…Why are we here again, dear taverness?",
+      "choices": [],
+      "nextLineIndex": 4
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Remember the disruptive customer of a few weeks ago?",
+      "choices": [],
+      "nextLineIndex": 5
+    },
+    {
+      "speakerID": "0",
+      "sentence": "“Bruster”, yes?",
+      "choices": [],
+      "nextLineIndex": 6
+    },
+    {
+      "speakerID": "1",
+      "sentence": "He spoke of getting a “lay of the land”. None see as much as the Sun.",
+      "choices": [],
+      "nextLineIndex": 7
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Ha! I believe you may have been overthinking his advice! That or we’re trusting the word of a drunk. Or both…",
+      "choices": [],
+      "nextLineIndex": 8
+    },
+    {
+      "speakerID": "3",
+      "sentence": "The sand and limestone that set the silent streets were cool with the temperature of night. At the end of the road lies a massive obelisk with a falcon on its tip.",
+      "choices": [],
+      "nextLineIndex": 9
+    },
+    {
+      "speakerID": "3",
+      "sentence": "Iunu. Heliopolis.",
+      "choices": [],
+      "nextLineIndex": 10
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Ahem, Ms. Laurel? I wanted to ask you about our disruptive alcoholic. You see, something he mentioned keeps ringing in my head, and I feel that you-",
+      "choices": [],
+      "nextLineIndex": 11
+    },
+    {
+      "speakerID": "5",
+      "sentence": "Come all! For the night is getting old! Watch as I raise the sun back from the Underworld! I shall give a passionate khutbah!",
+      "choices": [],
+      "nextLineIndex": 12
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Ugh…",
+      "choices": [],
+      "nextLineIndex": 13
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Ms. Laurel! Are you alright? Are the headaches getting to you again?",
+      "choices": [],
+      "nextLineIndex": 14
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Y-yeah…",
+      "choices": [],
+      "nextLineIndex": 15
+    },
+    {
+      "speakerID": "1",
+      "sentence": "... I think… we shouldn’t have come here…",
+      "choices": [],
+      "nextLineIndex": 16
+    },
+    {
+      "speakerID": "0",
+      "sentence": "Nonsense, any reason you had to come here had to have been a good one. Here, let me help you up. Please be strong enough to let it pass.",
+      "choices": [],
+      "nextLineIndex": 17
+    },
+    {
+      "speakerID": "5",
+      "sentence": "Are you alright, newcomers? The khutbah is going to start soon! I’m sure I can get my granddaughter Isis to heal any sicknesses you feel.",
+      "choices": [],
+      "nextLineIndex": 18
+    },
+    {
+      "speakerID": "1",
+      "sentence": "Strae… it's him.",
+      "choices": [],
+      "nextLineIndex": 19
+    },
+    {
+      "speakerID": "5",
+      "sentence": "Well, this is quite rude of you, the God of the Sun deserves some respect no? Fall and bow to his excellence.",
+      "choices": [],
+      "nextLineIndex": 20
+    },
+    {
+      "speakerID": "8",
+      "sentence": "Shadows of people start to surround the two. Forms. Silhouettes. Dozens, or hundreds of hands reach to take, to heal.",
+      "choices": [],
+      "nextLineIndex": 21
+    },
+    {
+      "speakerID": "1",
+      "sentence": "No, those lies… don't let him… Stall him…",
+      "choices": [],
+      "nextLineIndex": -1,
+      "leadsTo": "Ra_Battle"
+    }
+  ]
+}

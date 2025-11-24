@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f817b1d85f53246ab27f8afcbb8c18, type: 3}
+  m_Name: ActTwo_Start
+  m_EditorClassIdentifier: Assembly-CSharp::LoadDialogueOutcome
+  nextDialogueJSON: {fileID: 4900000, guid: 8c3c0d098b7310d4d89509d8bfe70bb0, type: 3}
