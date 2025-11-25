@@ -213,4 +213,23 @@ public class CombatManager : MonoBehaviour
     {
         return combatants;
     }
+
+    //Added by Alyssa
+    public void SkipCombat()
+    {
+        Health[] healthComponents = GameObject.FindObjectsByType<Health>(FindObjectsSortMode.None);
+
+        foreach (Health health in healthComponents)
+        {
+            foreach (int teamID in enemyTeamIDs)
+            {
+                if (health.teamID == teamID)
+                {
+                    health.TakeDamage(999999);
+                }
+            }
+        }
+
+        CheckCombatState();
+    }
 }

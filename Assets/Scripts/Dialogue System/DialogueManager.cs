@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     public FollowerManager followerManager;
     public Health health;
     private Dictionary<string, Action<string>> effects;
+    public string effectParameter;
 
     private void Awake()
     {
@@ -211,9 +212,17 @@ public class DialogueManager : MonoBehaviour
 
             { "GainItem", (param) =>
                 {
+                    string[] args = param.Split(',');
+
+                    ItemHandler.ItemType itemType = (ItemHandler.ItemType)System.Enum.Parse(typeof(ItemHandler.ItemType), args[0]);
+
                     int amount = 1;
-                    int.TryParse(param, out amount);
-                    ItemHandler.Instance.AddItem(amount);
+                    if (args.Length > 1)
+                    {
+                        int.TryParse(args[1], out amount);
+                    }
+
+                    ItemHandler.Instance.AddItem(itemType, amount);
                 }
             },
 
@@ -225,54 +234,34 @@ public class DialogueManager : MonoBehaviour
 
             { "SkipCombat", (param) =>
                 {
-                    //CombatManager.SkipNextCombat();
+                    if (CombatManager.instance != null)
+                    {
+                        CombatManager.instance.SkipCombat();
+                    }
                 }
             },
 
             { "RandomOutcome", (param) =>
                 {
                     bool success = UnityEngine.Random.value > 0.5f;
-
-                    if (success)
-                    {
-                        Debug.Log("Random outcome: Success");
-                        //GameFlags.Set("RandomOutcome", true);
-                    }
-                    else
-                    {
-                        Debug.Log("Random outcome: Failure");
-                        //GameFlags.Set("RandomOutcome", false);
-                    }
+                    GameFlags.Set("RandomOutcome", success);
+                    Debug.Log("Random outcome: " + success);
                 } 
             },
 
             { "SkillCheck", (param) =>
-            {
-                string[] parts = param.Split(',');
-                if (parts.Length != 2) return;
+                {
+                    string[] parts = param.Split(',');
+                    string skillName = parts[0];
+                    int difficulty = int.Parse(parts[1]);
 
-                string skillName = parts[0].Trim();
-                int difficulty = int.Parse(parts[1]);
+                    int skillValue = followerManager.GetHighestSkill(skillName);
 
-                //int skillValue = FollowerStatblock.GetSkills(skillName);
-
-                //bool success = skillValue >= difficulty;
-
-                //Debug.Log($"Skill check {skillName} {skillValue}/{difficulty} : {success}");
-
-                //GameFlags.Set("LastSkillCheck", success);
-            }
+                    bool success = skillValue >= difficulty;
+                    GameFlags.Set("LastSkillCheck", success);
+                }
             }
         };
-
-        //"DamageParty", () => takedamage(int)
-        //"AddHealingDebuff", () => debuff
-        //Add more debuffs
-        //"IncreaseFollowers", () => followerManager.AddFollower(int)
-        //"DecreaseFollowers", () => followerManager.RemoveFollower(int)
-        //"SkipCombat", ()  => skip combat
-        //"GainItem", () => ItemHandler.AddItem("")
-
 
         //how to implement within JSON
         //{
@@ -286,13 +275,7 @@ public class DialogueManager : MonoBehaviour
         //trigger an effect
         if (!string.IsNullOrEmpty(choice.effectID) && effects.TryGetValue(choice.effectID, out var effect))
         {
-            //effect.Invoke();
-        }
-
-        if (!string.IsNullOrEmpty(choice.effectID))
-        {
-            //flag system
-            //GameFlags.Set
+            effect.Invoke(choice.effectParameter);
         }
 
         if (choice.nextLineIndex >= 0)

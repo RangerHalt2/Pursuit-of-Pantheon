@@ -6,41 +6,77 @@ public class ItemHandler : MonoBehaviour
 {
     public static ItemHandler Instance;
 
-    public int itemCount = 0;
+    public enum ItemType
+    {
+        UpgradeToken,
+        RewindToken
+    }
+
+    public int upgradeTokenCount = 0;
+    public int rewindTokenCount = 0;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
-            return;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
-    public void AddItem(int amount = 1)
+    public void AddItem(ItemType item, int amount = 1)
     {
-        itemCount += amount;
-        Debug.Log("Item count is now: " + itemCount);
-    }
-
-    public bool RemoveItem(int amount = 1)
-    {
-        if (itemCount >= amount)
+        switch (item)
         {
-            itemCount -= amount;
-            return true;
+            case ItemType.UpgradeToken:
+                upgradeTokenCount += amount;
+                break;
+
+            case ItemType.RewindToken:
+                rewindTokenCount += amount; 
+                break;
         }
-        return false;
+
+        Debug.Log($"Added {amount} {item}. Total now: {GetItemCount(item)}");
     }
 
-    public bool HasItem()
+    public bool RemoveItem(ItemType item, int amount = 1)
     {
-        return itemCount > 0;
+        if (GetItemCount(item) < amount)
+        {
+            return false;
+        }
+
+        switch (item)
+        {
+            case ItemType.UpgradeToken:
+                upgradeTokenCount -= amount;
+                break;
+
+            case ItemType.RewindToken:
+                rewindTokenCount -= amount;
+                break;
+        }
+
+        return true;
+    }
+
+    public int GetItemCount(ItemType item)
+    {
+        switch (item)
+        {
+            case ItemType.UpgradeToken:
+                return upgradeTokenCount;
+
+            case ItemType.RewindToken:
+                return rewindTokenCount;
+
+            default:
+                return 0;
+        }
     }
 }

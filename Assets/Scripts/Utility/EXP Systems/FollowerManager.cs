@@ -11,6 +11,10 @@ public class FollowerManager : MonoBehaviour
     [Header("References")]
     public PlayerProfile playerProfile;
 
+    //Added by Alyssa
+    [Header("Active Folowers")]
+    public List<FollowerStatblock> equippedFollowers = new List<FollowerStatblock>();
+
     private void Awake()
     {
         if (playerProfile == null)
@@ -34,5 +38,37 @@ public class FollowerManager : MonoBehaviour
         expSystem.amount = Mathf.Max(0, expSystem.amount - amount);
         expSystem.SyncLevel();
         Debug.Log($"{amount} followers removed");
+    }
+
+    //Added by Alyssa
+    public void AddEquippedFollower(FollowerStatblock follower)
+    {
+        if (!equippedFollowers.Contains(follower))
+        {
+            equippedFollowers.Add(follower);
+        }
+    }
+
+    public void RemoveEquippedFollower(FollowerStatblock follower)
+    {
+        equippedFollowers.Remove(follower);
+    }
+
+    public int GetHighestSkill(string skillName)
+    {
+        int highest = 0;
+
+        foreach (var follower in equippedFollowers)
+        {
+            if (follower == null) continue;
+
+            int value = follower.GetSkill(skillName);
+            if (value > highest)
+            {
+                highest = value;
+            }
+        }
+
+        return highest;
     }
 }

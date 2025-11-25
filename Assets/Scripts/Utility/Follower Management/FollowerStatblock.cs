@@ -110,4 +110,21 @@ public class FollowerStatblock : MonoBehaviour, ICombatant
     public GameObject GetGameObject() => gameObject;
 
     public ISkill[] GetSkills() => skills;
+
+    //Added by Alyssa
+    public int GetSkill(string skillName)
+    {
+        switch (skillName.ToLower())
+        {
+            case "power": return Mathf.RoundToInt(power + bonusPower);
+            case "magick": return Mathf.RoundToInt(magick + bonusMagick);
+            case "resilience": return Mathf.RoundToInt(resilience + bonusResilience);
+            case "faith": return Mathf.RoundToInt(faith + bonusFaith);
+            case "agility": return Mathf.RoundToInt(agility + bonusAgility);
+            case "vigor": return Mathf.RoundToInt(vigor + bonusVigor);
+        }
+
+        Debug.LogWarning($"FollowerStatblock: Unknown skill '{skillName}'. Returning 0");
+        return 0;
+    }
 }
