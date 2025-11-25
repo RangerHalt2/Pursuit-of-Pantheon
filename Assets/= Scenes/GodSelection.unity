@@ -3196,12 +3196,6 @@ MonoBehaviour:
   - straeon_tavern_start
   - cloaked_figures_start
   - loki_start
-  - loki_start
-  - loki_start
-  - loki_start
-  - loki_start
-  - loki_start
-  - loki_start
 --- !u!1 &2096493497
 GameObject:
   m_ObjectHideFlags: 0

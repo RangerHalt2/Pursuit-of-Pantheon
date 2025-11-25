@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 799bf8bf79576554c920f1d8b49a8948
+    m_Address: loki_start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 87b9bd16179ea7f4f9b997330661540c
     m_Address: Assets/Scripts/Dialogue System/Dialogue jsons/Quilla/act_three_end.json
     m_ReadOnly: 0

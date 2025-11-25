@@ -98,7 +98,9 @@ public class ShowFollowersInHub : MonoBehaviour
         foreach (FollowerData follower in allFollowers)
         {
             GameObject followerButton = Instantiate(followerButtonPrefab, TrainingFollowersChildren.transform);
-            followerButton.GetComponent<FollowerPrefabController>().SetFollowerName(follower.displayName);
+            // RL: changed to work with Follower Party Button
+            followerButton.GetComponent<FollowerPrefabController>().SetFollower(follower);
+
             Button btn = followerButton.GetComponent<Button>();
             if (btn != null)
             {

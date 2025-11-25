@@ -55,11 +55,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 799bf8bf79576554c920f1d8b49a8948
-    m_Address: loki_start
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9386641ace827eb49a78fee78dd05f02
     m_Address: cloaked_figures_start
     m_ReadOnly: 0

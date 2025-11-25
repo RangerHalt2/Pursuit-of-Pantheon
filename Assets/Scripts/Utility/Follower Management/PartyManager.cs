@@ -39,10 +39,12 @@ public class PartyManager : MonoBehaviour
     // Unequip a follower (moves to unequipped list, sets position to 0)
     public void UnequipFollower(FollowerData follower)
     {
+       
         equippedFollowers.Remove(follower);
         follower.position = 0;
         if (!unequippedFollowers.Contains(follower))
             unequippedFollowers.Add(follower);
+        Debug.Log("PartyManager:" + follower.displayName + "removed from the active party!");
     }
 
     // Add a new follower to unequipped pool
@@ -81,6 +83,7 @@ public class PartyManager : MonoBehaviour
         unequippedFollowers.Remove(follower);
         follower.position = nextPos;
         equippedFollowers.Add(follower);
+        Debug.Log("PartyManager:" + follower.displayName + "added to the party in the next available slot!");
         return true;
     }
 
