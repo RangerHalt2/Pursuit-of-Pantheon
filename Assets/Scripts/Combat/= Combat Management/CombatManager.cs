@@ -16,12 +16,12 @@ public class CombatManager : MonoBehaviour
 
     [Header("Game Progress Settings")]
     [Tooltip("The page index in the UI Manager to go to when winning the game")]
-    public int gameVictoryPageIndex = 0;
+    public int gameVictoryPageIndex = 3;
     [Tooltip("The effect to be created when the player wins a battle")]
     public GameObject victoryEffect;
 
     [Tooltip("The page index in the UI Manager to go to when losing the game")]
-    public int gameLossPageIndex = 0;
+    public int gameLossPageIndex = 4;
     [Tooltip("The effect to be created when the player loses a battle")]
     public GameObject loseEffect;
 

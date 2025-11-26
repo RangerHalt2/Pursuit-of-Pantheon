@@ -111,6 +111,8 @@ public class UIManager : MonoBehaviour
         // If the page index is within the bounds of pages, and a page has been assigned at that index
         if (pageIndex < pages.Count && pages[pageIndex] != null)
         {
+            Debug.Log($"GoToPage called: {pageIndex}, page object: {pages[pageIndex]}");
+
             // Disable all pages
             SetActiveAllPages(false);
             // Activate the specified page
