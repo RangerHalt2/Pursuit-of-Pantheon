@@ -51,7 +51,9 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private Canvas selectedFollowerCanvas;
 
     [Header("Selected Party Members")]
-    
+    [SerializeField] private Canvas selectedPartyCanvas;
+    [SerializeField] private Canvas PartyCanvasChildren;
+
 
     public FollowerData selectedFollower { get; private set;}
 
@@ -65,6 +67,7 @@ public class ShowFollowersInHub : MonoBehaviour
 
         TrainingFollowers.gameObject.SetActive(false);
         HideSelectedFollowerCanvas();
+        HidePartyCanvas();
     }
 
     public void HideSelectedFollowerCanvas()
@@ -76,6 +79,29 @@ public class ShowFollowersInHub : MonoBehaviour
         }
 
         selectedFollowerCanvas.gameObject.SetActive(false);
+    }
+
+    public void HidePartyCanvas()
+    {
+        if(selectedPartyCanvas == null)
+        {
+            Debug.LogWarning("The Designated SelectedParty UI is null, no code ran.");
+            return;
+        }
+        selectedPartyCanvas.gameObject.SetActive(false);
+    }
+
+    public void ShowPartyStuff()
+    {
+        if (selectedPartyCanvas == null || PartyCanvasChildren == null)
+        {
+            Debug.LogWarning("Selected Party Canvas is null or the PartyCanvas Child is null, no code executed");
+            return;
+        }
+        selectedPartyCanvas.gameObject.SetActive(true);
+
+        ShowAllEquippedFollowers();
+        ShowAllUnEquippedFollowers();
     }
 
     public void ShowAllFollowersUI(string building)
@@ -100,8 +126,10 @@ public class ShowFollowersInHub : MonoBehaviour
             GameObject followerButton = Instantiate(followerButtonPrefab, TrainingFollowersChildren.transform);
             // RL: changed to work with Follower Party Button
             followerButton.GetComponent<FollowerPrefabController>().SetFollower(follower);
+            followerButton.GetComponentInChildren<FollowerPartyButton>().showButtons = false;
+            followerButton.GetComponentInChildren<FollowerPartyButton>().HideButtons();
 
-            Button btn = followerButton.GetComponent<Button>();
+            Button btn = followerButton.GetComponentInChildren<FollowerPartyButton>().generalClick;
             if (btn != null)
             {
                 btn.onClick.AddListener(() =>
@@ -150,5 +178,124 @@ public class ShowFollowersInHub : MonoBehaviour
             ret[index++] = follower;
         }
         return ret;
+    }
+
+    public void ShowAllEquippedFollowers()
+    {
+        if (TrainingFollowers == null)
+        {
+            Debug.LogWarning("The Designated TrainingFollowers UI is null, no code ran.");
+            return;
+        }
+
+        TrainingFollowers.gameObject.SetActive(true);
+        //Clear the old ones
+        foreach (Transform children in PartyCanvasChildren.transform)
+        {
+            Destroy(children.gameObject);
+        }
+
+        FollowerData[] allFollowers = GetEquippedFollowers();
+
+        foreach (FollowerData follower in allFollowers)
+        {
+            GameObject followerButton = Instantiate(followerButtonPrefab, PartyCanvasChildren.transform);
+            // RL: changed to work with Follower Party Button
+            followerButton.GetComponent<FollowerPrefabController>().SetFollower(follower);
+            followerButton.GetComponentInChildren<FollowerPartyButton>().showButtons = true;
+            followerButton.GetComponentInChildren<FollowerPartyButton>().ExternalUpdate();
+
+            Button btn = followerButton.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.onClick.AddListener(() =>
+                {
+                    selectedFollower = follower;
+                    selectedName.text = selectedFollower.displayName;
+                    selectedClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
+                    statsBlockText.text = ("Vigor:      " + selectedFollower.vigor + "\n"
+                                          + "Power:      " + selectedFollower.power + "\n"
+                                          + "Magick:     " + selectedFollower.magick + "\n"
+                                          + "Resilience: " + selectedFollower.resilience + "\n"
+                                          + "Faith:      " + selectedFollower.faith + "\n"
+                                          + "Agility:    " + selectedFollower.agility + "\n"
+                    );
+                }
+                ); //End of Listener Function
+            } //End of Null Check
+        } //End of foreach loop
+    }
+
+
+    private FollowerData[] GetEquippedFollowers()
+    {
+        PartyManager gameManager = GameObject.FindAnyObjectByType<PartyManager>();
+        int totalLength = gameManager.equippedFollowers.Count;
+        FollowerData[] ret = new FollowerData[totalLength];
+        int index = 0;
+        foreach (FollowerData follower in gameManager.equippedFollowers)
+        {
+            ret[index++] = follower;
+        }
+        return ret;
+    }
+
+    private FollowerData[] GetUnEquippedFollowers()
+    {
+        PartyManager gameManager = GameObject.FindAnyObjectByType<PartyManager>();
+        int totalLength = gameManager.unequippedFollowers.Count;
+        FollowerData[] ret = new FollowerData[totalLength];
+        int index = 0;
+        foreach (FollowerData follower in gameManager.unequippedFollowers)
+        {
+            ret[index++] = follower;
+        }
+        return ret;
+    }
+
+    public void ShowAllUnEquippedFollowers()
+    {
+        if (TrainingFollowers == null)
+        {
+            Debug.LogWarning("The Designated TrainingFollowers UI is null, no code ran.");
+            return;
+        }
+
+        TrainingFollowers.gameObject.SetActive(true);
+        //Clear the old ones
+        foreach (Transform children in TrainingFollowersChildren.transform)
+        {
+            Destroy(children.gameObject);
+        }
+
+        FollowerData[] allFollowers = GetUnEquippedFollowers();
+
+        foreach (FollowerData follower in allFollowers)
+        {
+            GameObject followerButton = Instantiate(followerButtonPrefab, TrainingFollowersChildren.transform);
+            // RL: changed to work with Follower Party Button
+            followerButton.GetComponent<FollowerPrefabController>().SetFollower(follower);
+            followerButton.GetComponentInChildren<FollowerPartyButton>().showButtons = true;
+            followerButton.GetComponentInChildren<FollowerPartyButton>().ExternalUpdate();
+
+            Button btn = followerButton.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.onClick.AddListener(() =>
+                {
+                    selectedFollower = follower;
+                    selectedName.text = selectedFollower.displayName;
+                    selectedClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
+                    statsBlockText.text = ("Vigor:      " + selectedFollower.vigor + "\n"
+                                          + "Power:      " + selectedFollower.power + "\n"
+                                          + "Magick:     " + selectedFollower.magick + "\n"
+                                          + "Resilience: " + selectedFollower.resilience + "\n"
+                                          + "Faith:      " + selectedFollower.faith + "\n"
+                                          + "Agility:    " + selectedFollower.agility + "\n"
+                    );
+                }
+                ); //End of Listener Function
+            } //End of Null Check
+        } //End of foreach loop
     }
 }

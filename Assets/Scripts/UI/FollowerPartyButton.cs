@@ -11,6 +11,10 @@ public class FollowerPartyButton : MonoBehaviour
     [SerializeField] private Button addButton;
     [SerializeField] private Button removeButton;
 
+    public Button generalClick;
+
+    private ShowFollowersInHub hubManager;
+
     void Awake()
     {
         // Find the party manager in runtime
@@ -19,6 +23,24 @@ public class FollowerPartyButton : MonoBehaviour
         {
             Debug.Log("FollowerPartyButton: PartyManager not Found!");
         }
+    }
+
+    private void Start()
+    {
+        hubManager = GameObject.FindAnyObjectByType<ShowFollowersInHub>();
+    }
+
+    private void UpdateUI()
+    {
+        if (hubManager != null)
+        {
+            hubManager.ShowPartyStuff();
+        }
+    }
+
+    public void ExternalUpdate()
+    {
+        RefreshButtons();
     }
 
     public void SetFollower(FollowerData followerData)
@@ -68,9 +90,17 @@ public class FollowerPartyButton : MonoBehaviour
         // Set is Equipped to false if the follower's position is 0, they are unequipped
         bool isEquipped = follower.position > 0;
 
+        UpdateUI();
+
         // The add button is enabled if the follower is unequipped, and disabled if they are
         addButton.gameObject.SetActive(!isEquipped);
         // The remove button is enabled if the follower is equipped, and disabled if they aren't
         removeButton.gameObject.SetActive(isEquipped);
+    }
+
+    public void HideButtons()
+    {
+        addButton.gameObject.SetActive(false);
+        removeButton.gameObject.SetActive(false);
     }
 }

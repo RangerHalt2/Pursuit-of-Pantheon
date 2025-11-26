@@ -278,6 +278,7 @@ MonoBehaviour:
   showButtons: 0
   addButton: {fileID: 1107489477783185177}
   removeButton: {fileID: 4387589278009804158}
+  generalClick: {fileID: 7001017911631033272}
 --- !u!1 &5400620448343449530
 GameObject:
   m_ObjectHideFlags: 0
