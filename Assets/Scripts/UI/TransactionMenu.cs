@@ -20,6 +20,11 @@ public class TransactionMenu : MonoBehaviour
 
     private CombatManager cm;
 
+    private void OnEnable()
+    {
+        RefreshTokenText();
+    }
+
     private void Start()
     {
         buyUpgradeButton.onClick.AddListener(OnBuyUpgrade);
