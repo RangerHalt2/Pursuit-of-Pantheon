@@ -32,6 +32,8 @@ public class CombatManager : MonoBehaviour
     [Tooltip("The teamIDs for the player's followers.")]
     [SerializeField] private int[] enemyTeamIDs;
 
+    public bool isInShop = false;
+
     private SceneController sceneController;
 
     #region CombatantTracking
@@ -131,6 +133,7 @@ public class CombatManager : MonoBehaviour
     private void TickCombat()
     {
         if (!registerd) return;
+        if (isInShop) return;
         // Update the Tick Timer
         actionTickTimer += Time.deltaTime;
         // If the actionTickInterval has passed

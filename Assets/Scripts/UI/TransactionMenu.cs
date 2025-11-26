@@ -18,6 +18,8 @@ public class TransactionMenu : MonoBehaviour
     [Header("Page Indexes")]
     public int losePageIndex = 4;
 
+    private CombatManager cm;
+
     private void Start()
     {
         buyUpgradeButton.onClick.AddListener(OnBuyUpgrade);
@@ -25,6 +27,7 @@ public class TransactionMenu : MonoBehaviour
         buyRewindButton.onClick.AddListener(OnBuyRewind);
         buyMultipleRewindButton.onClick.AddListener(OnMultipleBuyRewind);
         exitShopButton.onClick.AddListener(OnExitShop);
+        cm = GameObject.FindAnyObjectByType<CombatManager>();
     }
 
     public void RefreshTokenText()
@@ -66,5 +69,6 @@ public class TransactionMenu : MonoBehaviour
         {
             lose.Refresh();
         }
+        cm.isInShop = false;
     }
 }

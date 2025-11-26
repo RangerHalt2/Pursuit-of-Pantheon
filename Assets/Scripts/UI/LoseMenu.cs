@@ -11,10 +11,13 @@ public class LoseMenu : MonoBehaviour
     public int shopPageIndex = 5;
     public int losePageIndex = 4;
 
+    private CombatManager cm;
+
     private void Start()
     {
         rewindButton.onClick.AddListener(OnRewindPressed);
         backToHubButton.onClick.AddListener(OnBackToHubPressed);
+        cm = GameObject.FindAnyObjectByType<CombatManager>();
     }
 
     public void OnRewindPressed()
@@ -29,6 +32,7 @@ public class LoseMenu : MonoBehaviour
         }
         else
         {
+            cm.isInShop = true;
             int shopPageIndex = 5;
             Debug.Log("No Rewind Token. Opening shop page");
 
