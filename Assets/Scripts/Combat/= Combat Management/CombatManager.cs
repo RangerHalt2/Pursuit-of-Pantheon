@@ -2,6 +2,7 @@
 // Meant to manage combat in game
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEditor.EditorTools;
 using UnityEngine;
@@ -90,8 +91,26 @@ public class CombatManager : MonoBehaviour
         combatants.Clear();
         // Add all followers and enemies to the combatants list
         yield return new WaitForSeconds(0.2f);
-        FollowerSpawner spawner = GameObject.FindAnyObjectByType<FollowerSpawner>();
-        spawner.SpawnEquippedFollowers();
+
+        FollowerSpawner followerSpawner = GameObject.FindAnyObjectByType<FollowerSpawner>();
+        if (followerSpawner != null)
+        {
+            followerSpawner.SpawnEquippedFollowers();
+        }
+        else
+        {
+            Debug.LogError("CombatManager: FollowerSpawner not Found");
+        } 
+
+        EnemySpawner enemySpawner = GameObject.FindAnyObjectByType<EnemySpawner>();
+        if (enemySpawner != null)
+        {
+            enemySpawner.SpawnEncounterEnemies();
+        }
+        else
+        {
+            Debug.LogError("CombatManager: EnemySpawner not Found");
+        }
 
         var followers = FindObjectsByType<FollowerStatblock>(FindObjectsSortMode.None);
         foreach (var follower in followers)
@@ -232,4 +251,28 @@ public class CombatManager : MonoBehaviour
 
         CheckCombatState();
     }
-}
+
+    public void RestartBattle()
+    {
+        Time.timeScale = 1f;
+        UIManager.instance.GoToPage(0);
+        StartCoroutine(RestartRoutine());
+    }
+
+    private IEnumerator RestartRoutine()
+    {
+        registerd = false;
+
+        // Destroy all existing combatants
+        var healthObjects = FindObjectsByType<Health>(FindObjectsSortMode.None);
+        foreach (var h in healthObjects)
+        {
+            Destroy(h.gameObject);
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        // Re-register Combatants
+        StartCoroutine(RegisterCombatants());
+    }
+}   

@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4923628452666122431}
   - component: {fileID: 2599348098907893592}
   - component: {fileID: 7632734570840784525}
+  - component: {fileID: -1056062740441199340}
   m_Layer: 0
   m_Name: Test Enemy
   m_TagString: Enemy
@@ -147,6 +148,9 @@ MonoBehaviour:
   deathEffect: {fileID: 5415495801983142025, guid: 8b0262d8253086c41a87049f1a53f693, type: 3}
   followerStats: {fileID: 0}
   enemyStats: {fileID: 2599348098907893592}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2599348098907893592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,15 +167,16 @@ MonoBehaviour:
   displayName: Test_Enemy
   teamID: 1
   position: 0
-  maxHP: 5
-  currentHP: 1
+  maxHP: 7
+  currentHP: 7
   vigor: 1
-  power: 1
+  power: 2
   magick: 1
   resilience: 1
   faith: 1
   agility: 5
-  skillComponents: []
+  skillComponents:
+  - {fileID: -1056062740441199340}
   actionProgress: 0
 --- !u!114 &7632734570840784525
 MonoBehaviour:
@@ -188,6 +193,20 @@ MonoBehaviour:
   alliedTeamIds: 0100000002000000
   enemyTeamIds: 00000000
   selectedTactic: 0
+--- !u!114 &-1056062740441199340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796101736210973026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4b33556f0df2649a8fbbdfc512698a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  _accuracy: 100
+  attackModifier: 1
 --- !u!1001 &7276341312693194476
 PrefabInstance:
   m_ObjectHideFlags: 0
