@@ -3153,6 +3153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2119218302}
+    - targetCorrespondingSourceObject: {fileID: 5780261812266459097, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119218303}
     - targetCorrespondingSourceObject: {fileID: 371530954149985018, guid: 4dde1941164abcd4c9157633f1c486d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031461859}
@@ -3350,6 +3353,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   MainMenu: 
+--- !u!114 &2119218303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119218299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eadbd1f9f15fe645ae19c6e02c8ba60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemHandler
+  upgradeTokenCount: 0
+  rewindTokenCount: 0
 --- !u!1 &2142273008
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,10 +50,15 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private TextMeshProUGUI selectedClass;
     [SerializeField] private Canvas selectedFollowerCanvas;
 
-    [Header("Selected Party Members")]
+    [Header("Selected Promotion Canvas UI Elements")]
+    [SerializeField] private Canvas promotionCanvas;
+
+    [Header("Selected Party Canvas UI Elements")]
     [SerializeField] private Canvas selectedPartyCanvas;
     [SerializeField] private Canvas PartyCanvasChildren;
 
+    [Header("Raycast Blockers")]
+    [SerializeField] private Image mainHubBLCKER;
 
     public FollowerData selectedFollower { get; private set;}
 
@@ -89,6 +94,7 @@ public class ShowFollowersInHub : MonoBehaviour
             return;
         }
         selectedPartyCanvas.gameObject.SetActive(false);
+        if (mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(false);
     }
 
     public void ShowPartyStuff()
@@ -102,6 +108,7 @@ public class ShowFollowersInHub : MonoBehaviour
 
         ShowAllEquippedFollowers();
         ShowAllUnEquippedFollowers();
+        if(mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(true);
     }
 
     public void ShowAllFollowersUI(string building)
@@ -113,6 +120,7 @@ public class ShowFollowersInHub : MonoBehaviour
         }
 
         TrainingFollowers.gameObject.SetActive(true);
+        if (mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(true);
         //Clear the old ones
         foreach (Transform children in TrainingFollowersChildren.transform)
         {
@@ -150,10 +158,7 @@ public class ShowFollowersInHub : MonoBehaviour
                             selectedFollowerCanvas.gameObject.SetActive(true);
                             break;
                         case "promotion":
-
-                            break;
-                        case "party":
-
+                            promotionCanvas.gameObject.SetActive(true);
                             break;
                     }
                     

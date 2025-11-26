@@ -19,7 +19,7 @@ public class FollowerPartyButton : MonoBehaviour
     {
         // Find the party manager in runtime
         partyManager = FindFirstObjectByType<PartyManager>();
-        if (partyManager != null)
+        if (partyManager == null)
         {
             Debug.Log("FollowerPartyButton: PartyManager not Found!");
         }
