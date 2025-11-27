@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 2958553185233095178}
   m_Layer: 0
   m_Name: FollowerPrefab
-  m_TagString: Untagged
+  m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
   _accuracy: 100
   attackModifier: 1.46
+  magical: 0
 --- !u!1001 &7873813670913893551
 PrefabInstance:
   m_ObjectHideFlags: 0

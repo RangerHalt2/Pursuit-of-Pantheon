@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,15 +15,25 @@ public class FinalScore : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DelayedScore());
+    }
+
+    private IEnumerator DelayedScore()
+    {
+        yield return new WaitForSeconds(0.2f);
+
         scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+        scoreManager.CalculateTotalScore();
         if (scoreManager != null)
         {
-            totalScore.text = "Total Score: "+scoreManager.totalScore;
+            totalScore.text = "Total Score: " + scoreManager.totalScore;
             enemyScore.text = "Enemy Kill Score: " + scoreManager.enemyKillScore;
             recruitScore.text = "Recruitement Score " + scoreManager.recruitScore;
             trainingScore.text = "Training Score " + scoreManager.statTrainingScore;
             promoteScore.text = "Promotion Score " + scoreManager.promotionScore;
         }
+        else
+            Debug.Log("Score Manager is null");
     }
 
 }

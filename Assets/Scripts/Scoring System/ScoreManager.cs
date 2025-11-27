@@ -111,7 +111,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
 
-    private void CalculateTotalScore()
+    public void CalculateTotalScore()
     {
         // Calculate the sum of all score types
         totalScore = enemyKillScore + recruitScore + statTrainingScore + promotionScore;

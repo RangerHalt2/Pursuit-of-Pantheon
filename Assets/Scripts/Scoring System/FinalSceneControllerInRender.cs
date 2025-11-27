@@ -10,6 +10,7 @@ public class FinalSceneControllerInRender : MonoBehaviour
     private void Start()
     {
         sc = GameObject.FindAnyObjectByType<SceneController>();
+        mainMenu = GetComponent<Button>();
         if (sc != null)
         {
             mainMenu.onClick.AddListener(() =>

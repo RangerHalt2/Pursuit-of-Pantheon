@@ -1145,8 +1145,8 @@ RectTransform:
   - {fileID: 636224761}
   - {fileID: 1134444075}
   - {fileID: 97885971}
-  - {fileID: 637428501}
   - {fileID: 998405106}
+  - {fileID: 637428501}
   - {fileID: 1495090675}
   - {fileID: 693828603}
   - {fileID: 1639053380}
@@ -4363,6 +4363,7 @@ MonoBehaviour:
   promotionBtnOne: {fileID: 1171337991}
   promotionBtnTwo: {fileID: 1009718933}
   promotionImage: {fileID: 643634598}
+  currentItemCount: {fileID: 970660032}
   selectedPartyCanvas: {fileID: 1495090678}
   PartyCanvasChildren: {fileID: 298946951}
   mainHubBLCKER: {fileID: 637428502}

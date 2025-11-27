@@ -135,6 +135,11 @@ public class Health : MonoBehaviour
 
         // Remove the combatant from the list
         CombatManager.instance.RemoveCombatant(GetComponent<ICombatant>());
+        
+        if(teamID == 1)
+        {
+            ScoreManager.Instance.enemyKillScore += 15;
+        }
 
         //Debug.Log(gameObject.name + " has died.");
         //Delay destruction by a frame

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -63,6 +64,7 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private Button promotionBtnOne;
     [SerializeField] private Button promotionBtnTwo;
     [SerializeField] private Image promotionImage;
+    [SerializeField] private TextMeshProUGUI currentItemCount;
 
     [Header("Selected Party Canvas UI Elements")]
     [SerializeField] private Canvas selectedPartyCanvas;
@@ -72,7 +74,23 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private Image mainHubBLCKER;
     [SerializeField] private Image nonPartyScrollBLCKER;
 
+
+    private ItemHandler im;
+
+
     public FollowerData selectedFollower { get; private set;}
+
+
+    private void Start()
+    {
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(0.2f);
+        im = GameObject.FindAnyObjectByType<ItemHandler>();
+    }
 
     public void HideFollowerCanvas()
     {
@@ -187,6 +205,8 @@ public class ShowFollowersInHub : MonoBehaviour
                             break;
                         case "promotion":
                             promotionCanvas.gameObject.SetActive(true);
+                            if(im != null)
+                                currentItemCount.text = ""+im.upgradeTokenCount + " / 1";
                             break;
                     }
                     
@@ -208,10 +228,12 @@ public class ShowFollowersInHub : MonoBehaviour
             if (promotionOptionsField != null && promotionOptionsField.IsStatic)
                 promotionOptions = promotionOptionsField.GetValue(null) as Type[];
 
-            if(promotionOptions != null && promotionOptions.Length > 0)
+            if(promotionOptions != null && promotionOptions.Length > 0 && im.upgradeTokenCount > 0)
             {
                 promotionOption1.text = promotionOptions[0].Name;
                 promotionOption2.text = promotionOptions[1].Name;
+                promotionBtnOne.gameObject.SetActive(true);
+                promotionBtnTwo.gameObject.SetActive(true);
             }
             else
             {
@@ -219,7 +241,7 @@ public class ShowFollowersInHub : MonoBehaviour
                 promotionBtnTwo.gameObject.SetActive(false);
             }
 
-                promotionBtnOne.onClick.AddListener(() => AssignListenerToButton(promotionOptions, 0));
+            promotionBtnOne.onClick.AddListener(() => AssignListenerToButton(promotionOptions, 0));
             promotionBtnTwo.onClick.AddListener(() => AssignListenerToButton(promotionOptions, 1));
 
         }
@@ -238,11 +260,18 @@ public class ShowFollowersInHub : MonoBehaviour
             return;
         }
 
+        if (im.upgradeTokenCount == 0) return;
+
         // Update the selected follower's data
         selectedFollower.classID = newClassSO.classID;
         promotionBtnOne.gameObject.SetActive(false);
         promotionBtnTwo.gameObject.SetActive(false);
         promotionClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
+
+        ScoreManager.Instance.promotionScore += 100;
+
+        TurnManager.Instance.SpendTurn();
+
     }
 
     private FollowerData[] GetAllFollowersFromManager()
