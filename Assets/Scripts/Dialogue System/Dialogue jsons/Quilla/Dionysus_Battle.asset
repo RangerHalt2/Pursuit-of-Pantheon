@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartBattleOutCome
   hasStoryAfterBattle: 1
   nextDialogueJSON: {fileID: 4900000, guid: ff8ee0aa30ac29c4cb08ba61a14a398b, type: 3}
-  enemiesToSpawn: []
+  enemiesToSpawn:
+  - prefabIndex: 2
+    spawnIndex: 0
+  - prefabIndex: 2
+    spawnIndex: 2
+  - prefabIndex: 1
+    spawnIndex: 1
