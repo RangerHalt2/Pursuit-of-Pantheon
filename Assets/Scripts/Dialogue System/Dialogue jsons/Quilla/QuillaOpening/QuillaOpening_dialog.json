@@ -55,5 +55,8 @@
             "nextLineIndex": -1,
             "leadsTo": "ReturnToHub"
         }
-    ]
+    ],
+    "effectID": "GainItem",
+    "effectParameter": "UpgradeToken,1"
+
 }
