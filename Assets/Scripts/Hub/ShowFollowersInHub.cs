@@ -52,6 +52,7 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private TextMeshProUGUI selectedName;
     [SerializeField] private TextMeshProUGUI selectedClass;
     [SerializeField] private Canvas selectedFollowerCanvas;
+    [SerializeField] private Image trainingImage; 
 
     [Header("Selected Promotion Canvas UI Elements")]
     [SerializeField] private Canvas promotionCanvas;
@@ -61,6 +62,7 @@ public class ShowFollowersInHub : MonoBehaviour
     [SerializeField] private TextMeshProUGUI promotionOption2;
     [SerializeField] private Button promotionBtnOne;
     [SerializeField] private Button promotionBtnTwo;
+    [SerializeField] private Image promotionImage;
 
     [Header("Selected Party Canvas UI Elements")]
     [SerializeField] private Canvas selectedPartyCanvas;
@@ -175,6 +177,8 @@ public class ShowFollowersInHub : MonoBehaviour
                                           + "Faith:      " + selectedFollower.faith + "\n"
                                           + "Agility:    " + selectedFollower.agility + "\n"
                     );
+                    trainingImage.sprite = followerButton.GetComponent<FollowerPrefabController>().followerSprite.sprite;
+                    promotionImage.sprite = followerButton.GetComponent<FollowerPrefabController>().followerSprite.sprite;
                     SetPromotionData(follower);
                     switch (building)
                     {

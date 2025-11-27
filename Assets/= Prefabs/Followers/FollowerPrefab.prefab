@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1161749941
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5e5fbe13ba884804aaedba5a03971d7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,8 +105,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TempSpriteChanger
   sprites:
   - {fileID: 21300000, guid: 5e5fbe13ba884804aaedba5a03971d7e, type: 3}
-  - {fileID: 21300000, guid: 769080854db918d46af0907e74d08d55, type: 3}
-  - {fileID: 21300000, guid: bc4bcd42012298e4793f50bcd033b57c, type: 3}
+  - {fileID: 21300000, guid: e0d396a172feb3540ab0495b1a5e84e6, type: 3}
+  - {fileID: 21300000, guid: e0d396a172feb3540ab0495b1a5e84e6, type: 3}
+  - {fileID: 21300000, guid: c50ad43bfa59fae41a7f993e24db1422, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: c50ad43bfa59fae41a7f993e24db1422, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: c50ad43bfa59fae41a7f993e24db1422, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
+  - {fileID: 21300000, guid: bbde9dd1865b0b34a826b5904ef8e8d7, type: 3}
+  - {fileID: 21300000, guid: bbde9dd1865b0b34a826b5904ef8e8d7, type: 3}
+  - {fileID: 21300000, guid: bbde9dd1865b0b34a826b5904ef8e8d7, type: 3}
+  - {fileID: 21300000, guid: f69b2256875c482498dd921bff9864d1, type: 3}
+  - {fileID: 21300000, guid: f69b2256875c482498dd921bff9864d1, type: 3}
+  - {fileID: 21300000, guid: 874cf2270ac2cfb499b7294092a41411, type: 3}
 --- !u!1 &8127696437970686377
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TempSpriteChanger : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
     
     private SpriteRenderer spriteRenderer;
+    private Image spriteAlt;
 
     private FollowerStatblock fSB;
 
@@ -13,21 +16,22 @@ public class TempSpriteChanger : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         fSB = GetComponentInParent<FollowerStatblock>();
+        spriteAlt = GetComponent<Image>();
     }
 
     private void Update()
     {
-        if(fSB.classID == 0)
+        int classID = 0;
+        if (fSB == null)
         {
-            spriteRenderer.sprite = sprites[0];
+            FollowerPrefabController controller = GetComponentInParent<FollowerPrefabController>();
+            classID = controller.followerData.classID;
         }
-        if(fSB.classID == 1)
-        {
-            spriteRenderer.sprite = sprites[1];
-        }
-        if(fSB.classID == 2)
-        {
-            spriteRenderer.sprite = sprites[2];
-        }
+        else
+            classID = fSB.classID;
+        if(spriteRenderer != null)
+            spriteRenderer.sprite = sprites[classID];
+        if(spriteAlt != null)
+            spriteAlt.sprite = sprites[classID];
     }
 }

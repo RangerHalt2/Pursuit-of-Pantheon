@@ -1141,6 +1141,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 23039493}
   - {fileID: 636224761}
   - {fileID: 1134444075}
   - {fileID: 97885971}
@@ -1149,7 +1150,6 @@ RectTransform:
   - {fileID: 1495090675}
   - {fileID: 693828603}
   - {fileID: 1639053380}
-  - {fileID: 23039493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -116.42615, w: 0}
+  m_margin: {x: -117.81418, y: 0, z: -116.42615, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4354,6 +4354,7 @@ MonoBehaviour:
   selectedName: {fileID: 1106969614}
   selectedClass: {fileID: 1636698370}
   selectedFollowerCanvas: {fileID: 1839992616}
+  trainingImage: {fileID: 904891648}
   promotionCanvas: {fileID: 693828606}
   promotionName: {fileID: 1786010401}
   promotionClass: {fileID: 915048162}
@@ -4361,6 +4362,7 @@ MonoBehaviour:
   promotionOption2: {fileID: 227678691}
   promotionBtnOne: {fileID: 1171337991}
   promotionBtnTwo: {fileID: 1009718933}
+  promotionImage: {fileID: 643634598}
   selectedPartyCanvas: {fileID: 1495090678}
   PartyCanvasChildren: {fileID: 298946951}
   mainHubBLCKER: {fileID: 637428502}
@@ -4377,7 +4379,7 @@ GameObject:
   - component: {fileID: 904891649}
   - component: {fileID: 904891648}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TrainingPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5966,7 +5968,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -112.30853, w: 0}
+  m_margin: {x: -127.17418, y: 0, z: -112.30853, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8710,7 +8712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1839992613
 RectTransform:
   m_ObjectHideFlags: 0
