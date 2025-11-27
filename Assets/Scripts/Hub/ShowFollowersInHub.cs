@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -52,6 +55,12 @@ public class ShowFollowersInHub : MonoBehaviour
 
     [Header("Selected Promotion Canvas UI Elements")]
     [SerializeField] private Canvas promotionCanvas;
+    [SerializeField] private TextMeshProUGUI promotionName;
+    [SerializeField] private TextMeshProUGUI promotionClass;
+    [SerializeField] private TextMeshProUGUI promotionOption1;
+    [SerializeField] private TextMeshProUGUI promotionOption2;
+    [SerializeField] private Button promotionBtnOne;
+    [SerializeField] private Button promotionBtnTwo;
 
     [Header("Selected Party Canvas UI Elements")]
     [SerializeField] private Canvas selectedPartyCanvas;
@@ -59,6 +68,7 @@ public class ShowFollowersInHub : MonoBehaviour
 
     [Header("Raycast Blockers")]
     [SerializeField] private Image mainHubBLCKER;
+    [SerializeField] private Image nonPartyScrollBLCKER;
 
     public FollowerData selectedFollower { get; private set;}
 
@@ -72,6 +82,7 @@ public class ShowFollowersInHub : MonoBehaviour
 
         TrainingFollowers.gameObject.SetActive(false);
         HideSelectedFollowerCanvas();
+        HidePromotionCanvas();
         HidePartyCanvas();
     }
 
@@ -86,6 +97,15 @@ public class ShowFollowersInHub : MonoBehaviour
         selectedFollowerCanvas.gameObject.SetActive(false);
     }
 
+    public void HidePromotionCanvas()
+    {
+        if(promotionCanvas == null)
+        {
+            Debug.LogWarning("The Designated Promotion UI is null, no code ran.");
+            return;
+        }
+        promotionCanvas.gameObject.SetActive(false);
+    }
     public void HidePartyCanvas()
     {
         if(selectedPartyCanvas == null)
@@ -95,6 +115,7 @@ public class ShowFollowersInHub : MonoBehaviour
         }
         selectedPartyCanvas.gameObject.SetActive(false);
         if (mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(false);
+        if (nonPartyScrollBLCKER != null) nonPartyScrollBLCKER.gameObject.SetActive(false);
     }
 
     public void ShowPartyStuff()
@@ -108,7 +129,7 @@ public class ShowFollowersInHub : MonoBehaviour
 
         ShowAllEquippedFollowers();
         ShowAllUnEquippedFollowers();
-        if(mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(true);
+        if(nonPartyScrollBLCKER != null) nonPartyScrollBLCKER.gameObject.SetActive(true);
     }
 
     public void ShowAllFollowersUI(string building)
@@ -144,6 +165,8 @@ public class ShowFollowersInHub : MonoBehaviour
                 {
                     selectedFollower = follower;
                     selectedName.text = selectedFollower.displayName;
+                    promotionName.text = selectedFollower.displayName;
+                    promotionClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
                     selectedClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
                     statsBlockText.text = ("Vigor:      " + selectedFollower.vigor + "\n"
                                           + "Power:      " + selectedFollower.power + "\n"
@@ -152,6 +175,7 @@ public class ShowFollowersInHub : MonoBehaviour
                                           + "Faith:      " + selectedFollower.faith + "\n"
                                           + "Agility:    " + selectedFollower.agility + "\n"
                     );
+                    SetPromotionData(follower);
                     switch (building)
                     {
                         case "training":
@@ -167,6 +191,55 @@ public class ShowFollowersInHub : MonoBehaviour
             } //End of Null Check
         } //End of foreach loop
     } //End of ShowAllFollowersUI
+
+    private void SetPromotionData(FollowerData follower)
+    {
+        FollowerClass selectedFollowerClassData;
+        selectedFollowerClassData = FollowerFactory.GetClassByID(follower.classID);
+        var type = Type.GetType(selectedFollowerClassData.unityClassName);
+        if (type != null && typeof(BaseClass).IsAssignableFrom(type))
+        {
+            var promotionOptionsField = type.GetField("promotionOptions");
+            Type[] promotionOptions = null;
+            if (promotionOptionsField != null && promotionOptionsField.IsStatic)
+                promotionOptions = promotionOptionsField.GetValue(null) as Type[];
+
+            if(promotionOptions != null && promotionOptions.Length > 0)
+            {
+                promotionOption1.text = promotionOptions[0].Name;
+                promotionOption2.text = promotionOptions[1].Name;
+            }
+            else
+            {
+                promotionBtnOne.gameObject.SetActive(false);
+                promotionBtnTwo.gameObject.SetActive(false);
+            }
+
+                promotionBtnOne.onClick.AddListener(() => AssignListenerToButton(promotionOptions, 0));
+            promotionBtnTwo.onClick.AddListener(() => AssignListenerToButton(promotionOptions, 1));
+
+        }
+    }
+
+    private void AssignListenerToButton(Type [] promotionOptions,int index)
+    {
+        // Get the new class type and its FollowerClass ScriptableObject
+        var newClassType = promotionOptions[index];
+        var allClasses = Resources.LoadAll<FollowerClass>("ClassStats");
+        var newClassSO = allClasses.FirstOrDefault(fc => fc.unityClassName == newClassType.FullName);
+
+        if (newClassSO == null)
+        {
+            Debug.LogError($"No FollowerClass found for type {newClassType.FullName}");
+            return;
+        }
+
+        // Update the selected follower's data
+        selectedFollower.classID = newClassSO.classID;
+        promotionBtnOne.gameObject.SetActive(false);
+        promotionBtnTwo.gameObject.SetActive(false);
+        promotionClass.text = ("Class: " + ClassNames.GetNameById(selectedFollower.classID));
+    }
 
     private FollowerData[] GetAllFollowersFromManager()
     {
