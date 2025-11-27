@@ -6247,11 +6247,11 @@ ParticleSystem:
         m_RotationOrder: 4
     m_Range: {x: 0, y: 1}
   ForceModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -99
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7874,7 +7874,7 @@ ParticleSystem:
     - serializedVersion: 3
       emitter: {fileID: 0}
       type: 0
-      properties: 0
+      properties: 1
       emitProbability: 1
   LightsModule:
     enabled: 0
