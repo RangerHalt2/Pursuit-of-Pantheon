@@ -6,20 +6,6 @@
       "eventName": "Dialogue",
       "loadDialogueScene": true,
       "dialogueFileName": "dionysus_start"
-    },
-    {
-      "act": 2,
-      "turn": 3,
-      "eventName": "Test",
-      "loadDialogueScene": false,
-      "dialogueFileName": ""
-    },
-    {
-      "act": 3,
-      "turn": 1,
-      "eventName": "Test",
-      "loadDialogueScene": false,
-      "dialogueFileName": ""
     }
   ]
 }
