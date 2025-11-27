@@ -2,6 +2,7 @@
 // This script is designed to manage the bootstrapper ensuring one instance of it is constantly active
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Bootstrapper : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class Bootstrapper : MonoBehaviour
     public bool combatLeadsToDialogue = false;
     [HideInInspector]
     public TextAsset dialogueAfterBattle;
+
+    [HideInInspector]
+    public List<EnemySpawnData> enemiesForNextBattle = new List<EnemySpawnData>();
 
     public void HandleCombatEnd()
     {

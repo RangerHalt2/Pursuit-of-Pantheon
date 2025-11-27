@@ -11,10 +11,11 @@ public class BasicAttack : SkillBase
     [Header("Skill Configuration")]
     [Tooltip("The modifier applied to an attack.")]
     [Range(0, 2)] public float attackModifier = 1f;
+    [SerializeField] private bool magical = false;
     
     // The attack stat used by the skill
     private float skillAtk;
-    
+    private float targetDef;
 
     // Function of the MultiAttack Skill
     public override void UseSkill(GameObject target)
@@ -32,11 +33,26 @@ public class BasicAttack : SkillBase
             return;
         }
 
-        // Get the modified Attack stat of the caster
-        skillAtk = (GetStatFromObject(this.gameObject, "Power") + GetStatFromObject(this.gameObject, "BonusPower"))  * attackModifier;
+        if (!magical)
+        {
+            // Get the modified Attack stat of the caster
+            skillAtk = (GetStatFromObject(this.gameObject, "Power") + GetStatFromObject(this.gameObject, "BonusPower"))  * attackModifier;
+        }
+        else
+        {
+            // Get the modified Attack stat of the caster
+            skillAtk = (GetStatFromObject(this.gameObject, "Magick") + GetStatFromObject(this.gameObject, "BonusMagick"))  * attackModifier;
+        }
 
-        // Find the defense of the assigned target
-        float targetDef = GetStatFromObject(target, "Resilience");
+        if (!magical)
+        {
+            // Find the defense of the assigned target
+            targetDef = GetStatFromObject(target, "Resilience");
+        }
+        else
+        {
+            targetDef = GetStatFromObject(target, "Faith");
+        }
 
         // Calculate Skill Damage
         float damage = skillAtk - targetDef;

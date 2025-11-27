@@ -63,6 +63,7 @@ public class TrainingBuilding : MonoBehaviour
         }//End of Switch
 
         hubManager.HideFollowerCanvas();
+        ScoreManager.Instance.statTrainingScore++;
         turnManager.SpendTurn();
 
         return;

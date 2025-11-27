@@ -33,6 +33,15 @@ EditorBuildSettings:
     path: Assets/= Scenes/HubWorld.unity
     guid: c029868b43c355c40af52a76a493aefe
   - enabled: 1
+    path: Assets/= Scenes/Character UI.unity
+    guid: 90362e96306ea974aab0bdbdf2684cd3
+  - enabled: 1
+    path: Assets/= Scenes/EndGameScreen.unity
+    guid: 6fd1227b5b0c2c4479f906826580f754
+  - enabled: 1
+    path: Assets/= Scenes/SampleScene.unity
+    guid: 05f37c7f1c89e0146b80fca317f62554
+  - enabled: 1
     path: Assets/= Scenes/DialogueTesting.unity
     guid: c65068acee4a96f45bc440279ddd8a8e
   m_configObjects:

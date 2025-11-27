@@ -298,6 +298,7 @@ public class DialogueManager : MonoBehaviour
         {
             RecruitmentManager rm = GameObject.FindAnyObjectByType<RecruitmentManager>(); //This will always be loaded
             rm.RecruitNewFollower();
+            ScoreManager.Instance.recruitScore += 50;
         }
 
         HandleDialogueOutcome(leadsTo);

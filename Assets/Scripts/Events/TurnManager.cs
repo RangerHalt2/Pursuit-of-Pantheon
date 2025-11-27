@@ -27,6 +27,10 @@ public class TurnManager : MonoBehaviour
     SceneController sceneController;
     EventManager eventManager;
 
+    private int numOfScheduledEvents = 0;
+    private int scheduledEventsPreformed = 0;
+
+
     private ScheduledEventList scheduledEventList;
     #endregion
 
@@ -59,6 +63,7 @@ public class TurnManager : MonoBehaviour
         if (jsonFile != null)
         {
             scheduledEventList = JsonUtility.FromJson<ScheduledEventList>(jsonFile.text);
+            numOfScheduledEvents = scheduledEventList.scheduledEvents.Length;
             Debug.Log("TurnManager: Scheduled events successfully loaded!");
         }
         else
@@ -82,6 +87,11 @@ public class TurnManager : MonoBehaviour
         {
             // Decrease it by one
             reCooldown--;
+        }
+
+        if(scheduledEventsPreformed == numOfScheduledEvents && scheduledEventsPreformed > 0)
+        {
+            sceneController.GoToScene("EndGameScreen");
         }
 
         // If the currentAct is less than or equal to the amount of acts in the game...
@@ -188,6 +198,7 @@ public class TurnManager : MonoBehaviour
                 if (!string.IsNullOrEmpty(e.dialogueFileName))
                 {
                     Debug.Log("Turn Manager: Scheduled dialogue event " + e.eventName + " triggered with dialogue " + e.dialogueFileName);
+                    scheduledEventsPreformed++;
                     StartDialogueEvent(e.dialogueFileName, e.loadDialogueScene);
                     ret = true;
                 }
