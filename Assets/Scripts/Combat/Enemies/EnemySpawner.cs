@@ -12,6 +12,17 @@ public class EnemySpawner : MonoBehaviour
     // The data defining which enemies appear in this battle
     public List<EnemySpawnData> enemiesToSpawn = new List<EnemySpawnData>();
 
+    void Start()
+    {
+        // Pull battle data from Bootstrapper
+        var boot = Bootstrapper.Instance;
+
+        if (boot != null)
+        {
+            enemiesToSpawn = boot.enemiesForNextBattle;
+        }
+    }
+
     public void SpawnEncounterEnemies()
     {
         // For every enemy which is to be spawned
@@ -25,14 +36,4 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefabs[enemyData.prefabIndex], enemySpawnPoints[enemyData.spawnIndex].position, enemySpawnPoints[enemyData.spawnIndex].rotation);
         }
     }
-}
-
-[System.Serializable]
-public class EnemySpawnData
-{
-    [Tooltip("Index of prefab in EnemySpawner's prefab list.")]
-    public int prefabIndex;
-
-    [Tooltip("Index of spawn point in EnemySpawner's spawn points array.")]
-    public int spawnIndex;
 }
