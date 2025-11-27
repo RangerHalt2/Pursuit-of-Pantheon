@@ -145,8 +145,9 @@ public class ShowFollowersInHub : MonoBehaviour
             Debug.LogWarning("Selected Party Canvas is null or the PartyCanvas Child is null, no code executed");
             return;
         }
-        selectedPartyCanvas.gameObject.SetActive(true);
+        HideFollowerCanvas();
 
+        selectedPartyCanvas.gameObject.SetActive(true);
         ShowAllEquippedFollowers();
         ShowAllUnEquippedFollowers();
         if(nonPartyScrollBLCKER != null) nonPartyScrollBLCKER.gameObject.SetActive(true);
@@ -159,6 +160,8 @@ public class ShowFollowersInHub : MonoBehaviour
             Debug.LogWarning("The Designated TrainingFollowers UI is null, no code ran.");
             return;
         }
+
+        HideFollowerCanvas();
 
         TrainingFollowers.gameObject.SetActive(true);
         if (mainHubBLCKER != null) mainHubBLCKER.gameObject.SetActive(true);
@@ -298,7 +301,6 @@ public class ShowFollowersInHub : MonoBehaviour
             Debug.LogWarning("The Designated TrainingFollowers UI is null, no code ran.");
             return;
         }
-
         TrainingFollowers.gameObject.SetActive(true);
         //Clear the old ones
         foreach (Transform children in PartyCanvasChildren.transform)

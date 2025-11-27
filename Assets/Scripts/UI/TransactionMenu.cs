@@ -74,6 +74,7 @@ public class TransactionMenu : MonoBehaviour
         {
             lose.Refresh();
         }
-        cm.isInShop = false;
+        if(cm != null)
+            cm.isInShop = false;
     }
 }
