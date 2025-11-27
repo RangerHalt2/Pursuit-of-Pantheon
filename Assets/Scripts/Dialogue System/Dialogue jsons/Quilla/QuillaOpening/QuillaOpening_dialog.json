@@ -52,11 +52,24 @@
             "speakerID": "2",
             "sentence": "I can’t wait to bear witness to it.",
             "choices": [],
-            "nextLineIndex": -1,
+            "nextLineIndex": 9
+        },
+        {
+            "speakerID": "2",
+            "sentence": "Would you like a gift before you begin?",
+            "choices": [
+                {
+                    "choiceText": "Of Course, I would love a gift",
+                    "effectID": "GainItem",
+                    "effectParameter": "UpgradeToken,1",
+                    "nextLineIndex": -1
+                },
+                {
+                    "choiceText": "Thank you for the offer, but I'll decline it.",
+                    "nextLineIndex": -1
+                }
+            ],
             "leadsTo": "ReturnToHub"
         }
-    ],
-    "effectID": "GainItem",
-    "effectParameter": "UpgradeToken,1"
-
+    ]
 }
