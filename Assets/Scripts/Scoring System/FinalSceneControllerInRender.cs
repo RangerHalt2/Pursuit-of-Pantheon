@@ -15,7 +15,7 @@ public class FinalSceneControllerInRender : MonoBehaviour
         {
             mainMenu.onClick.AddListener(() =>
             {
-                sc.GoToScene("MainMenu");
+                sc.GoToMainMenu();
             });
         }
         else

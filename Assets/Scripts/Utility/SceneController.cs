@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     //Dynamic Scene Naming capabilities
-    [SerializeField] private string MainMenu = "";
+    [SerializeField] private string MainMenu = "MainMenu";
 
     void Start()
     {
-        
+        MainMenu = "MainMenu";
     }
 
     // Closes out of the application
@@ -25,6 +25,8 @@ public class SceneController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        DestroyAllOnMainMenu.Clear();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(MainMenu);
     }
 
